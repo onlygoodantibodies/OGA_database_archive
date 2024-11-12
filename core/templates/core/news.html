@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>News- Better Antibodies Community</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'core/up-logo.png' %}">
+
+    <!-- Add Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'home' %}"> <!-- Link to the home page -->
+                <img src="{% static 'core/logo.png' %}" alt="Logo" class="logo-img">
+            </a>
+        </div>  
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'projects' %}">Publications</a></li>
+                <li><a href="{% url 'news' %}">News</a></li>
+                <li><a href="{% url 'data' %}">Data</a></li>
+                <li><a href="{% url 'partners' %}">Partners</a></li>
+                <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Section for New Page -->
+    <section class="banner about-banner">
+        <div class="banner-text">
+            <h2 style="color: white;">News</h2>
+        </div>
+    </section>
+
+<!-- News Section -->
+<section class="news-section">
+    <div class="news-container">
+        <!-- News Card -->
+        <div class="news-card">
+            <div class="news-content">
+                <h3>Nature Feature: OGA Community Spotlight</h3>
+                <p>
+                    We are thrilled and deeply grateful to Diana Kwon and <strong>Nature Magazine</strong> for showcasing the work of the OGA community. This feature highlights our role as part of a large international collaboration of fantastic groups striving to achieve a future with better antibodies, better science, and better patient outcomes.
+                </p>
+                <p>
+                    A huge thank you to all the incredible individuals and teams who have contributed to this effort. While we couldn’t mention everyone in the piece, your support remains invaluable in driving this mission forward.
+                </p>
+                <a href="https://www.nature.com/articles/d41586-024-03590-0" class="read-more" target="_blank">Read Full Article</a>
+            </div>
+            <div class="news-image-container">
+                <a href="https://www.nature.com/articles/d41586-024-03590-0" target="_blank">
+                    <img src="{% static 'core/nat3.png' %}" alt="Nature Feature on OGA Community" class="news-image">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section class="news-section">
+    <div class="news-container">
+        <!-- News Card -->
+        <div class="news-card">
+            <div class="news-content">
+                <h3>Antibody Validation for Flow Cytometry</h3>
+                <p>
+                    It was great to work with Rachel Leeson from <strong>Addgene</strong> to develop this short blog describing how to validate antibodies for flow cytometry. Key points:
+                </p>
+                <ul class="styled-list">
+                    <li>Confirm/refute that your antibody can detect the antigen of interest, ideally at endogenously expressed levels, using your specific staining protocol.</li>
+                    <li>Test several antibodies if possible.</li>
+                    <li>When a good candidate(s) are found, explore their validity in your precious samples of interest.</li>
+                    <li>This might require more than one approach if genetic manipulation of your cells of interest is not possible.</li>
+                </ul>
+                <a href="https://blog.addgene.org/antibody-validation-for-flow-cytometry" class="read-more" target="_blank">Read Full Article</a>
+            </div>
+            <div class="news-image-container">
+                <a href="https://blog.addgene.org/antibody-validation-for-flow-cytometry" target="_blank">
+                    <img src="{% static 'core/news22.png' %}" alt="Nature Feature on OGA Community" class="news-image">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section class="news-section">
+    <div class="news-container">
+        <!-- News Card -->
+        <div class="news-card">
+            <div class="news-content">
+                <h3>Improving Antibody Reproducibility with OGA</h3>
+                <p>
+                    The Only Good Antibodies (OGA) community is collaborating with <strong>NC3Rs</strong> to address challenges in research reproducibility involving antibodies. Poorly characterized and inadequately performing antibodies lead to significant waste, including the unnecessary use of animals in their production and in research studies.
+                <p>
+                    Earlier this year, we co-hosted a meeting with NC3Rs, bringing together antibody manufacturers, end-users, the pharmaceutical industry, academic researchers, publishers, research funders, and experts in research culture and integrity. Participants shared insights on challenges such as quality control, lot-to-lot variability, and the need for better validation practices, and explored actions to improve reproducibility and research integrity.
+                </p>
+                <a href="https://nc3rs.org.uk/sites/default/files/2024-07/NC3Rs-OGA%20Meeting%20report%20%E2%80%93%20Defining%20the%20role%20of%20antibodies%20in%20improving%20research%20reproducibility.pdf" class="read-more" target="_blank">Read Full Article</a>
+            </div>
+            <div class="news-image-container">
+                <a href="https://nc3rs.org.uk/sites/default/files/2024-07/NC3Rs-OGA%20Meeting%20report%20%E2%80%93%20Defining%20the%20role%20of%20antibodies%20in%20improving%20research%20reproducibility.pdf" target="_blank">
+                    <img src="{% static 'core/news3.jpeg' %}" alt="Nature Feature on OGA Community" class="news-image">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About Us</a>
+                <a href="{% url 'projects' %}">Publications</a>
+                <a href="{% url 'news' %}">News</a>
+                <a href="{% url 'data' %}">Data</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </div>
+
+            <!-- Contact Information Column -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="onlygoodantibodies@gmail.com">onlygoodantibodies@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">Visit our LinkedIn</a></p>
+                <p>X: <a href="https://x.com/OGA_Community" target="_blank">Visit us on X</a></p>
+            </div>
+
+            <!-- Social Media Column -->
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">
+                    <img src="{% static 'core/linkedin-logo.webp' %}" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://x.com/OGA_Community" target="_blank">
+                    <img src="{% static 'core/x.png' %}" alt="X Social Media" class="social-icon">
+                </a>
+                <!-- Add other social media icons here -->
+            </div>
+        </div>
+
+        <!-- Bottom Footer with Copyright and Back to Top -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Better Antibodies Community. All Rights Reserved.</p>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">Back to Top</button>
+        </div>
+    </footer>
+
+</body>
+</html>

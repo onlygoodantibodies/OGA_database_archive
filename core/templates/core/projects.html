@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Load CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+
+    <title>Pulications - Better Antibodies Community</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'core/up-logo.png' %}">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'home' %}"> <!-- Link to the home page -->
+                <img src="{% static 'core/logo.png' %}" alt="Logo" class="logo-img">
+            </a>
+        </div>        
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'projects' %}">Publications</a></li>
+                <li><a href="{% url 'news' %}">News</a></li>
+                <li><a href="{% url 'data' %}">Data</a></li>
+                <li><a href="{% url 'partners' %}">Partners</a></li>
+                <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Banner Section for Data Page - Same as About Page -->
+    <section class="banner about-banner">
+        <div class="banner-text">
+            <h2>Publications</h2>
+        </div>
+    </section>
+    <section class="publications">
+        <div class="publications-grid">
+            
+<!-- Publication 1 -->
+<div class="publication-card">
+    <a href="https://www.nature.com/articles/d41586-023-02566-w" target="_blank">
+        <img src="{% static 'core/pub1.png' %}" alt="Heed a decade of calls for antibody validation" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>Heed a decade of calls for antibody validation</h3>
+        <p><strong>Authors:</strong> Richard A Kahn, Harvinder S Virk, Peter S McPherson</p>
+        <p><strong>Journal:</strong> Nature, <strong>Year:</strong> 2023</p>
+        <a href="https://www.nature.com/articles/d41586-023-02566-w" class="read-more" target="_blank">Read Full Publication</a>
+    </div>
+</div>
+
+<!-- Publication 2 -->
+<div class="publication-card">
+    <a href="https://nc3rs.org.uk/sites/default/files/2024-07/NC3Rs-OGA%20Meeting%20report%20%E2%80%93%20Defining%20the%20role%20of%20antibodies%20in%20improving%20research%20reproducibility.pdf" target="_blank">
+        <img src="{% static 'core/pub2.png' %}" alt="Defining the role of antibodies in improving research reproducibility" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>Defining the role of antibodies in improving research reproducibility</h3>
+        <p><strong>Authors:</strong> Dr. Harvinder Virk, Dr. Rachel Eyre, Dr. Anthony Holmes, Dr. Michael Biddle, Dr. Eva Krockow</p>
+        <p><strong>Organization:</strong> NC3Rs and Only Good Antibodies community</p>
+        <p><strong>Year:</strong> 2024</p>
+        <a href="https://nc3rs.org.uk/sites/default/files/2024-07/NC3Rs-OGA%20Meeting%20report%20%E2%80%93%20Defining%20the%20role%20of%20antibodies%20in%20improving%20research%20reproducibility.pdf" class="read-more" target="_blank">Read Full Report</a>
+    </div>
+</div>
+
+<!-- Publication 3 -->
+<div class="publication-card">
+    <a href="https://protocolexchange.researchsquare.com/article/pex-2607/v1" target="_blank">
+        <img src="{% static 'core/pub3.png' %}" alt="A consensus platform for antibody characterization" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>A consensus platform for antibody characterization</h3>
+        <p><strong>Journal:</strong> Research Square Protocol Exchange</p>
+        <p><strong>Year:</strong> 2023</p>
+        <a href="https://protocolexchange.researchsquare.com/article/pex-2607/v1" class="read-more" target="_blank">Read Full Publication</a>
+    </div>
+</div>
+
+<!-- Publication 4 -->
+<div class="publication-card">
+    <a href="https://elifesciences.org/articles/91645" target="_blank">
+        <img src="{% static 'core/pub4.png' %}" alt="Scaling of an antibody validation procedure" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>Scaling of an antibody validation procedure enables quantification of antibody performance in major research applications</h3>
+        <p><strong>Authors:</strong> Riham Ayoubi, Joel Ryan, Michael S Biddle, et al.</p>
+        <p><strong>Journal:</strong> eLife, <strong>Year:</strong> 2023</p>
+        <a href="https://elifesciences.org/articles/91645" class="read-more" target="_blank">Read Full Publication</a>
+    </div>
+</div>
+
+<!-- Publication 5 -->
+<div class="publication-card">
+    <a href="https://doi.org/10.7554/eLife.87444" target="_blank">
+        <img src="{% static 'core/pub5.png' %}" alt="Careers: Tales of the unexpected" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>Careers: Tales of the unexpected</h3>
+        <p><strong>Authors:</strong> Nicole Aponte Santiago, Stephanie Konecki, Lauren Porter, Harvinder Virk</p>
+        <p><strong>Journal:</strong> eLife, <strong>Year:</strong> 2023</p>
+        <a href="https://doi.org/10.7554/eLife.87444" class="read-more" target="_blank">Read Full Article</a>
+    </div>
+</div>
+
+<!-- Publication 6 -->
+<div class="publication-card">
+    <a href="https://doi.org/10.7554/eLife.100211" target="_blank">
+        <img src="{% static 'core/pub6.png' %}" alt="Science Forum: Antibody characterization is critical" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>Science Forum: Antibody characterization is critical to enhance reproducibility in biomedical research</h3>
+        <p><strong>Authors:</strong> Richard A Kahn, Harvinder Virk, Carl Laflamme, et al.</p>
+        <p><strong>Journal:</strong> eLife, <strong>Year:</strong> 2024</p>
+        <a href="https://doi.org/10.7554/eLife.100211" class="read-more" target="_blank">Read Full Article</a>
+    </div>
+</div>
+
+<!-- Publication 7 -->
+<div class="publication-card">
+    <a href="https://www.proquest.com/docview/2884639302" target="_blank">
+        <img src="{% static 'core/pub7.png' %}" alt="YCharOS open antibody characterization data" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>YCharOS open antibody characterization data: Lessons learned and progress made</h3>
+        <p><strong>Authors:</strong> Michael S Biddle, Harvinder S Virk</p>
+        <p><strong>Journal:</strong> F1000Research, <strong>Year:</strong> 2023</p>
+        <a href="https://www.proquest.com/docview/2884639302" class="read-more" target="_blank">Read Full Article</a>
+    </div>
+</div>
+
+<!-- Publication 8 -->
+<div class="publication-card">
+    <a href="https://figshare.le.ac.uk/articles/journal_contribution/25347991" target="_blank">
+        <img src="{% static 'core/pub8.png' %}" alt="Improving research integrity and reproducibility with antibodies" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>Improving research integrity and reproducibility with antibodies: a technical, data sharing, behavioral and policy challenge</h3>
+        <p><strong>Authors:</strong> Harvinder Virk, Michael Biddle, et al.</p>
+        <p><strong>Platform:</strong> Figshare, <strong>Year:</strong> 2024</p>
+        <a href="https://figshare.le.ac.uk/articles/journal_contribution/25347991" class="read-more" target="_blank">Read Full Article</a>
+    </div>
+</div>
+
+<!-- Publication 9 -->
+<div class="publication-card">
+    <a href="https://f1000research.com/articles/13-817" target="_blank">
+        <img src="{% static 'core/pub10.png' %}" alt="A guide to selecting high-performing antibodies" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>A guide to selecting high-performing antibodies for Synaptotagmin-1 (Uniprot ID P21579) for use in western blot, immunoprecipitation, immunofluorescence and flow cytometry</h3>
+        <p><strong>Authors:</strong> Michael S Biddle, Charles Alende, et al.</p>
+        <p><strong>Journal:</strong> F1000Research, <strong>Year:</strong> 2024</p>
+        <a href="https://f1000research.com/articles/13-817" class="read-more" target="_blank">Read Full Guide</a>
+    </div>
+</div>
+
+<!-- Publication 10 -->
+<div class="publication-card">
+    <a href="https://f1000research.com/articles/12-376" target="_blank">
+        <img src="{% static 'core/pub10.png' %}" alt="Identification of high-performing antibodies for FUS" class="publication-image">
+    </a>
+    <div class="publication-content">
+        <h3>Identification of high-performing antibodies for FUS (Uniprot ID P35637) for use in western blot, immunoprecipitation, immunofluorescence and flow cytometry</h3>
+        <p><strong>Authors:</strong> Walaa Alshafie, Riham Ayoubi, et al.</p>
+        <p><strong>Platform:</strong> NCBI, <strong>Year:</strong> 2023</p>
+        <a href="https://f1000research.com/articles/12-376" class="read-more" target="_blank">Read Full Article</a>
+    </div>
+</div>
+
+
+
+
+
+<!-- Footer for Publications Page -->
+<div class="footer-wrapper">
+<footer class="footer footer-publications">
+    <div class="footer-container">
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'projects' %}">Publications</a>
+            <a href="{% url 'news' %}">News</a>
+            <a href="{% url 'data' %}">Data</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+
+        <!-- Contact Information Column -->
+        <div class="footer-column">
+            <h4>Contact Us</h4>
+            <p>Email: <a href="onlygoodantibodies@gmail.com">onlygoodantibodies@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">Follow us on LinkedIn</a></p>
+            <p>X: <a href="https://x.com/OGA_Community" target="_blank">Follow us on X</a></p>
+        </div>
+
+        <!-- Social Media Column -->
+        <div class="footer-column">
+            <h4>Follow Us</h4>
+            <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">
+                <img src="{% static 'core/linkedin-logo.webp' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://x.com/OGA_Community" target="_blank">
+                <img src="{% static 'core/x.png' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <!-- Add other social media icons here -->
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Better Antibodies Community. All Rights Reserved.</p>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">Back to Top</button>
+    </div>
+</div>
+</footer>
+
+
+</body>
+</html>

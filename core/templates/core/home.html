@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <!-- Add Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+    <title>OGA - Better Antibodies Community</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'core/up-logo.png' %}">
+
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'home' %}"> <!-- Link to the home page -->
+                <img src="{% static 'core/logo.png' %}" alt="Logo" class="logo-img">
+            </a>
+        </div>        
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'projects' %}">Publications</a></li>
+                <li><a href="{% url 'news' %}">News</a></li>
+                <li><a href="{% url 'data' %}">Data</a></li>
+                <li><a href="{% url 'partners' %}">Partners</a></li>
+                <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- Banner Section with Extended Height -->
+<section class="banner home-banner">
+    <img src="{% static 'core/banner1.png' %}" alt="Banner Image">
+    <div class="banner-text">
+        <h2 style="color: white;">Better antibodies, better science, better patient outcomes.</h2>
+        <div class="buttons">
+            <a href="{% url 'about' %}" class="cta-button">Learn More</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <p>The Only Good Antibodies (OGA) community was established in April 2023 to address the antibody reproducibility crisis that affects scientific research and drug development.</p>
+        <p>We collaborate with researchers, industry leaders, and advocacy groups to increase the availability of high-quality antibodies. Join us to ensure better science and treatments.</p>
+    </section>
+
+    <!-- Browse Button at the Bottom -->
+    <section class="browse-section">
+        <div class="buttons">
+            <a href="{% url 'data' %}" class="cta-button">Browse Data</a>
+        </div>
+    </section>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'projects' %}">Publications</a>
+            <a href="{% url 'news' %}">News</a>
+            <a href="{% url 'data' %}">Data</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+
+        <!-- Contact Information Column -->
+        <div class="footer-column">
+            <h4>Contact Us</h4>
+            <p>Email: <a href="onlygoodantibodies@gmail.com">onlygoodantibodies@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">Follow us on LinkedIn</a></p>
+            <p>X: <a href="https://x.com/OGA_Community" target="_blank">Follow us on X</a></p>
+        </div>
+
+        <!-- Social Media Column -->
+        <div class="footer-column">
+            <h4>Follow Us</h4>
+            <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">
+                <img src="{% static 'core/linkedin-logo.webp' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://x.com/OGA_Community" target="_blank">
+                <img src="{% static 'core/x.png' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <!-- Add other social media icons here -->
+        </div>
+    </div>
+
+    <!-- Bottom Footer with Copyright and Back to Top -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Better Antibodies Community. All Rights Reserved.</p>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">Back to Top</button>
+    </div>
+</footer>
+
+</body>
+</html>
