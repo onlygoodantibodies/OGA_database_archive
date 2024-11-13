@@ -872,130 +872,62 @@ html, body {
 }
 
 @media (max-width: 768px) {
-
-    /* Navigation Bar - Hamburger Menu */
-    nav {
-        position: relative;
+    /* Reduce Banner Height */
+    .home-banner {
+        height: 400px; /* Adjust height proportionately */
     }
 
-    nav ul {
-        display: none; /* Hide the links by default */
-        flex-direction: column; /* Stack links in a column */
-        position: absolute; /* Position the menu below the hamburger */
-        top: 100%; /* Align with the nav bar */
-        right: 0;
-        background-color: #fff; /* Background color for the dropdown */
-        border: 1px solid #ccc; /* Optional: Add a border */
-        width: 200px; /* Set a consistent width */
-        z-index: 1000; /* Ensure it appears above other content */
-    }
-
-    nav ul.show {
-        display: flex; /* Show the menu when triggered */
-    }
-
-    .hamburger {
-        display: block; /* Show the hamburger icon */
-        cursor: pointer;
-        font-size: 1.5rem;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-    }
-
-    nav ul li a {
-        font-size: 1rem; /* Smaller font for menu links */
-        padding: 10px; /* Add padding for better spacing */
-        text-align: left; /* Align links */
-    }
-
-    /* Home Page Adjustments */
+    /* Adjust Banner Text */
     .home-banner .banner-text h2 {
-        font-size: 1.3rem; /* Reduce heading size */
+        font-size: 1.5rem; /* Smaller heading size */
+        line-height: 1.3; /* Adjust line spacing */
     }
 
-    .home-banner p {
+    /* Adjust Learn More Button */
+    .home-banner .cta-button {
+        font-size: 0.9rem; /* Smaller text on the button */
+        padding: 10px 20px; /* Adjust button size */
+    }
+
+    /* Adjust Introduction Section Text */
+    .introduction p {
+        font-size: 0.9rem; /* Reduce paragraph text size */
+        line-height: 1.5; /* Improve readability */
+        margin-bottom: 15px; /* Add space between paragraphs */
+    }
+
+    /* Adjust Browse Button */
+    .browse-section .cta-button {
         font-size: 0.9rem; /* Smaller text */
-        line-height: 1.5; /* Adjust spacing */
+        padding: 8px 16px; /* Adjust button padding */
     }
 
-    .home-banner .buttons .cta-button {
-        padding: 8px 15px; /* Smaller button size */
-        font-size: 0.8rem; /* Smaller text on buttons */
-    }
-
-    /* About Page Adjustments */
-    .about-banner h2 {
-        font-size: 1.5rem; /* Reduce title size */
-    }
-
-    .about-banner p, .about-banner li {
-        font-size: 0.9rem; /* Smaller text */
-    }
-
-    /* Team Section */
-    .team-grid {
-        display: grid;
-        gap: 10px; /* Reduce spacing */
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
-    }
-
-    .team-member {
-        padding: 10px; /* Adjust spacing */
-    }
-
-    .team-member img {
-        max-width: 100px; /* Smaller images */
-        border-radius: 50%; /* Optional: Circular images */
-    }
-
-    .team-member h3 {
-        font-size: 1rem; /* Smaller team member names */
-    }
-
-    .team-member p {
-        font-size: 0.8rem; /* Smaller roles */
-    }
-
-    /* News Page Adjustments */
-    .news-content ul li {
-        font-size: 0.9rem; /* Reduce bullet point font size */
-    }
-
-    /* Data Page Adjustments */
-    .data-page p {
-        font-size: 0.9rem; /* Smaller text */
-    }
-
-    .data-page .cta-button {
-        padding: 8px 15px; /* Smaller buttons */
-        font-size: 0.8rem; /* Reduce text size */
-    }
-
-    /* Partners Page Adjustments */
-    .partners h2 {
-        font-size: 1.5rem; /* Reduce title size */
-    }
-
-    .partners .learn-more-button {
-        padding: 8px 15px; /* Adjust button size */
-        font-size: 0.8rem; /* Smaller button text */
-    }
-
-    .partners .container {
-        max-width: 150px; /* Smaller containers */
-        padding: 10px; /* Adjust spacing */
-    }
-
-    /* General Adjustments for Bullet Points */
-    ul li {
-        font-size: 0.9rem; /* Standardize bullet point font size */
-    }
-
-    /* Footer */
+    /* Footer Adjustments */
     .footer-container {
         flex-direction: column; /* Stack content vertically */
-        align-items: center; /* Center-align content */
+        align-items: center; /* Center-align columns */
         text-align: center;
     }
+
+    .footer-column {
+        margin-bottom: 20px; /* Add space between stacked columns */
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+}
+
+/* Reuse navigation styles for smaller screens */
+nav ul {
+    display: flex; /* Keep links visible */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center-align links */
+    gap: 10px; /* Add spacing between links */
+}
+
+nav ul li a {
+    font-size: 1rem; /* Smaller font size */
+    padding: 5px 10px; /* Adjust padding for smaller screens */
 }
