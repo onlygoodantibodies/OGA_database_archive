@@ -1076,10 +1076,31 @@ html, body {
     text-decoration: underline; /* Add underline on hover */
 }
 
-/* Publications Grid Adjustments */
-.publications-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 20px; /* Add spacing between cards */
-    padding: 10px; /* Add padding around grid */
-}
+    /* Publication Cards */
+    .publication-card {
+        gap: 10px; /* Reduce spacing */
+        padding: 15px; /* Smaller padding */
+    }
+
+    .publication-image {
+        width: 150px; /* Reduce image size */
+        height: 200px;
+    }
+
+    .publication-content h3 {
+        font-size: 1.2rem; /* Smaller title size */
+    }
+
+    .publication-content p {
+        font-size: 0.9rem; /* Smaller text size */
+    }
+
+    /* Contact Form */
+    .contact-form input,
+    .contact-form textarea {
+        width: 90%; /* Adjust to fit within smaller screens */
+    }
+
+    .contact-form textarea {
+        height: 100px; /* Adjust height */
+    }
