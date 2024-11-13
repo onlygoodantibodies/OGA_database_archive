@@ -871,51 +871,102 @@ html, body {
     display: block; 
 }
 
-/* Responsive Adjustments for Smaller Screens (max-width: 576px) */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     /* Header */
     .header {
-        flex-direction: column; /* Stack header items vertically */
-        align-items: center;
-        text-align: center;
-        padding: 20px; /* Reduce padding */
+        padding: 15px; /* Reduce padding */
+        height: auto; /* Let the height adjust naturally */
     }
 
-    nav ul {
-        flex-direction: column; /* Stack navigation links */
-        gap: 10px;
+    .header .logo-img {
+        max-width: 100px; /* Smaller logo */
     }
 
     /* Banner */
     .banner {
-        height: auto; /* Allow height to adjust */
-        padding: 20px;
+        height: 150px; /* Skinnier banner */
+    }
+
+    .home-banner {
+        height: 400px; /* Adjusted height for home page */
+    }
+
+    .about-banner {
+        height: 100px; /* Smaller about banner */
     }
 
     .banner-text h2 {
-        font-size: 2rem; /* Adjust font size for readability */
+        font-size: 1.8rem; /* Reduce font size in banner text */
     }
 
-    /* Content Container */
-    .content-container {
-        padding: 10px; /* Reduce padding */
+    /* Titles and Text */
+    h1, h2, h3 {
+        font-size: 1.3rem; /* Reduce heading sizes */
     }
 
-    /* Grids */
-    .partner-grid,
+    p, li {
+        font-size: 0.9rem; /* Smaller text for readability */
+        line-height: 1.5; /* Adjust spacing */
+    }
+
+    /* Team Section */
     .team-grid {
-        grid-template-columns: 1fr; /* Single-column layout */
-        gap: 15px; /* Adjust spacing */
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 10px; /* Reduce spacing */
     }
 
     .team-member {
-        width: 90%; /* Allow flexibility */
+        width: 100%; /* Ensure consistent width */
     }
 
-    .team-member img {
-        width: 80%; /* Adjust image size */
-        height: auto;
+    /* Publication Cards */
+    .publication-card {
+        flex-direction: column; /* Stack content vertically */
+        gap: 10px; /* Reduce spacing */
+        padding: 15px; /* Smaller padding */
     }
+
+    .publication-image {
+        width: 150px; /* Reduce image size */
+        height: 200px;
+    }
+
+    .publication-content h3 {
+        font-size: 1.2rem; /* Smaller title size */
+    }
+
+    .publication-content p {
+        font-size: 0.9rem; /* Smaller text size */
+    }
+
+    /* Contact Form */
+    .contact-form input,
+    .contact-form textarea {
+        width: 90%; /* Adjust to fit within smaller screens */
+    }
+
+    .contact-form textarea {
+        height: 100px; /* Adjust height */
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column; /* Stack footer items */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px; /* Add spacing between columns */
+    }
+
+    /* Buttons */
+    .buttons {
+        flex-direction: column; /* Stack buttons */
+        gap: 15px; /* Adjust spacing between buttons */
+        margin-top: 20px;
+    }
+}
 
     /* Footer */
     .footer-container {
@@ -943,4 +994,4 @@ html, body {
         gap: 15px;
         margin-top: 20px; /* Adjust spacing */
     }
-}
+
