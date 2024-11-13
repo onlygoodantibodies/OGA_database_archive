@@ -1,6 +1,6 @@
 /* Root Variables */
 :root {
-    --main-blue: red;
+    --main-blue: #10428a;
     --font-primary: 'Open Sans', sans-serif;
     --heading-color: var(--main-blue);
     --background-color: #f4f4f4;
@@ -929,12 +929,14 @@ html, body {
         margin-bottom: 8px; /* Add spacing between items */
     }
 
-    /* Bottom Footer Text */
-    .footer-bottom {
-        font-size: 0.8rem; /* Smaller copyright text */
-        text-align: center; /* Center-align for aesthetics */
-        margin-top: 20px;
+    /* Footer Adjustments */
+    .footer-bottom p {
+    font-size: 0.8rem; /* Smaller font size */
+    color: #ffffff; /* Ensure consistent color */
+    text-align: center; /* Center-align text */
+    margin: 0; /* Remove unnecessary margins */
     }
+
 
     .back-to-top {
         font-size: 0.8rem; /* Smaller "Back to Top" button */
@@ -948,31 +950,18 @@ html, body {
     }
 
     /* Navigation Links */
-    nav ul {
-        list-style: none;
-        display: flex; /* Show links again */
-        flex-wrap: wrap; /* Allow links to wrap */
-        justify-content: center; /* Center links */
-        gap: 10px; /* Add spacing between links */
-        padding: 0; /* Remove default padding */
-    }
+   /* Hide Navigation Links */
+   nav ul {
+    display: none; /* Hide the links */
+}
 
-    nav ul li {
-        margin: 5px 0; /* Space between list items */
-    }
-
-    nav ul li a {
-        font-size: 1rem; /* Font size for navigation links */
-        padding: 8px 12px; /* Add padding for better clickability */
-        color: var(--main-blue); /* Consistent text color */
-        text-decoration: none;
-    }
-
-    nav ul li a:hover {
-        text-decoration: underline; /* Highlight links on hover */
-    }
-
-    .hamburger {
-        display: none; /* Temporarily hide hamburger */
-    }
+/* Show Hamburger Icon */
+.hamburger {
+    display: block; /* Ensure the hamburger is visible */
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: 1.5rem; /* Adjust size of the hamburger */
+    position: absolute; /* Position it properly */
+    top: 15px;
+    right: 15px;
+}
 }
