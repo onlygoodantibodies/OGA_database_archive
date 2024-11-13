@@ -902,21 +902,56 @@ html, body {
         padding: 8px 16px; /* Adjust button padding */
     }
 
-    /* Footer Adjustments */
-    .footer-container {
-        flex-direction: column; /* Stack content vertically */
-        align-items: center; /* Center-align columns */
-        text-align: center;
-    }
+  /* Footer Adjustments */
+  .footer-container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align content */
+    text-align: center;
+}
 
-    .footer-column {
-        margin-bottom: 20px; /* Add space between stacked columns */
-    }
+.footer-column {
+    margin-bottom: 20px; /* Add space between stacked columns */
+}
 
-    .footer-bottom {
-        margin-top: 20px;
-        padding-top: 20px;
-    }
+.footer-column h4 {
+    font-size: 1rem; /* Smaller heading size */
+}
+
+.footer-column p, .footer-column a {
+    font-size: 0.8rem; /* Smaller text size for links and paragraphs */
+}
+
+.footer-bottom {
+    font-size: 0.8rem; /* Reduce copyright text size */
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.back-to-top {
+    font-size: 0.8rem; /* Smaller "Back to Top" button */
+    padding: 8px 12px; /* Adjust button padding */
+}
+
+/* Adjust Footer Social Media Icons */
+.social-icon {
+    width: 20px; /* Smaller icon size */
+    height: 20px;
+}
+
+/* Navigation - Hide Links for Aesthetic Testing */
+nav ul {
+    display: none; /* Temporarily hide links */
+}
+
+.hamburger {
+    display: block; /* Show hamburger menu */
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001; /* Ensure it sits above other content */
+}
 }
 
 /* Reuse navigation styles for smaller screens */
