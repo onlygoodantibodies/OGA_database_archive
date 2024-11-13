@@ -902,81 +902,77 @@ html, body {
         padding: 8px 16px; /* Adjust button padding */
     }
 
+    /* Footer Layout */
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow columns to wrap */
+        justify-content: space-between; /* Distribute columns evenly */
+        align-items: flex-start; /* Align to the top */
+        text-align: left; /* Align text to the left */
+        gap: 20px; /* Add spacing between columns */
+    }
 
- /* Footer Adjustments */
- .footer-container {
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center-align columns */
-    text-align: center;
-}
+    .footer-column {
+        flex: 1 1 calc(50% - 20px); /* Two columns with spacing */
+        min-width: 200px; /* Ensure columns don’t shrink too much */
+    }
 
-.footer-column {
-    width: 100%; /* Full width for small screens */
-    margin-bottom: 20px; /* Add spacing between columns */
-}
+    /* Text Styling for Footer */
+    .footer-column h4 {
+        font-size: 1rem; /* Reduce heading size */
+        margin-bottom: 10px;
+    }
 
-.footer-column h4 {
-    font-size: 1rem; /* Reduce heading size */
-}
+    .footer-column p,
+    .footer-column a {
+        font-size: 0.8rem; /* Smaller text for paragraphs and links */
+        margin-bottom: 8px; /* Add spacing between items */
+    }
 
-.footer-column p,
-.footer-column a {
-    font-size: 0.8rem; /* Reduce text size for links and paragraphs */
-}
+    /* Bottom Footer Text */
+    .footer-bottom {
+        font-size: 0.8rem; /* Smaller copyright text */
+        text-align: center; /* Center-align for aesthetics */
+        margin-top: 20px;
+    }
 
-.footer-bottom {
-    font-size: 0.8rem; /* Make "All Rights Reserved" text smaller */
-    margin-top: 20px;
-    padding-top: 10px;
-}
+    .back-to-top {
+        font-size: 0.8rem; /* Smaller "Back to Top" button */
+        padding: 8px 12px;
+    }
 
-.back-to-top {
-    font-size: 0.8rem; /* Adjust button text size */
-    padding: 8px 12px; /* Adjust button padding */
-}
+    /* Social Media Icons */
+    .social-icon {
+        width: 20px; /* Smaller icon size */
+        height: 20px;
+    }
 
-.social-icon {
-    width: 20px; /* Smaller icon size */
-    height: 20px;
-}
+    /* Navigation Links */
+    nav ul {
+        list-style: none;
+        display: flex; /* Show links again */
+        flex-wrap: wrap; /* Allow links to wrap */
+        justify-content: center; /* Center links */
+        gap: 10px; /* Add spacing between links */
+        padding: 0; /* Remove default padding */
+    }
 
-/* Footer Columns for Small Screens */
-.footer-container {
-    flex-wrap: wrap; /* Allow wrapping for small screens */
-    justify-content: space-between; /* Distribute columns evenly */
-}
+    nav ul li {
+        margin: 5px 0; /* Space between list items */
+    }
 
-.footer-column {
-    width: calc(50% - 20px); /* Two columns with spacing */
-    text-align: left; /* Align text to the left */
-}
+    nav ul li a {
+        font-size: 1rem; /* Font size for navigation links */
+        padding: 8px 12px; /* Add padding for better clickability */
+        color: var(--main-blue); /* Consistent text color */
+        text-decoration: none;
+    }
 
-/* Navigation Links */
-nav ul {
-    list-style: none;
-    display: flex; /* Show links again */
-    flex-wrap: wrap; /* Allow links to wrap */
-    justify-content: center; /* Center links */
-    gap: 10px; /* Add spacing between links */
-    padding: 0; /* Remove default padding */
-}
+    nav ul li a:hover {
+        text-decoration: underline; /* Highlight links on hover */
+    }
 
-nav ul li {
-    margin: 5px 0; /* Space between list items */
-}
-
-nav ul li a {
-    font-size: 1rem; /* Font size for navigation links */
-    padding: 8px 12px; /* Add padding for better clickability */
-    color: var(--main-blue); /* Consistent text color */
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline; /* Highlight links on hover */
-}
-
-.hamburger {
-    display: none; /* Temporarily hide hamburger */
-}
+    .hamburger {
+        display: none; /* Temporarily hide hamburger */
+    }
 }
