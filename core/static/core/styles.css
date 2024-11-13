@@ -1030,3 +1030,56 @@ html, body {
 .section-divider {
     display: none; /* Hide divider section on small screens */
 }
+ /* Publication Card Adjustments */
+ .publication-card {
+    display: flex;
+    flex-direction: column; /* Stack image and content */
+    align-items: center; /* Center-align content */
+    padding: 15px; /* Add padding */
+    gap: 15px; /* Add spacing between image and text */
+    background-color: #f7f7f7; /* Optional: Add background color */
+    border: 1px solid #ddd; /* Optional: Add border */
+    border-radius: 10px; /* Slightly round corners */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+.publication-card img {
+    width: 80%; /* Reduce image size */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 120px; /* Ensure image isn't too tall */
+    border-radius: 5px; /* Optional: Round corners for images */
+}
+
+.publication-content {
+    text-align: center; /* Center text */
+}
+
+.publication-content h3 {
+    font-size: 1rem; /* Smaller title font */
+    margin-bottom: 10px;
+}
+
+.publication-content p {
+    font-size: 0.8rem; /* Smaller text */
+    line-height: 1.5; /* Improve readability */
+    margin-bottom: 8px; /* Reduce spacing */
+}
+
+.read-more {
+    font-size: 0.9rem; /* Smaller link text */
+    color: var(--main-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Publications Grid Adjustments */
+.publications-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Add spacing between cards */
+    padding: 10px; /* Add padding around grid */
+}
