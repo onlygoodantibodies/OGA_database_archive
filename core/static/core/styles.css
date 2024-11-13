@@ -964,7 +964,7 @@ html, body {
     top: 15px;
     right: 15px;
    }
-}
+
 /* Adjust Banner */
 .about-banner {
     height: 150px; /* Reduce banner height */
@@ -1086,4 +1086,4 @@ html, body {
     height: 100px; /* Adjust height */
 }
 
-
+}
