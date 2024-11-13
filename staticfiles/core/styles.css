@@ -870,3 +870,128 @@ html, body {
     margin: 10px auto; 
     display: block; 
 }
+
+@media (max-width: 768px) {
+    /* Header */
+    .header {
+        padding: 15px; /* Reduce padding */
+        height: auto; /* Let the height adjust naturally */
+    }
+
+    .header .logo-img {
+        max-width: 100px; /* Smaller logo */
+    }
+
+    /* Banner */
+    .banner {
+        height: 150px; /* Skinnier banner */
+    }
+
+    .home-banner {
+        height: 400px; /* Adjusted height for home page */
+    }
+
+    .about-banner {
+        height: 100px; /* Smaller about banner */
+    }
+
+    .banner-text h2 {
+        font-size: 1.8rem; /* Reduce font size in banner text */
+    }
+
+    /* Titles and Text */
+    h1, h2, h3 {
+        font-size: 1.3rem; /* Reduce heading sizes */
+    }
+
+    p, li {
+        font-size: 0.9rem; /* Smaller text for readability */
+        line-height: 1.5; /* Adjust spacing */
+    }
+
+    /* Team Section */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .team-member {
+        width: 100%; /* Ensure consistent width */
+    }
+
+    /* Publication Cards */
+    .publication-card {
+        flex-direction: column; /* Stack content vertically */
+        gap: 10px; /* Reduce spacing */
+        padding: 15px; /* Smaller padding */
+    }
+
+    .publication-image {
+        width: 150px; /* Reduce image size */
+        height: 200px;
+    }
+
+    .publication-content h3 {
+        font-size: 1.2rem; /* Smaller title size */
+    }
+
+    .publication-content p {
+        font-size: 0.9rem; /* Smaller text size */
+    }
+
+    /* Contact Form */
+    .contact-form input,
+    .contact-form textarea {
+        width: 90%; /* Adjust to fit within smaller screens */
+    }
+
+    .contact-form textarea {
+        height: 100px; /* Adjust height */
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column; /* Stack footer items */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px; /* Add spacing between columns */
+    }
+
+    /* Buttons */
+    .buttons {
+        flex-direction: column; /* Stack buttons */
+        gap: 15px; /* Adjust spacing between buttons */
+        margin-top: 20px;
+    }
+}
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+
+    /* General Font Scaling */
+    h1, h2, h3 {
+        font-size: 1.3rem; /* Adjust for readability */
+    }
+
+    p, li {
+        font-size: 0.9rem;
+        line-height: 1.5; /* Ensure proper spacing */
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px; /* Adjust spacing */
+    }
+
