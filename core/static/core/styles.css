@@ -882,6 +882,16 @@ html, body {
         max-width: 100px; /* Smaller logo */
     }
 
+    /* Navigation Bar */
+    nav ul {
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center navigation links */
+    }
+
+    nav ul li {
+        margin: 5px 10px; /* Add spacing between links */
+    }
+
     /* Banner */
     .banner {
         height: 150px; /* Skinnier banner */
@@ -921,7 +931,6 @@ html, body {
 
     /* Publication Cards */
     .publication-card {
-        flex-direction: column; /* Stack content vertically */
         gap: 10px; /* Reduce spacing */
         padding: 15px; /* Smaller padding */
     }
@@ -966,32 +975,13 @@ html, body {
         gap: 15px; /* Adjust spacing between buttons */
         margin-top: 20px;
     }
+
+    /* News Section */
+    .news-content h3 {
+        font-size: 1.2rem; /* Reduce title size */
+    }
+
+    .news-content p {
+        font-size: 0.9rem; /* Reduce text size */
+    }
 }
-
-    /* Footer */
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-column {
-        margin-bottom: 20px;
-    }
-
-    /* General Font Scaling */
-    h1, h2, h3 {
-        font-size: 1.3rem; /* Adjust for readability */
-    }
-
-    p, li {
-        font-size: 0.9rem;
-        line-height: 1.5; /* Ensure proper spacing */
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 20px; /* Adjust spacing */
-    }
-
