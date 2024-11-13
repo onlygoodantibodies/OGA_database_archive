@@ -1076,31 +1076,14 @@ html, body {
     text-decoration: underline; /* Add underline on hover */
 }
 
-    /* Publication Cards */
-    .publication-card {
-        gap: 10px; /* Reduce spacing */
-        padding: 15px; /* Smaller padding */
-    }
+/* Contact Form */
+.contact-form input,
+ .contact-form textarea {
+    width: 90%; /* Adjust to fit within smaller screens */
+}
 
-    .publication-image {
-        width: 150px; /* Reduce image size */
-        height: 200px;
-    }
+.contact-form textarea {
+    height: 100px; /* Adjust height */
+}
 
-    .publication-content h3 {
-        font-size: 1.2rem; /* Smaller title size */
-    }
 
-    .publication-content p {
-        font-size: 0.9rem; /* Smaller text size */
-    }
-
-    /* Contact Form */
-    .contact-form input,
-    .contact-form textarea {
-        width: 90%; /* Adjust to fit within smaller screens */
-    }
-
-    .contact-form textarea {
-        height: 100px; /* Adjust height */
-    }
