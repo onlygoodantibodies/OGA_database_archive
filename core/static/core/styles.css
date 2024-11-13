@@ -991,17 +991,22 @@ html, body {
     margin-bottom: 10px; /* Reduce spacing */
 }
 
-/* Team Section - Two Columns */
+/* Team Section - Two Columns with Spacing */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 15px; /* Add spacing between team members */
+    gap: 20px; /* Add spacing between team members */
     justify-content: center; /* Center-align team grid */
 }
 
 .team-member {
     width: 100%; /* Ensure full width within the column */
     text-align: center;
+    background-color: #f7f7f7; /* Optional: Add a subtle background */
+    border: 1px solid #ddd; /* Optional: Add a border */
+    padding: 10px; /* Add padding inside each box */
+    border-radius: 8px; /* Slightly round the corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
 }
 
 .team-member img {
@@ -1019,6 +1024,7 @@ html, body {
     font-size: 0.8rem; /* Smaller roles */
     color: #666; /* Muted text color */
 }
+
 
 /* Divider Section */
 .section-divider .divider-line {
