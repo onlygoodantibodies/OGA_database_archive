@@ -956,12 +956,73 @@ html, body {
 }
 
 /* Show Hamburger Icon */
-.hamburger {
+  .hamburger {
     display: block; /* Ensure the hamburger is visible */
     cursor: pointer; /* Change cursor to pointer */
     font-size: 1.5rem; /* Adjust size of the hamburger */
     position: absolute; /* Position it properly */
     top: 15px;
     right: 15px;
+   }
 }
+/* Adjust Banner */
+.about-banner {
+    height: 150px; /* Reduce banner height */
+}
+
+.about-banner .banner-text h2 {
+    font-size: 1.5rem; /* Smaller banner title */
+    line-height: 1.3; /* Adjust line height for readability */
+}
+
+/* Adjust Section Titles */
+.our-approach h2,
+.our-team h2 {
+    font-size: 1.8rem; /* Smaller section titles */
+    line-height: 1.4;
+}
+
+/* Adjust Paragraph and List Text */
+.our-approach p,
+.our-approach ul li,
+.our-team p {
+    font-size: 0.9rem; /* Consistent smaller text size */
+    line-height: 1.5; /* Improve readability */
+    margin-bottom: 10px; /* Reduce spacing */
+}
+
+/* Team Section - Two Columns */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 15px; /* Add spacing between team members */
+    justify-content: center; /* Center-align team grid */
+}
+
+.team-member {
+    width: 100%; /* Ensure full width within the column */
+    text-align: center;
+}
+
+.team-member img {
+    max-width: 80px; /* Reduce image size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 10px; /* Center-align and add spacing below */
+}
+
+.team-member h3 {
+    font-size: 1rem; /* Smaller team member names */
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 0.8rem; /* Smaller roles */
+    color: #666; /* Muted text color */
+}
+
+/* Divider Section */
+.section-divider .divider-line {
+    width: 70%; /* Make divider narrower */
+    height: 1px; /* Reduce thickness */
+    margin: 20px auto; /* Center-align with smaller spacing */
 }
