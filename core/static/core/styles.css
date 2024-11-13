@@ -1,6 +1,6 @@
 /* Root Variables */
 :root {
-    --main-blue: #10428a;
+    --main-blue: red;
     --font-primary: 'Open Sans', sans-serif;
     --heading-color: var(--main-blue);
     --background-color: #f4f4f4;
