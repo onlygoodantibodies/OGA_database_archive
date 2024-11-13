@@ -870,3 +870,77 @@ html, body {
     margin: 10px auto; 
     display: block; 
 }
+
+/* Responsive Adjustments for Smaller Screens (max-width: 576px) */
+@media (max-width: 576px) {
+    /* Header */
+    .header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: center;
+        text-align: center;
+        padding: 20px; /* Reduce padding */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation links */
+        gap: 10px;
+    }
+
+    /* Banner */
+    .banner {
+        height: auto; /* Allow height to adjust */
+        padding: 20px;
+    }
+
+    .banner-text h2 {
+        font-size: 2rem; /* Adjust font size for readability */
+    }
+
+    /* Content Container */
+    .content-container {
+        padding: 10px; /* Reduce padding */
+    }
+
+    /* Grids */
+    .partner-grid,
+    .team-grid {
+        grid-template-columns: 1fr; /* Single-column layout */
+        gap: 15px; /* Adjust spacing */
+    }
+
+    .team-member {
+        width: 90%; /* Allow flexibility */
+    }
+
+    .team-member img {
+        width: 80%; /* Adjust image size */
+        height: auto;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+
+    /* General Font Scaling */
+    h1, h2, h3 {
+        font-size: 1.3rem; /* Adjust for readability */
+    }
+
+    p, li {
+        font-size: 0.9rem;
+        line-height: 1.5; /* Ensure proper spacing */
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px; /* Adjust spacing */
+    }
+}
