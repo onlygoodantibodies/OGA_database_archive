@@ -926,7 +926,7 @@ html, body {
 
     /* Home Page Adjustments */
     .home-banner .banner-text h2 {
-        font-size: 1.3rem; /* Reduce heading size */
+        font-size: 1.2rem; /* Reduce heading size */
     }
 
     .home-banner p {
@@ -938,25 +938,46 @@ html, body {
         padding: 8px 15px; /* Smaller button size */
         font-size: 0.8rem; /* Smaller text on buttons */
     }
+    .introduction p {
+        font-size: 0.9rem; /* Reduce paragraph text size */
+        line-height: 1.5; /* Improve readability with proper spacing */
+        margin-bottom: 10px; /* Add space between paragraphs */
+    }
 
+    /* Browse Button */
+    .browse-section .cta-button {
+        font-size: 0.8rem; /* Reduce button text size */
+        padding: 8px 12px; /* Smaller padding for a more compact button */
+        display: inline-block; /* Ensure proper button alignment */
+        margin-top: 15px; /* Add spacing above the button */
+    }
+
+    .browse-section .buttons {
+        text-align: center; /* Center the button */
+    }
+}
     /* About Page Adjustments */
     .about-banner h2 {
-        font-size: 1.5rem; /* Reduce title size */
+        font-size: 1.2rem; /* Reduce title size */
     }
 
     .about-banner p, .about-banner li {
-        font-size: 0.9rem; /* Smaller text */
+        font-size: 0.8rem; /* Smaller text */
     }
 
     /* Team Section */
     .team-grid {
         display: grid;
-        gap: 10px; /* Reduce spacing */
         grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 15px; /* Add spacing between columns and rows */
+        padding: 10px; /* Optional: Add padding around the grid */
     }
 
     .team-member {
-        padding: 10px; /* Adjust spacing */
+        padding: 10px; /* Add internal padding for each member */
+        background-color: #f9f9f9; /* Optional: Add background to distinguish members */
+        border-radius: 8px; /* Optional: Rounded corners for aesthetic */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
     }
 
     .team-member img {
@@ -979,12 +1000,12 @@ html, body {
 
     /* Data Page Adjustments */
     .data-page p {
-        font-size: 0.9rem; /* Smaller text */
+        font-size: 0.8rem; /* Smaller text */
     }
 
     .data-page .cta-button {
         padding: 8px 15px; /* Smaller buttons */
-        font-size: 0.8rem; /* Reduce text size */
+        font-size: 0.7rem; /* Reduce text size */
     }
 
     /* Partners Page Adjustments */
@@ -1012,5 +1033,10 @@ html, body {
         flex-direction: column; /* Stack content vertically */
         align-items: center; /* Center-align content */
         text-align: center;
+    }
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide on large screens */
     }
 }
