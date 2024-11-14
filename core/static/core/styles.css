@@ -1041,15 +1041,6 @@ html, body {
     margin-bottom: 0;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 600px) {
-    .team-grid {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
-    }
-}
-
-
-
 /* Hide Divider Section */
 .section-divider {
     display: none; /* Hide divider section on small screens */
