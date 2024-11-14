@@ -1243,4 +1243,57 @@ html, body {
         margin: 0 auto; /* Center-align the button */
     }
 
+        /* Banner Title Adjustments */
+        .about-banner h2 {
+            font-size: 1.5rem; /* Reduce title size */
+            text-align: center; /* Center-align the title */
+        }
+    
+        /* Contact Info Section */
+        .contact-info .content h2 {
+            font-size: 1.8rem; /* Smaller heading size */
+            margin-bottom: 15px; /* Add space below heading */
+            text-align: center; /* Center-align heading */
+        }
+    
+        .contact-info .content p {
+            font-size: 0.9rem; /* Reduce paragraph text size */
+            line-height: 1.5; /* Improve readability */
+            text-align: justify; /* Align text for a cleaner look */
+            margin-bottom: 15px; /* Add space below text */
+        }
+    
+        .contact-info .content ul {
+            padding-left: 20px; /* Add indentation */
+        }
+    
+        .contact-info .content ul li {
+            font-size: 0.9rem; /* Smaller list item text */
+            margin-bottom: 10px; /* Add space between list items */
+        }
+    
+        .contact-info .content ul li strong {
+            font-size: 1rem; /* Ensure bold text is slightly larger for emphasis */
+        }
+    
+        .contact-info .content ul li a {
+            font-size: 0.9rem; /* Adjust link size */
+            text-decoration: underline; /* Highlight links */
+        }
+    
+        /* Contact Form Section */
+        .contact-form .content h2 {
+            font-size: 1.8rem; /* Smaller form heading */
+            text-align: center; /* Center-align form heading */
+            margin-bottom: 20px;
+        }
+    
+        .contact-form .cta-button {
+            font-size: 0.9rem; /* Adjust button text size */
+            padding: 10px 20px; /* Adjust button padding */
+            display: block; /* Ensure button spans full width */
+            max-width: 200px; /* Restrict max width of button */
+            margin: 0 auto; /* Center-align the button */
+        }
+
 }
