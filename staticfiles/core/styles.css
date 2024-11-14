@@ -1074,13 +1074,6 @@ html, body {
     text-align: center; /* Center-align the image */
 }
 
-.news-image {
-    width: 90%; /* Smaller image to fit the screen */
-    max-height: 150px; /* Cap height for consistency */
-    border-radius: 5px; /* Optional: Round corners */
-    object-fit: cover; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center image within the container */
-}
 
 /* News Content Styling */
 .news-content {
