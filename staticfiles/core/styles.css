@@ -1150,9 +1150,9 @@ html, body {
 
 /* Adjust Partner Cards */
 .partner-card {
-    width: 100%; /* Full width within the grid columns */
+    width: 90%; /* Slightly smaller to ensure alignment */
     padding: 15px; /* Add inner padding */
-    margin: 10px; /* Add space around each card */
+    margin: 10px auto; /* Add vertical and horizontal spacing */
     background-color: #fff; /* Ensure white background */
     border-radius: 8px; /* Slight rounding of edges */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for separation */
@@ -1164,7 +1164,7 @@ html, body {
 }
 
 .partner-logo {
-    max-width: 75%; /* Shrink logo size */
+    max-width: 70%; /* Shrink logo size */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 10px; /* Add spacing below the logo */
 }
@@ -1179,8 +1179,9 @@ html, body {
     display: grid; /* Use grid layout */
     grid-template-columns: 1fr 1fr; /* Two columns */
     gap: 20px; /* Add space between the cards */
-    padding: 0 10px; /* Add padding around the grid */
+    padding: 10px; /* Add padding around the grid */
     justify-items: center; /* Center-align items within the grid */
+    align-items: center; /* Center-align vertically */
 }
 
 /* General Spacing for Partner Section */
