@@ -994,11 +994,11 @@ html, body {
 /* Team Section - Two Columns with Spacing */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two equal columns with minimum width of 0 */
-    gap: 30px; /* Reduced gap for better alignment */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two equal columns */
+    gap: 30px; /* Spacing between team member cards */
     justify-content: center;
-    max-width: 800px; /* Set a max-width for the entire grid */
-    margin: 0 auto; /* Center the grid on the page */
+    max-width: 1000px; /* Increased max-width for wider grid */
+    margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -1006,7 +1006,7 @@ html, body {
 /* Individual Team Member Styling */
 .team-member {
     width: 100%;
-    max-width: 180px;
+    max-width: 300px; /* Increased max-width for wider cards */
     margin: 0 auto;
     text-align: center;
     background-color: #f7f7f7;
@@ -1014,17 +1014,16 @@ html, body {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Include padding in width calculations */
+    box-sizing: border-box;
 }
 
 /* Team Member Image Styling */
 .team-member img {
-    width: 80px; /* Set a fixed width */
-    height: 80px; /* Set a fixed height */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    max-width: 100%; /* Allow image to fill the width of its container */
+    height: auto; /* Maintain aspect ratio */
     margin: 0 auto 10px;
     display: block;
-    border-radius: 50%; /* Make the image circular */
+    /* Removed fixed dimensions and border-radius */
 }
 
 /* Team Member Name */
