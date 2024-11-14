@@ -1140,8 +1140,8 @@ html, body {
     object-fit: cover; /* Maintain aspect ratio */
     border-radius: 5px; /* Add slight rounding */
 }
-/* Adjust Partner Section Title */
-.partner-section-title {
+ /* Adjust Partner Section Title */
+ .partner-section-title {
     font-size: 1.5rem; /* Consistent with other small screen titles */
     text-align: center; /* Center align the title for better aesthetics */
     margin-bottom: 20px; /* Space below the title */
@@ -1149,8 +1149,8 @@ html, body {
 
 /* Adjust Partner Cards */
 .partner-card {
-    width: calc(100% - 30px); /* Ensure the card fits nicely with padding */
-    margin: 0 auto 20px; /* Center the card and add spacing below */
+    width: 100%; /* Full width within the grid columns */
+    margin: 0 auto; /* Center the card */
     padding: 10px; /* Reduce padding inside the card */
 }
 
@@ -1165,15 +1165,11 @@ html, body {
     padding: 8px 12px; /* Adjust button padding */
 }
 
-/* Adjust Partner Grid */
+/* Adjust Partner Grid for Two Columns */
 .partner-grid {
     display: grid; /* Use grid layout */
-    grid-template-columns: 1fr 1fr; /* Two columns for smaller screens */
+    grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
     gap: 15px; /* Space between columns and rows */
-}
-
-.partner-grid.three-column {
-    grid-template-columns: 1fr; /* Switch to one column for very small screens */
 }
 
 /* General Spacing for Partner Section */
