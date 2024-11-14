@@ -1141,49 +1141,50 @@ html, body {
     border-radius: 5px; /* Add slight rounding */
 }
 
-    /* Adjust Partner Section Title */
-    .partner-section-title {
-        font-size: 1.5rem; /* Consistent with other small screen titles */
-        text-align: center; /* Center align the title */
-        margin-bottom: 20px; /* Space below the title */
-    }
+ /* Adjust Partner Section Title */
+ .partner-section-title {
+    font-size: 1.5rem; /* Consistent title size */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add spacing below title */
+}
 
-    /* Adjust Partner Cards */
-    .partner-card {
-        width: 100%; /* Full width within the grid columns */
-        padding: 10px; /* Add padding inside each card */
-        margin: 10px; /* Add space between cards */
-        background-color: #fff; /* Ensure white background for better readability */
-        border-radius: 8px; /* Slight rounding of edges */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
-        height: auto; /* Let height adjust dynamically */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
+/* Adjust Partner Cards */
+.partner-card {
+    width: 100%; /* Full width within the grid columns */
+    padding: 15px; /* Add inner padding */
+    margin: 10px; /* Add space around each card */
+    background-color: #fff; /* Ensure white background */
+    border-radius: 8px; /* Slight rounding of edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for separation */
+    height: auto; /* Let the height adjust dynamically */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align content */
+    justify-content: space-between; /* Distribute content evenly */
+}
 
-    .partner-logo {
-        max-width: 75%; /* Shrink the logo for smaller screens */
-        height: auto; /* Maintain aspect ratio */
-        margin-bottom: 10px; /* Add spacing below the logo */
-    }
+.partner-logo {
+    max-width: 75%; /* Shrink logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Add spacing below the logo */
+}
 
-    .learn-more-button {
-        font-size: 0.85rem; /* Reduce button text size */
-        padding: 8px 12px; /* Adjust button padding */
-    }
+.learn-more-button {
+    font-size: 0.85rem; /* Reduce button text size */
+    padding: 8px 12px; /* Adjust button padding */
+}
 
-    /* Adjust Partner Grid for Two Columns */
-    .partner-grid {
-        display: grid; /* Use grid layout */
-        grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
-        gap: 15px; /* Add space between cards */
-        padding: 0 10px; /* Add padding around the grid */
-    }
+/* Adjust Partner Grid for Two Columns */
+.partner-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Add space between the cards */
+    padding: 0 10px; /* Add padding around the grid */
+    justify-items: center; /* Center-align items within the grid */
+}
 
-    /* General Spacing for Partner Section */
-    .partner-wrapper {
-        padding: 20px 10px; /* Add spacing around each section */
-    }
+/* General Spacing for Partner Section */
+.partner-wrapper {
+    padding: 20px 10px; /* Add spacing around each section */
+}
 }
