@@ -992,9 +992,10 @@ html, body {
 }
 
 /* Team Section - Two Columns with Spacing */
+/* Team Section - Two Columns with Spacing */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two equal columns with minimum width of 0 */
+    grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Two equal columns with a minimum width of 150px */
     gap: 30px; /* Reduced gap for better alignment */
     justify-content: center;
     max-width: 800px; /* Set a max-width for the entire grid */
@@ -1002,6 +1003,7 @@ html, body {
     padding: 20px;
     box-sizing: border-box;
 }
+
 
 /* Individual Team Member Styling */
 .team-member {
