@@ -1209,4 +1209,38 @@ html, body {
     padding: 20px 10px; /* Add spacing around each section */
     text-align: center; /* Center-align the section content */
 }
+
+    /* Banner Title Adjustments for Small Screens */
+    .about-banner h2 {
+        font-size: 1.5rem; /* Smaller title size */
+        line-height: 1.2; /* Adjust line height for readability */
+    }
+
+    /* Coming Soon Section */
+    .coming-soon {
+        padding: 20px; /* Add padding for better spacing on small screens */
+    }
+
+    .coming-soon h2 {
+        font-size: 1.8rem; /* Reduce size of 'Coming Soon' title */
+        text-align: center; /* Center-align the title */
+        margin-bottom: 15px; /* Space below the title */
+    }
+
+    .coming-soon p {
+        font-size: 0.9rem; /* Reduce paragraph text size */
+        line-height: 1.5; /* Improve readability */
+        text-align: center; /* Center-align text for better layout */
+        margin-bottom: 20px; /* Add space below text */
+    }
+
+    /* Browse Button */
+    .coming-soon .cta-button {
+        font-size: 0.9rem; /* Smaller button text */
+        padding: 10px 20px; /* Adjust button padding */
+        display: block; /* Ensure button spans full width */
+        max-width: 200px; /* Restrict max width of the button */
+        margin: 0 auto; /* Center-align the button */
+    }
+
 }
