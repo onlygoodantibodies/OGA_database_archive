@@ -1305,9 +1305,52 @@ html, body {
     }
 }
 
-/* Show the hamburger icon on smaller screens */
+
+/* Dropdown Menu for Small Screens */
 @media (max-width: 768px) {
+    /* Hamburger Icon Styling */
     .hamburger {
-        display: block; /* Display the hamburger icon */
+        display: block; /* Show hamburger icon */
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Hidden Dropdown Menu */
+    nav ul.menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack items vertically */
+        background: white; /* Background color */
+        padding: 10px;
+        border: 1px solid #ddd; /* Optional: Add a border */
+        position: absolute; /* Dropdown below header */
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        right: 0; /* Full width */
+        z-index: 1000; /* Ensure it is above other content */
+        transition: all 0.3s ease-in-out; /* Smooth dropdown transition */
+    }
+
+    /* Show Menu When Hamburger is Toggled */
+    nav ul.menu.show {
+        display: flex; /* Show menu */
+    }
+
+    /* Dropdown Menu List Items */
+    nav ul.menu li {
+        margin: 5px 0; /* Spacing between menu items */
+    }
+
+    /* Menu Links */
+    nav ul.menu li a {
+        font-size: 0.9rem; /* Adjust font size for small screens */
+        color: #333; /* Text color */
+        text-decoration: none; /* Remove underline */
+        padding: 5px 10px; /* Add padding for touch targets */
+    }
+
+    nav ul.menu li a:hover {
+        background: #f0f0f0; /* Add hover effect */
+        color: #000; /* Optional hover text color */
     }
 }
+
