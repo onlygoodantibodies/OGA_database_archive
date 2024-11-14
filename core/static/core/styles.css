@@ -1041,51 +1041,23 @@ html, body {
     height: 100px; /* Adjust height */
 }
 
-    /* News Card Layout */
-    .news-card {
-        display: flex; /* Keep image and content side-by-side */
-        flex-direction: row; /* Ensure horizontal layout */
-        align-items: flex-start; /* Align content to the top */
-        gap: 15px; /* Add spacing between image and text */
-        padding: 10px; /* Adjust padding for small screens */
-        background-color: #f7f7f7; /* Optional: Add background color */
-        border: 1px solid #ddd; /* Optional: Add a border */
-        border-radius: 8px; /* Slightly round corners */
-    }
+ /* Publication Cards */
+ .publication-card {
+    gap: 10px; /* Reduce spacing */
+    padding: 15px; /* Smaller padding */
+}
 
-    .news-image {
-        width: 30%; /* Reduce image width */
-        height: auto; /* Maintain aspect ratio */
-        max-height: 120px; /* Limit the height of the image */
-        border-radius: 5px; /* Optional: Round image corners */
-        object-fit: cover; /* Ensure the image fits properly */
-    }
+.publication-image {
+    width: 150px; /* Reduce image size */
+    height: 200px;
+}
 
-    .news-content {
-        width: 70%; /* Adjust content width */
-        font-size: 0.9rem; /* Smaller font size */
-        line-height: 1.5; /* Adjust line spacing for readability */
-    }
+.publication-content h3 {
+    font-size: 1.2rem; /* Smaller title size */
+}
 
-    .news-content h3 {
-        font-size: 1rem; /* Reduce title size */
-        margin-bottom: 10px; /* Add spacing below title */
-    }
-
-    .news-content p {
-        font-size: 0.9rem; /* Smaller text size */
-        margin-bottom: 8px; /* Adjust paragraph spacing */
-    }
-
-    .read-more {
-        font-size: 0.9rem; /* Adjust link size */
-        color: var(--main-blue);
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .read-more:hover {
-        text-decoration: underline; /* Add underline on hover */
-    }
+.publication-content p {
+    font-size: 0.9rem; /* Smaller text size */
+}
 
 }
