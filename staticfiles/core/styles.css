@@ -1140,40 +1140,50 @@ html, body {
     object-fit: cover; /* Maintain aspect ratio */
     border-radius: 5px; /* Add slight rounding */
 }
- /* Adjust Partner Section Title */
- .partner-section-title {
-    font-size: 1.5rem; /* Consistent with other small screen titles */
-    text-align: center; /* Center align the title for better aesthetics */
-    margin-bottom: 20px; /* Space below the title */
-}
 
-/* Adjust Partner Cards */
-.partner-card {
-    width: 100%; /* Full width within the grid columns */
-    margin: 0 auto; /* Center the card */
-    padding: 10px; /* Reduce padding inside the card */
-}
+    /* Adjust Partner Section Title */
+    .partner-section-title {
+        font-size: 1.5rem; /* Consistent with other small screen titles */
+        text-align: center; /* Center align the title */
+        margin-bottom: 20px; /* Space below the title */
+    }
 
-.partner-logo {
-    max-width: 80%; /* Shrink the logo for smaller screens */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto 10px; /* Center logo and add spacing below */
-}
+    /* Adjust Partner Cards */
+    .partner-card {
+        width: 100%; /* Full width within the grid columns */
+        padding: 10px; /* Add padding inside each card */
+        margin: 10px; /* Add space between cards */
+        background-color: #fff; /* Ensure white background for better readability */
+        border-radius: 8px; /* Slight rounding of edges */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+        height: auto; /* Let height adjust dynamically */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.learn-more-button {
-    font-size: 0.85rem; /* Reduce button text size */
-    padding: 8px 12px; /* Adjust button padding */
-}
+    .partner-logo {
+        max-width: 75%; /* Shrink the logo for smaller screens */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 10px; /* Add spacing below the logo */
+    }
 
-/* Adjust Partner Grid for Two Columns */
-.partner-grid {
-    display: grid; /* Use grid layout */
-    grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
-    gap: 15px; /* Space between columns and rows */
-}
+    .learn-more-button {
+        font-size: 0.85rem; /* Reduce button text size */
+        padding: 8px 12px; /* Adjust button padding */
+    }
 
-/* General Spacing for Partner Section */
-.partner-wrapper {
-    padding: 20px 10px; /* Add spacing around each section */
-}
+    /* Adjust Partner Grid for Two Columns */
+    .partner-grid {
+        display: grid; /* Use grid layout */
+        grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+        gap: 15px; /* Add space between cards */
+        padding: 0 10px; /* Add padding around the grid */
+    }
+
+    /* General Spacing for Partner Section */
+    .partner-wrapper {
+        padding: 20px 10px; /* Add spacing around each section */
+    }
 }
