@@ -1089,6 +1089,9 @@ html, body {
         color: var(--main-blue); /* Use primary color */
     }
 
+    .news-content p {
+        font-size: 0.9rem; /* Smaller title size */
+ 
     .news-content ul.styled-list {
         padding-left: 20px; /* Add indentation */
         margin-bottom: 10px; /* Space below lists */
