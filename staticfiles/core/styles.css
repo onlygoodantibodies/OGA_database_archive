@@ -994,21 +994,23 @@ html, body {
 /* Team Section - Two Columns with Spacing */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     gap: 50px; /* Add spacing between team member cards */
-    justify-content: center; /* Center-align grid in its container */
+    justify-content: center; /* Center-align the grid in the container */
     padding: 20px; /* Add padding around the grid */
     box-sizing: border-box; /* Include padding in width calculations */
 }
 
 /* Individual Team Member Styling */
 .team-member {
-    width: 100%; /* Ensure full width within the column */
-    text-align: center;
+    width: 100%; /* Take up full width within the column */
+    max-width: 200px; /* Limit card width for consistency */
+    margin: 0 auto; /* Center-align the card within the grid */
+    text-align: center; /* Center-align text inside the card */
     background-color: #f7f7f7; /* Subtle background */
     border: 1px solid #ddd; /* Add a border for separation */
     padding: 15px; /* Inner spacing for each card */
-    border-radius: 8px; 
+    border-radius: 8px; /* Slightly round the corners */
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
 }
 
@@ -1016,7 +1018,7 @@ html, body {
 .team-member img {
     max-width: 80px; /* Control image size */
     height: auto; /* Maintain aspect ratio */
-    margin: 10 auto 10px; /* Center-align and add spacing below image */
+    margin: 0 auto 10px; /* Center-align image and add spacing below */
     display: block; /* Ensure proper centering */
 }
 
@@ -1024,13 +1026,16 @@ html, body {
 .team-member h3 {
     font-size: 1rem; /* Adjust name size */
     margin-bottom: 5px; /* Space below name */
+    color: #333; /* Standard text color */
 }
 
 /* Team Member Role */
 .team-member p {
     font-size: 0.8rem; /* Adjust role text size */
     color: #666; /* Muted text color */
+    margin-bottom: 0; /* Ensure no extra spacing */
 }
+
 
 /* Hide Divider Section */
 .section-divider {
