@@ -1017,14 +1017,13 @@ html, body {
     box-sizing: border-box; /* Include padding in width calculations */
 }
 
+
 /* Team Member Image Styling */
 .team-member img {
-    width: 80px; /* Set a fixed width */
-    height: 80px; /* Set a fixed height */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    margin: 0 auto 10px;
-    display: block;
-    border-radius: 50%; /* Make the image circular */
+    max-width: 80%; /* Allow image to fit proportionally within the card */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 10px; /* Center-align image and add space below */
+    display: block; /* Ensure the image is properly centered */
 }
 
 /* Team Member Name */
