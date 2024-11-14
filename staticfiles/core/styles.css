@@ -994,47 +994,52 @@ html, body {
 /* Team Section - Two Columns with Spacing */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    gap: 50px; /* Add spacing between team member cards */
-    justify-content: center; /* Center-align the grid in the container */
-    padding: 20px; /* Add padding around the grid */
-    box-sizing: border-box; /* Include padding in width calculations */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two equal columns with minimum width of 0 */
+    gap: 30px; /* Reduced gap for better alignment */
+    justify-content: center;
+    max-width: 800px; /* Set a max-width for the entire grid */
+    margin: 0 auto; /* Center the grid on the page */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Individual Team Member Styling */
 .team-member {
-    width: 100%; /* Take up full width within the column */
-    max-width: 180px; /* Set a consistent max width for all cards */
-    margin: 0 auto; /* Center-align each card in the grid */
-    text-align: center; /* Center-align text inside the card */
-    background-color: #f7f7f7; /* Subtle background */
-    border: 1px solid #ddd; /* Add a border for separation */
-    padding: 15px; /* Inner spacing for each card */
-    border-radius: 8px; /* Slightly round the corners */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding in width calculations */
 }
 
 /* Team Member Image Styling */
 .team-member img {
-    max-width: 80px; /* Ensure all images have the same width */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto 10px; /* Center-align image and add spacing below */
-    display: block; /* Ensure proper centering */
+    width: 80px; /* Set a fixed width */
+    height: 80px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    margin: 0 auto 10px;
+    display: block;
+    border-radius: 50%; /* Make the image circular */
 }
 
 /* Team Member Name */
 .team-member h3 {
-    font-size: 1rem; /* Adjust name size */
-    margin-bottom: 5px; /* Space below name */
-    color: var(--main-blue); /* Ensure bold letters use main color */
-    font-weight: 600; /* Keep the font weight consistent */
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--main-blue);
+    font-weight: 600;
 }
 
 /* Team Member Role */
 .team-member p {
-    font-size: 0.8rem; /* Adjust role text size */
-    color: #666; /* Muted text color */
-    margin-bottom: 0; /* Ensure no extra spacing */
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0;
 }
 
 
