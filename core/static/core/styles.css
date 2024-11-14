@@ -992,38 +992,39 @@ html, body {
 }
 
 /* Team Section - Two Columns with Spacing */
-/* Team Section - Increased Spacing */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 30px; /* Increased spacing between team members */
+    gap: 30px; /* Add spacing between team member cards */
     justify-content: center; /* Center-align team grid */
+    padding: 0 10px; /* Add padding on the sides for better alignment */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
 .team-member {
     width: 100%; /* Ensure full width within the column */
     text-align: center;
-    background-color: #f7f7f7; /* Optional: Add a subtle background */
-    border: 1px solid #ddd; /* Optional: Add a border */
-    padding: 15px; /* Increased padding inside each box */
-    border-radius: 8px; /* Slightly round the corners */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    background-color: #f7f7f7; /* Subtle background for contrast */
+    border: 1px solid #ddd; /* Optional: Add a border for distinction */
+    padding: 15px; /* Padding inside each team member card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
 }
 
 .team-member img {
     max-width: 80px; /* Reduce image size */
     height: auto; /* Maintain aspect ratio */
-    margin: 0 auto 10px; /* Center-align and add spacing below */
+    margin: 0 auto 10px; /* Center-align image and add spacing below */
 }
 
 .team-member h3 {
     font-size: 1rem; /* Smaller team member names */
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* Space below name */
 }
 
 .team-member p {
-    font-size: 0.8rem; /* Smaller roles */
-    color: #666; /* Muted text color */
+    font-size: 0.8rem; /* Smaller text for roles */
+    color: #666; /* Muted color for secondary text */
 }
 
 /* Hide Divider Section */
