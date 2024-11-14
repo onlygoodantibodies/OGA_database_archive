@@ -995,9 +995,9 @@ html, body {
 .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px; /* Add spacing between team member cards */
+    gap: 50px; /* Add spacing between team member cards */
     justify-content: center; /* Center-align grid in its container */
-    padding: 10px; /* Add padding around the grid */
+    padding: 20px; /* Add padding around the grid */
     box-sizing: border-box; /* Include padding in width calculations */
 }
 
@@ -1008,7 +1008,7 @@ html, body {
     background-color: #f7f7f7; /* Subtle background */
     border: 1px solid #ddd; /* Add a border for separation */
     padding: 15px; /* Inner spacing for each card */
-    border-radius: 8px; /* Rounded corners for a modern look */
+    border-radius: 8px; 
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
 }
 
@@ -1016,7 +1016,7 @@ html, body {
 .team-member img {
     max-width: 80px; /* Control image size */
     height: auto; /* Maintain aspect ratio */
-    margin: 0 auto 10px; /* Center-align and add spacing below image */
+    margin: 10 auto 10px; /* Center-align and add spacing below image */
     display: block; /* Ensure proper centering */
 }
 
