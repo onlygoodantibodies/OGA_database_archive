@@ -1060,76 +1060,84 @@ html, body {
     font-size: 0.9rem; /* Smaller text size */
 }
 
-    /* News Card Layout */
-    .news-card {
-        display: flex;
-        flex-direction: column; /* Stack text and image vertically */
-        gap: 15px; /* Add space between content and image */
-        padding: 15px; /* Add inner spacing */
-        background-color: #fff; /* Background for card */
-        border-radius: 10px; /* Rounded corners */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        overflow: hidden; /* Prevent overflow */
-        width: 100%; /* Full-width of container */
-        margin-bottom: 20px; /* Space between cards */
-    }
-
-    .news-content {
-        font-size: 0.9rem; /* Smaller font size */
-        line-height: 1.6; /* Improve readability */
-        color: #333; /* Text color */
-        margin-bottom: 10px; /* Space below paragraphs */
-        text-align: justify; /* Align text for cleaner layout */
-    }
-
-    .news-content h3 {
-        font-size: 1rem; /* Smaller title size */
-        margin-bottom: 8px; /* Space below the title */
-        word-wrap: break-word; /* Ensure no text overflow */
-        color: var(--main-blue); /* Use primary color */
-    }
-
-    .news-content p {
-        font-size: 0.9rem; /* Smaller title size */
-    }
-
-    .news-content ul.styled-list {
-        padding-left: 20px; /* Add indentation */
-        margin-bottom: 10px; /* Space below lists */
-    }
-
-    .news-content ul.styled-list li {
-        font-size: 0.9rem; /* Smaller list text */
-        margin-bottom: 8px; /* Space between list items */
-    }
-
-    .styled-list {
-        font-size: 0.9rem; /* Smaller list text */
-    }
-
-    .read-more {
-        font-size: 0.85rem; /* Adjust Read More text */
-        color: var(--main-blue);
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .read-more:hover {
-        text-decoration: underline;
-    }
-
-    /* Image Styling */
-    .news-image-container {
-        width: 100%; /* Full width of the container */
-        text-align: center; /* Center-align the image */
-        margin-top: 10px; /* Space above image */
-    }
-
-    .news-image {
-        width: 90%; /* Resize image for mobile */
-        max-height: 180px; /* Cap image height */
-        object-fit: cover; /* Maintain aspect ratio */
-        border-radius: 5px; /* Add slight rounding */
-    }
+/* News Card Layout */
+.news-card {
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    gap: 15px; /* Add space between content and image */
+    padding: 15px; /* Add inner spacing */
+    background-color: #fff; /* Background for card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Prevent overflow */
+    width: 100%; /* Full-width of container */
+    margin-bottom: 20px; /* Space between cards */
 }
 
+.news-content {
+    font-size: 0.9rem; /* Smaller font size */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Text color */
+    margin-bottom: 10px; /* Space below paragraphs */
+    text-align: justify; /* Align text for cleaner layout */
+}
+
+.news-content h3 {
+    font-size: 1rem; /* Smaller title size */
+    margin-bottom: 8px; /* Space below the title */
+    word-wrap: break-word; /* Ensure no text overflow */
+    color: var(--main-blue); /* Use primary color */
+}
+
+.news-content p {
+    font-size: 0.9rem; /* Consistent paragraph text size */
+    line-height: 1.5; /* Line spacing for better readability */
+}
+
+/* Bullet Points Styling */
+.news-content ul.styled-list {
+    padding-left: 20px; /* Add indentation */
+    margin-bottom: 10px; /* Space below lists */
+    font-size: 0.85rem; /* Ensure smaller font size for lists */
+    line-height: 1.4; /* Adjust line height for lists */
+    color: #333; /* Ensure consistent text color */
+}
+
+.news-content ul.styled-list li {
+    font-size: 0.85rem; /* Smaller list text */
+    margin-bottom: 8px; /* Space between list items */
+    line-height: 1.4; /* Ensure proper spacing */
+}
+
+/* Apply consistent font size globally for styled lists */
+.styled-list {
+    font-size: 0.85rem; /* Smaller list text */
+    line-height: 1.4; /* Consistent spacing */
+    color: #333; /* Consistent text color */
+}
+
+.read-more {
+    font-size: 0.85rem; /* Adjust Read More text */
+    color: var(--main-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Image Styling */
+.news-image-container {
+    width: 100%; /* Full width of the container */
+    text-align: center; /* Center-align the image */
+    margin-top: 10px; /* Space above image */
+}
+
+.news-image {
+    width: 90%; /* Resize image for mobile */
+    max-height: 180px; /* Cap image height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 5px; /* Add slight rounding */
+}
+}
