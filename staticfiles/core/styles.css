@@ -997,7 +997,7 @@ html, body {
     grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two equal columns */
     gap: 30px; /* Spacing between team member cards */
     justify-content: center;
-    max-width: 1000px; /* Increased max-width for wider grid */
+    max-width: 1200px; /* Increased max-width for wider grid */
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -1006,7 +1006,7 @@ html, body {
 /* Individual Team Member Styling */
 .team-member {
     width: 100%;
-    max-width: 300px; /* Increased max-width for wider cards */
+    max-width: 400px; /* Increased max-width for wider cards */
     margin: 0 auto;
     text-align: center;
     background-color: #f7f7f7;
@@ -1021,25 +1021,25 @@ html, body {
 .team-member img {
     max-width: 100%; /* Allow image to fill the width of its container */
     height: auto; /* Maintain aspect ratio */
-    margin: 0 auto 10px;
-    display: block;
-    /* Removed fixed dimensions and border-radius */
+    margin: 0 auto 10px; /* Center-align image and add spacing below */
+    display: block; /* Ensure proper centering */
 }
 
 /* Team Member Name */
 .team-member h3 {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: var(--main-blue);
-    font-weight: 600;
+    font-size: 1rem; /* Adjust name size */
+    margin-bottom: 5px; /* Space below name */
+    color: var(--main-blue); /* Ensure bold letters use main color */
+    font-weight: 600; /* Keep the font weight consistent */
 }
 
 /* Team Member Role */
 .team-member p {
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 0;
+    font-size: 0.8rem; /* Adjust role text size */
+    color: #666; /* Muted text color */
+    margin-bottom: 0; /* Ensure no extra spacing */
 }
+
 
 /* Hide Divider Section */
 .section-divider {
