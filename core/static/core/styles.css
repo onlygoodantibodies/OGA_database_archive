@@ -1091,7 +1091,8 @@ html, body {
 
     .news-content p {
         font-size: 0.9rem; /* Smaller title size */
- 
+    }
+
     .news-content ul.styled-list {
         padding-left: 20px; /* Add indentation */
         margin-bottom: 10px; /* Space below lists */
@@ -1100,6 +1101,10 @@ html, body {
     .news-content ul.styled-list li {
         font-size: 0.9rem; /* Smaller list text */
         margin-bottom: 8px; /* Space between list items */
+    }
+
+    .styled-list {
+        font-size: 0.9rem; /* Smaller list text */
     }
 
     .read-more {
