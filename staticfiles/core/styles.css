@@ -1004,19 +1004,19 @@ html, body {
 /* Individual Team Member Styling */
 .team-member {
     width: 100%; /* Take up full width within the column */
-    max-width: 200px; /* Limit card width for consistency */
-    margin: 0 auto; /* Center-align the card within the grid */
+    max-width: 180px; /* Set a consistent max width for all cards */
+    margin: 0 auto; /* Center-align each card in the grid */
     text-align: center; /* Center-align text inside the card */
     background-color: #f7f7f7; /* Subtle background */
     border: 1px solid #ddd; /* Add a border for separation */
     padding: 15px; /* Inner spacing for each card */
     border-radius: 8px; /* Slightly round the corners */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Team Member Image Styling */
 .team-member img {
-    max-width: 80px; /* Control image size */
+    max-width: 80px; /* Ensure all images have the same width */
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto 10px; /* Center-align image and add spacing below */
     display: block; /* Ensure proper centering */
@@ -1026,7 +1026,8 @@ html, body {
 .team-member h3 {
     font-size: 1rem; /* Adjust name size */
     margin-bottom: 5px; /* Space below name */
-    color: #333; /* Standard text color */
+    color: var(--main-blue); /* Ensure bold letters use main color */
+    font-weight: 600; /* Keep the font weight consistent */
 }
 
 /* Team Member Role */
