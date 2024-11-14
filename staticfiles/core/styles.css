@@ -998,7 +998,7 @@ html, body {
     gap: 30px; /* Spacing between team member cards */
     justify-content: center;
     max-width: 1200px; /* Increased max-width for wider grid */
-    width: 200px;
+    width: 400px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
