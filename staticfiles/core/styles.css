@@ -991,15 +991,11 @@ html, body {
     margin-bottom: 10px; /* Reduce spacing */
 }
 
-/* Team Section - Two Columns with Spacing */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two equal columns */
-    gap: 30px; /* Spacing between team member cards */
-    justify-content: center;
-    max-width: 1200px; /* Increased max-width for wider grid */
-    width: 400px;
-    margin: 0 auto;
+    grid-template-columns: 1fr 30px 1fr; /* Two columns with a gap column in between */
+    width: 370px; /* Keep the width you specified */
+    margin: 0 auto; /* Center the grid */
     padding: 20px;
     box-sizing: border-box;
 }
