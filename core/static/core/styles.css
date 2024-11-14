@@ -1060,59 +1060,60 @@ html, body {
     font-size: 0.9rem; /* Smaller text size */
 }
 
-    /* News Card Adjustments */
-    .news-card {
-        display: flex; /* Maintain side-by-side layout */
-        flex-direction: row; /* Horizontal layout */
-        align-items: flex-start; /* Align content to the top */
-        gap: 15px; /* Add spacing between image and text */
-        padding: 10px; /* Reduce padding */
-    }
+/* News Card Layout */
+.news-card {
+    display: flex;
+    flex-direction: column; /* Stack content and image vertically */
+    gap: 10px; /* Add spacing between text and image */
+    padding: 10px; /* Reduce padding */
+}
 
-    /* News Image Styling */
-    .news-image-container {
-        width: 30%; /* Adjust width for smaller screens */
-    }
+/* News Image Styling */
+.news-image-container {
+    width: 100%; /* Full width for small screens */
+    text-align: center; /* Center-align the image */
+}
 
-    .news-image {
-        width: 100%; /* Ensure image fills its container */
-        height: auto; /* Maintain aspect ratio */
-        border-radius: 5px; /* Optional: Round image corners */
-        max-height: 100px; /* Limit image height */
-    }
+.news-image {
+    width: 90%; /* Smaller image to fit the screen */
+    max-height: 150px; /* Cap height for consistency */
+    border-radius: 5px; /* Optional: Round corners */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center image within the container */
+}
 
-    /* News Content Styling */
-    .news-content {
-        width: 70%; /* Adjust content width to fit alongside the image */
-        font-size: 0.9rem; /* Consistent with other small-screen text */
-        line-height: 1.5; /* Improve readability */
-    }
+/* News Content Styling */
+.news-content {
+    width: 100%; /* Full width for text */
+    font-size: 0.9rem; /* Adjust text size */
+    line-height: 1.5; /* Improve readability */
+}
 
-    .news-content h3 {
-        font-size: 1rem; /* Reduce title size */
-        margin-bottom: 10px; /* Add spacing below the title */
-    }
+.news-content h3 {
+    font-size: 1rem; /* Reduce title size */
+    margin-bottom: 10px; /* Add spacing below title */
+}
 
-    .news-content p,
-    .styled-list li {
-        font-size: 0.8rem; /* Smaller text size for paragraphs and list items */
-        margin-bottom: 10px; /* Adjust spacing between items */
-    }
+.news-content p,
+.styled-list li {
+    font-size: 0.8rem; /* Smaller text size */
+    margin-bottom: 10px; /* Add spacing between items */
+}
 
-    .read-more {
-        font-size: 0.8rem; /* Smaller link text */
-        color: var(--main-blue); /* Use consistent color */
-        font-weight: bold;
-        text-decoration: none;
-    }
+.read-more {
+    font-size: 0.8rem; /* Smaller link text */
+    color: var(--main-blue); /* Consistent color */
+    font-weight: bold;
+    text-decoration: none;
+}
 
-    .read-more:hover {
-        text-decoration: underline; /* Add underline on hover */
-    }
+.read-more:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
 
-    /* Adjust Spacing for News Section */
-    .news-section {
-        padding: 10px 15px; /* Reduce padding for smaller screens */
-    }
+/* Adjust Spacing for News Section */
+.news-section {
+    padding: 10px 15px; /* Reduce padding for smaller screens */
+}
 
 }
