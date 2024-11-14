@@ -1297,3 +1297,17 @@ html, body {
         }
 
 }
+
+/* Hide the hamburger icon on larger screens */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide the hamburger icon */
+    }
+}
+
+/* Show the hamburger icon on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Display the hamburger icon */
+    }
+}
