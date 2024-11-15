@@ -1354,29 +1354,4 @@ html, body {
     }
 }
 
-/* Fix Horizontal Wobble Only for Small Screens */
-@media (max-width: 768px) {
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-
-    /* Ensure Containers and Grids Stay Within Bounds */
-    .container, .content, section, nav, .grid, .grid-container {
-        max-width: 100%; /* Prevent child elements from overflowing */
-        margin: 0 auto; /* Center content */
-    }
-
-    /* Prevent Media Overflow */
-    img, video {
-        max-width: 100%;
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    /* Add Padding for Grids to Avoid Edge Clipping */
-    .grid, .grid-container {
-        padding: 0 10px; /* Add inner padding for better structure */
-    }
-}
 
