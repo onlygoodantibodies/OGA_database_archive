@@ -1354,3 +1354,28 @@ html, body {
     }
 }
 
+@media (max-width: 768px) {
+    /* Prevent horizontal scrolling */
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Hide horizontal overflow */
+    }
+
+    /* Ensure all elements stay within the viewport */
+    * {
+        box-sizing: border-box; /* Include padding and border in width calculations */
+    }
+
+    /* Prevent container overflow */
+    .container {
+        max-width: 100%; /* Ensure containers don't exceed screen width */
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+
+    /* Scale down wide content like images and videos */
+    img, video {
+        max-width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+}
