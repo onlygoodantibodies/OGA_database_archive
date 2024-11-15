@@ -1355,27 +1355,37 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    /* Prevent horizontal scrolling */
+    /* Ensure no padding or margin on root elements */
     html, body {
         margin: 0;
         padding: 0;
-        overflow-x: hidden; /* Hide horizontal overflow */
+        overflow-x: hidden; /* Disable horizontal scrolling */
+        width: 100%;
     }
 
-    /* Ensure all elements stay within the viewport */
+    /* Normalize box-sizing across all elements */
     * {
-        box-sizing: border-box; /* Include padding and border in width calculations */
+        box-sizing: border-box;
     }
 
-    /* Prevent container overflow */
-    .container {
-        max-width: 100%; /* Ensure containers don't exceed screen width */
-        overflow-x: hidden; /* Prevent horizontal overflow */
+    /* Limit width of containers and sections */
+    .container, .content, section, nav {
+        max-width: 100%;
+        overflow-x: hidden; /* Prevent overflow */
+        margin-left: auto;
+        margin-right: auto; /* Center content */
     }
 
-    /* Scale down wide content like images and videos */
+    /* Avoid margins causing extra space */
+    * {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Ensure media elements don’t overflow */
     img, video {
         max-width: 100%;
-        height: auto; /* Maintain aspect ratio */
+        height: auto;
     }
 }
+

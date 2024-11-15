@@ -1354,3 +1354,38 @@ html, body {
     }
 }
 
+@media (max-width: 768px) {
+    /* Ensure no padding or margin on root elements */
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Disable horizontal scrolling */
+        width: 100%;
+    }
+
+    /* Normalize box-sizing across all elements */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Limit width of containers and sections */
+    .container, .content, section, nav {
+        max-width: 100%;
+        overflow-x: hidden; /* Prevent overflow */
+        margin-left: auto;
+        margin-right: auto; /* Center content */
+    }
+
+    /* Avoid margins causing extra space */
+    * {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Ensure media elements don’t overflow */
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
