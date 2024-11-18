@@ -1355,44 +1355,46 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    /* Ensure pages with 'no-wobble' class have no horizontal overflow */
+    /* Apply the no-wobble fixes only to the pages with the class "no-wobble" */
     body.no-wobble {
         margin: 0;
         padding: 0;
         overflow-x: hidden; /* Disable horizontal scrolling */
+        width: 100%; /* Ensure body fits within the viewport */
     }
 
-    /* Target wide elements and prevent overflow */
+    /* Normalize box-sizing */
     body.no-wobble * {
-        box-sizing: border-box; /* Consistent sizing */
-        max-width: 100vw; /* Prevent elements from exceeding viewport width */
-        overflow-x: hidden; /* Hide overflow on nested elements */
+        box-sizing: border-box; /* Include padding and border in width/height */
     }
 
-    /* Handle specific containers and sections */
+    /* Ensure specific elements don't overflow */
+    body.no-wobble img,
+    body.no-wobble video {
+        max-width: 100%; /* Images/videos stay within their container */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Prevent unintended changes to buttons, links, and other specific elements */
+    body.no-wobble button,
+    body.no-wobble .cta-button,
+    body.no-wobble a {
+        max-width: none; /* Ensure buttons/links are not constrained */
+        width: auto; /* Reset width for buttons */
+        display: inline-block; /* Ensure proper button/link display */
+    }
+
+    /* Avoid overly broad rules */
     body.no-wobble .container,
     body.no-wobble .content,
     body.no-wobble section,
-    body.no-wobble header {
-        max-width: 100%; /* Prevent wide containers from breaking layout */
-        overflow-x: hidden;
-        margin: 0 auto; /* Ensure central alignment */
+    body.no-wobble nav {
+        max-width: 100%; /* Restrict content to viewport */
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* For images and media */
-    body.no-wobble img,
-    body.no-wobble video {
-        max-width: 100%; /* Prevent media overflow */
-        height: auto;
-        display: block; /* Avoid inline margin issues */
-    }
-
-    /* Specific adjustment for the home page hero section */
-    body.no-wobble.home-page .banner {
-        overflow-x: hidden; /* Ensure hero section doesn't overflow */
-    }
-
-    /* Avoid unwanted gaps caused by margins */
+    /* Avoid extra margins causing layout shifts */
     body.no-wobble * {
         margin-left: 0;
         margin-right: 0;
