@@ -1355,40 +1355,54 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    /* Apply anti-wobble only to pages with .no-wobble class */
-    body.no-wobble {
+    /* Ensure the body itself doesn't overflow */
+    body {
         margin: 0;
         padding: 0;
         overflow-x: hidden; /* Disable horizontal scrolling */
-        width: 100%;
     }
 
-    /* Normalize box-sizing across all elements */
-    body.no-wobble * {
+    /* Normalize box-sizing for all elements */
+    * {
         box-sizing: border-box;
     }
 
-    /* Limit width of containers and sections */
-    body.no-wobble .container,
-    body.no-wobble .content,
-    body.no-wobble section,
-    body.no-wobble nav {
+    /* Fix any overflowing sections, containers, or navbars */
+    .container, 
+    .content, 
+    section, 
+    nav {
         max-width: 100%;
         overflow-x: hidden; /* Prevent overflow */
-        margin-left: auto;
-        margin-right: auto; /* Center content */
+        margin: 0 auto; /* Center content */
     }
 
-    /* Avoid margins causing extra space */
-    body.no-wobble * {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    /* Ensure media elements don’t overflow */
-    body.no-wobble img,
-    body.no-wobble video {
+    /* Prevent images or media from causing overflow */
+    img, 
+    video {
         max-width: 100%;
         height: auto;
+        display: block; /* Avoid inline margin issues */
+    }
+
+    /* Fix specific elements potentially causing overflow */
+    .grid, 
+    .team-grid, 
+    .partners-grid {
+        max-width: 100%;
+        overflow-x: hidden; /* Ensure grids don't cause overflow */
+        padding: 0 10px; /* Add inner padding to avoid edge overflow */
+    }
+
+    /* Remove unintended margin/padding on all elements */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Fix overly wide elements */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
     }
 }

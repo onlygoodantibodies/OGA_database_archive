@@ -1354,4 +1354,55 @@ html, body {
     }
 }
 
+@media (max-width: 768px) {
+    /* Ensure the body itself doesn't overflow */
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Disable horizontal scrolling */
+    }
 
+    /* Normalize box-sizing for all elements */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Fix any overflowing sections, containers, or navbars */
+    .container, 
+    .content, 
+    section, 
+    nav {
+        max-width: 100%;
+        overflow-x: hidden; /* Prevent overflow */
+        margin: 0 auto; /* Center content */
+    }
+
+    /* Prevent images or media from causing overflow */
+    img, 
+    video {
+        max-width: 100%;
+        height: auto;
+        display: block; /* Avoid inline margin issues */
+    }
+
+    /* Fix specific elements potentially causing overflow */
+    .grid, 
+    .team-grid, 
+    .partners-grid {
+        max-width: 100%;
+        overflow-x: hidden; /* Ensure grids don't cause overflow */
+        padding: 0 10px; /* Add inner padding to avoid edge overflow */
+    }
+
+    /* Remove unintended margin/padding on all elements */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Fix overly wide elements */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
