@@ -1487,10 +1487,10 @@ section.banner.home-banner .banner-text .cta-button:hover {
         margin-right: 0;
     }
 
-    /* Adjust Partner Card Size - Specific to Partner Page */
+/* Adjust Partner Card Size - Specific to Partner Page */
 body.no-wobble .partner-grid .partner-card {
-    width: 180px; /* Increased width for larger squares */
-    height: 200px; /* Ensure a proportional height */
+    width: 180px; /* Set a fixed width */
+    height: 200px; /* Proportional height */
     background-color: #ffffff; /* Optional: Ensure consistent background */
     border: 1px solid #ddd; /* Add a subtle border */
     border-radius: 10px; /* Add rounded corners */
@@ -1530,10 +1530,10 @@ body.no-wobble .partner-grid .partner-card .learn-more-button:hover {
     background-color: #003366; /* Darker shade on hover */
 }
 
-/* Adjust Grid Layout for Larger Squares */
+/* Adjust Grid Layout for Two Columns */
 body.no-wobble .partner-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     gap: 20px; /* Space between cards */
     justify-content: center;
     align-items: start;
