@@ -1394,44 +1394,28 @@ html, body {
         margin-right: auto;
     }
 
-    /* Avoid extra margins causing layout shifts */
-    body.no-wobble * {
-        margin-left: 0;
-        margin-right: 0;
-    }
 
-        body.no-wobble .banner {
-            display: flex; /* Ensure proper alignment */
-            align-items: center; /* Center content vertically */
-            justify-content: center; /* Center content horizontally */
-            width: 100%; /* Full width */
+        body.home-page .banner {
             height: 100vh; /* Full height of the viewport */
-            margin: 0; /* Remove default margins */
-            padding: 0; /* Remove default padding */
-            background-size: cover; /* Ensure the image covers the section */
+            width: 100%; /* Full width */
+            margin: 0;
+            padding: 0;
+            background-size: cover; /* Stretch the image to cover the section */
             background-position: center; /* Center the background image */
             background-repeat: no-repeat; /* Prevent repeating */
         }
     
-        body.no-wobble .banner.about-banner {
-            background-image: url("{% static 'core/your-image.jpg' %}"); /* Replace with your actual image */
+        body.home-page .banner-text {
+            position: relative; /* Ensure text stays above the background */
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 20px; /* Add padding for better readability */
         }
     
-        body.no-wobble .banner .banner-text {
-            z-index: 2; /* Ensure text is above the background */
-            text-align: center; /* Center text */
-            color: white; /* Make text readable */
-            padding: 20px; /* Add spacing for readability */
-        }
-    
-        body.no-wobble .banner .banner-text h2 {
-            font-size: 1.8rem; /* Adjust font size for mobile */
-            margin: 0; /* Remove extra spacing */
-        }
-    
-        /* Prevent any additional spacing below the banner */
-        body.no-wobble .banner + * {
-            margin-top: 0;
+        body.home-page .banner-text h2 {
+            font-size: 2rem; /* Adjust font size for mobile */
+            margin: 0;
         }
     
     
