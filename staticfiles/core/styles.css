@@ -1394,34 +1394,32 @@ html, body {
         margin-right: auto;
     }
 
- /* Banner Section for the Home Page */
+ /* Home Page Banner Section */
  body.home-page .banner {
-    height: 100vh; /* Full height of the viewport */
+    height: auto; /* Automatically adjust to image size */
     width: 100%; /* Full width */
     margin: 0;
     padding: 0;
     background-size: cover; /* Stretch the image to cover the section */
-    background-position: center; /* Center the background image */
+    background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating */
-    display: flex; /* Ensure the text content is centered */
-    flex-direction: column; /* Arrange text elements vertically */
-    justify-content: center; /* Center text vertically */
-    align-items: center; /* Center text horizontally */
     position: relative; /* Allow positioning of text above */
 }
 
-/* Banner Text Styling */
+/* Restore Text and Button */
 body.home-page .banner-text {
-    position: relative; /* Place text relative to the banner */
-    text-align: center; /* Center-align the text */
+    position: absolute; /* Place text relative to the banner */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    text-align: center;
     color: white; /* Ensure text is readable */
-    z-index: 2; /* Ensure it appears above the background */
-    padding: 10px;
+    z-index: 2; /* Ensure text appears above the image */
 }
 
-/* Heading Styling */
+/* Text Styling */
 body.home-page .banner-text h2 {
-    font-size: 1.5rem; /* Adjust font size for mobile */
+    font-size: 1.8rem; /* Adjust font size for mobile */
     margin: 0 0 15px; /* Add spacing below the heading */
 }
 
@@ -1434,7 +1432,7 @@ body.home-page .cta-button {
     background-color: var(--main-blue); /* Use your primary color */
     text-decoration: none;
     border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 body.home-page .cta-button:hover {
@@ -1447,5 +1445,11 @@ body.home-page {
     padding: 0;
     overflow-x: hidden; /* Disable horizontal scrolling */
     width: 100%;
+}
+
+/* Ensure media elements (e.g., images) do not overflow */
+body.home-page img {
+    max-width: 100%;
+    height: auto;
 }
 }
