@@ -1393,7 +1393,8 @@ html, body {
         margin-left: auto;
         margin-right: auto;
     }
- /* Banner Section Styling for Home Page */
+
+ /* Banner Section for the Home Page */
  body.home-page .banner {
     height: 100vh; /* Full height of the viewport */
     width: 100%; /* Full width */
@@ -1402,78 +1403,49 @@ html, body {
     background-size: cover; /* Stretch the image to cover the section */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent repeating */
+    display: flex; /* Ensure the text content is centered */
+    flex-direction: column; /* Arrange text elements vertically */
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
     position: relative; /* Allow positioning of text above */
-    overflow: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Text Over the Banner */
+/* Banner Text Styling */
 body.home-page .banner-text {
-    position: absolute; /* Position text over the banner */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
-    z-index: 2; /* Ensure text appears above the background */
-    text-align: center;
+    position: relative; /* Place text relative to the banner */
+    text-align: center; /* Center-align the text */
     color: white; /* Ensure text is readable */
+    z-index: 2; /* Ensure it appears above the background */
     padding: 10px;
 }
 
-/* Adjust Banner Heading */
+/* Heading Styling */
 body.home-page .banner-text h2 {
-    font-size: 1.8rem; /* Adjust font size for mobile */
+    font-size: 1.5rem; /* Adjust font size for mobile */
     margin: 0 0 15px; /* Add spacing below the heading */
 }
 
-/* Call-to-Action Button */
+/* Button Styling */
 body.home-page .cta-button {
     display: inline-block;
     font-size: 1rem;
     padding: 10px 20px;
     color: white;
-    background-color: var(--main-blue); /* Add your brand color */
+    background-color: var(--main-blue); /* Use your primary color */
     text-decoration: none;
     border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Optional: Add subtle shadow */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
 }
 
 body.home-page .cta-button:hover {
     background-color: #003366; /* Darken color on hover */
 }
 
-/* Prevent Wobble for Home Page */
+/* Prevent Horizontal Scrolling */
 body.home-page {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Disable horizontal scrolling */
     width: 100%;
-}
-
-/* Normalize box-sizing across all elements on the home page */
-body.home-page * {
-    box-sizing: border-box;
-}
-
-/* Prevent Containers and Sections from Overflowing */
-body.home-page .container,
-body.home-page .content,
-body.home-page section,
-body.home-page nav {
-    max-width: 100%;
-    overflow-x: hidden;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Avoid Margins Causing Extra Space */
-body.home-page * {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-/* Ensure Media Elements (e.g., Images) Do Not Overflow */
-body.home-page img,
-body.home-page video {
-    max-width: 100%;
-    height: auto;
 }
 }
