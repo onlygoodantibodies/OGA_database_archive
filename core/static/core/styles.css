@@ -1354,25 +1354,41 @@ html, body {
     }
 }
 
-/* Fix Horizontal Wobble for Pages with `no-wobble` Class */
 @media (max-width: 768px) {
+    /* Apply anti-wobble only to pages with .no-wobble class */
     body.no-wobble {
         margin: 0;
         padding: 0;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-x: hidden; /* Disable horizontal scrolling */
+        width: 100%;
     }
 
+    /* Normalize box-sizing across all elements */
+    body.no-wobble * {
+        box-sizing: border-box;
+    }
+
+    /* Limit width of containers and sections */
     body.no-wobble .container,
     body.no-wobble .content,
     body.no-wobble section,
     body.no-wobble nav {
-        max-width: 100%; /* Keep everything within bounds */
+        max-width: 100%;
+        overflow-x: hidden; /* Prevent overflow */
+        margin-left: auto;
+        margin-right: auto; /* Center content */
     }
 
-    body.no-wobble img, 
+    /* Avoid margins causing extra space */
+    body.no-wobble * {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Ensure media elements don’t overflow */
+    body.no-wobble img,
     body.no-wobble video {
-        max-width: 100%; /* Prevent media from overflowing */
+        max-width: 100%;
         height: auto;
     }
 }
-
