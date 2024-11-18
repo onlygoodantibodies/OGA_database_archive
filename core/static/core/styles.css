@@ -1399,4 +1399,28 @@ html, body {
         margin-left: 0;
         margin-right: 0;
     }
+    body.no-wobble .banner {
+        width: 100%; /* Ensure the banner spans the full width */
+        margin: 0; /* Remove any unexpected margin */
+        padding: 0; /* Remove any padding */
+    }
+
+    body.no-wobble .banner.about-banner {
+        background-size: cover; /* Ensure the background covers the entire section */
+        background-position: center; /* Center the image within the section */
+        background-repeat: no-repeat; /* Prevent background repetition */
+    }
+
+    body.no-wobble .banner .banner-text {
+        position: relative;
+        z-index: 1; /* Ensure text appears above the background */
+        text-align: center; /* Center text within the banner */
+        padding: 40px 20px; /* Adjust padding for readability */
+    }
+
+    body.no-wobble .banner .banner-text h2 {
+        font-size: 1.5rem; /* Adjust title size for small screens */
+        color: white; /* Keep the title readable */
+        margin: 0;
+    }
 }
