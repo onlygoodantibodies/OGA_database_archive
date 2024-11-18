@@ -1487,4 +1487,57 @@ section.banner.home-banner .banner-text .cta-button:hover {
         margin-right: 0;
     }
 
+    /* Adjust Partner Card Size - Specific to Partner Page */
+body.no-wobble .partner-grid .partner-card {
+    width: 180px; /* Increased width for larger squares */
+    height: 200px; /* Ensure a proportional height */
+    background-color: #ffffff; /* Optional: Ensure consistent background */
+    border: 1px solid #ddd; /* Add a subtle border */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px; /* Add inner padding for spacing */
+    margin: 10px auto; /* Adjust spacing between cards */
+}
+
+/* Style Partner Logos to Fit Inside the Cards */
+body.no-wobble .partner-grid .partner-card img {
+    max-width: 100%;
+    max-height: 100px; /* Restrict the logo height */
+    object-fit: contain; /* Keep aspect ratio */
+    margin-bottom: 10px; /* Add space below the logo */
+}
+
+/* Style the Learn More Button */
+body.no-wobble .partner-grid .partner-card .learn-more-button {
+    display: inline-block;
+    padding: 8px 12px; /* Adjust button padding */
+    background-color: var(--main-blue); /* Use your primary brand color */
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add slight shadow */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover Effect for Buttons */
+body.no-wobble .partner-grid .partner-card .learn-more-button:hover {
+    background-color: #003366; /* Darker shade on hover */
+}
+
+/* Adjust Grid Layout for Larger Squares */
+body.no-wobble .partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+    justify-content: center;
+    align-items: start;
+    margin: 20px auto; /* Center the grid within the page */
+    padding: 0 10px; /* Add padding for mobile screens */
+}
 }
