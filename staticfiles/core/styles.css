@@ -1393,30 +1393,46 @@ html, body {
         margin-left: auto;
         margin-right: auto;
     }
+    body.home-page .banner {
+        height: 100vh; /* Full height of the viewport */
+        width: 100%; /* Full width */
+        margin: 0;
+        padding: 0;
+        background-size: cover; /* Stretch the image to cover the section */
+        background-position: center; /* Center the background image */
+        background-repeat: no-repeat; /* Prevent repeating */
+        position: relative; /* Allow positioning of text above */
+    }
 
+    body.home-page .banner-text {
+        position: absolute; /* Position text over the banner */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Perfect centering */
+        z-index: 2; /* Ensure it appears above the background */
+        text-align: center;
+        color: white; /* Ensure text is readable */
+        padding: 10px;
+    }
 
-        body.home-page .banner {
-            height: 100vh; /* Full height of the viewport */
-            width: 100%; /* Full width */
-            margin: 0;
-            padding: 0;
-            background-size: cover; /* Stretch the image to cover the section */
-            background-position: center; /* Center the background image */
-            background-repeat: no-repeat; /* Prevent repeating */
-        }
-    
-        body.home-page .banner-text {
-            position: relative; /* Ensure text stays above the background */
-            z-index: 2;
-            color: white;
-            text-align: center;
-            padding: 20px; /* Add padding for better readability */
-        }
-    
-        body.home-page .banner-text h2 {
-            font-size: 2rem; /* Adjust font size for mobile */
-            margin: 0;
-        }
-    
-    
+    body.home-page .banner-text h2 {
+        font-size: 1.8rem; /* Adjust font size for mobile */
+        margin: 0 0 15px; /* Add spacing below the heading */
+    }
+
+    body.home-page .cta-button {
+        display: inline-block;
+        font-size: 1rem;
+        padding: 10px 20px;
+        color: white;
+        background-color: var(--main-blue); /* Add your brand color */
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Optional: Add subtle shadow */
+    }
+
+    body.home-page .cta-button:hover {
+        background-color: #003366; /* Darken color on hover */
+    }
+
 }
