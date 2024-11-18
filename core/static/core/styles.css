@@ -1354,3 +1354,40 @@ html, body {
     }
 }
 
+@media (max-width: 768px) {
+    /* Target only pages with the no-wobble class */
+    body.no-wobble {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* Ensure content and containers don’t cause overflow */
+    body.no-wobble * {
+        box-sizing: border-box; /* Maintain consistent sizing */
+    }
+
+    /* Handle wide elements like images and videos */
+    body.no-wobble img,
+    body.no-wobble video {
+        max-width: 100%; /* Limit width to viewport */
+        height: auto; /* Preserve aspect ratio */
+        display: block; /* Avoid inline margin issues */
+    }
+
+    /* Prevent overflow on containers */
+    body.no-wobble .container,
+    body.no-wobble .content,
+    body.no-wobble section {
+        max-width: 100%;
+        overflow-x: hidden; /* Prevent content overflow */
+        margin: 0 auto; /* Center align */
+    }
+
+    /* Preserve grid layouts */
+    body.no-wobble .grid,
+    body.no-wobble .team-grid,
+    body.no-wobble .partners-grid {
+        padding: 0; /* Ensure grid padding doesn’t add to overflow */
+        margin: 0 auto; /* Center grids */
+        max-width: calc(100% - 20px); /* Avoid overflow by reducing width */
+    }
+}
