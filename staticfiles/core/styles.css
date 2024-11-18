@@ -1434,5 +1434,41 @@ html, body {
     body.home-page .cta-button:hover {
         background-color: #003366; /* Darken color on hover */
     }
+        /* Prevent horizontal scrolling (no wobble) specifically for the home page */
+        body.home-page {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Disable horizontal scrolling */
+            width: 100%;
+        }
+    
+        /* Normalize box-sizing across all elements on the home page */
+        body.home-page * {
+            box-sizing: border-box;
+        }
+    
+        /* Ensure containers and sections do not overflow */
+        body.home-page .container,
+        body.home-page .content,
+        body.home-page section,
+        body.home-page nav {
+            max-width: 100%;
+            overflow-x: hidden;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        /* Avoid margins causing extra space */
+        body.home-page * {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    
+        /* Ensure media elements (e.g., images) do not overflow */
+        body.home-page img,
+        body.home-page video {
+            max-width: 100%;
+            height: auto;
+        }
 
 }
