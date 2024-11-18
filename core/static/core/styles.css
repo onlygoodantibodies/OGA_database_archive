@@ -1354,54 +1354,54 @@ html, body {
     }
 }
 
+
 @media (max-width: 768px) {
-    /* Ensure the body itself doesn't overflow */
-    body {
+    /* Apply only to pages with .no-wobble class on body */
+    body.no-wobble {
         margin: 0;
         padding: 0;
         overflow-x: hidden; /* Disable horizontal scrolling */
     }
 
-    /* Normalize box-sizing for all elements */
-    * {
-        box-sizing: border-box;
+    body.no-wobble * {
+        box-sizing: border-box; /* Normalize box-sizing */
     }
 
-    /* Fix any overflowing sections, containers, or navbars */
-    .container, 
-    .content, 
-    section, 
-    nav {
+    /* Ensure sections, containers, and nav don't overflow */
+    body.no-wobble .container, 
+    body.no-wobble .content, 
+    body.no-wobble section, 
+    body.no-wobble nav {
         max-width: 100%;
         overflow-x: hidden; /* Prevent overflow */
         margin: 0 auto; /* Center content */
     }
 
-    /* Prevent images or media from causing overflow */
-    img, 
-    video {
+    /* Prevent media elements from causing overflow */
+    body.no-wobble img, 
+    body.no-wobble video {
         max-width: 100%;
         height: auto;
         display: block; /* Avoid inline margin issues */
     }
 
-    /* Fix specific elements potentially causing overflow */
-    .grid, 
-    .team-grid, 
-    .partners-grid {
+    /* Address grid layouts specifically */
+    body.no-wobble .grid, 
+    body.no-wobble .team-grid, 
+    body.no-wobble .partners-grid {
         max-width: 100%;
-        overflow-x: hidden; /* Ensure grids don't cause overflow */
-        padding: 0 10px; /* Add inner padding to avoid edge overflow */
+        overflow-x: hidden;
+        padding: 0 10px; /* Add padding to avoid edge overflow */
     }
 
-    /* Remove unintended margin/padding on all elements */
-    * {
+    /* Remove unintended margin/padding on all child elements */
+    body.no-wobble * {
         margin: 0;
         padding: 0;
     }
 
-    /* Fix overly wide elements */
-    html, body {
+    /* Ensure html and body don't overflow */
+    html, body.no-wobble {
         width: 100%;
         overflow-x: hidden;
     }
