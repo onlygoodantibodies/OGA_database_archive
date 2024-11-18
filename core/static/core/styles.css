@@ -1395,46 +1395,48 @@ html, body {
     }
 
     body.home-page .banner {
-        height: 100vh; /* Full height of the viewport */
+        height: 100vh; /* Full viewport height */
         width: 100%; /* Full width */
         margin: 0;
         padding: 0;
-        background-size: cover; /* Stretch the image to cover the section */
-        background-position: center; /* Center the background image */
+        background-image: url("{% static 'core/your-banner-image.jpg' %}"); /* Path to your image */
+        background-size: cover; /* Stretch image to cover entire section */
+        background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Prevent repeating */
-        position: relative; /* Allow positioning of text above */
+        position: relative; /* Position for text overlay */
     }
-
+    
     body.home-page .banner-text {
         position: absolute; /* Position text over the banner */
         top: 50%; /* Center vertically */
         left: 50%; /* Center horizontally */
         transform: translate(-50%, -50%); /* Perfect centering */
-        z-index: 2; /* Ensure it appears above the background */
+        z-index: 2; /* Ensure text appears above the image */
         text-align: center;
-        color: white; /* Ensure text is readable */
+        color: white; /* Text color */
         padding: 10px;
     }
-
+    
     body.home-page .banner-text h2 {
         font-size: 1.8rem; /* Adjust font size for mobile */
-        margin: 0 0 15px; /* Add spacing below the heading */
+        margin: 0 0 15px; /* Spacing below heading */
     }
-
+    
     body.home-page .cta-button {
         display: inline-block;
         font-size: 1rem;
         padding: 10px 20px;
         color: white;
-        background-color: var(--main-blue); /* Add your brand color */
+        background-color: var(--main-blue); /* Your brand color */
         text-decoration: none;
         border-radius: 5px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Optional: Add subtle shadow */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
     }
-
+    
     body.home-page .cta-button:hover {
-        background-color: #003366; /* Darken color on hover */
+        background-color: #003366; /* Darken on hover */
     }
+    
 
     /* Prevent Horizontal Scrolling (No Wobble) */
     body.home-page {
