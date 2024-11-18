@@ -1354,25 +1354,3 @@ html, body {
     }
 }
 
-
-/* Fix Horizontal Wobble for Pages with `no-wobble` Class */
-@media (max-width: 768px) {
-    body.no-wobble {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-
-    body.no-wobble .container,
-    body.no-wobble .content,
-    body.no-wobble section,
-    body.no-wobble nav {
-        max-width: 100%; /* Keep everything within bounds */
-    }
-
-    body.no-wobble img, 
-    body.no-wobble video {
-        max-width: 100%; /* Prevent media from overflowing */
-        height: auto;
-    }
-}
