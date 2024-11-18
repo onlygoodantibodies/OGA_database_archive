@@ -1399,18 +1399,18 @@ html, body {
         width: 100%; /* Full width */
         margin: 0;
         padding: 0;
-        background-size: cover; /* Ensure the image fully covers the banner */
+        background-image: url('../path-to-your-image.jpg'); /* Ensure correct image URL */
+        background-size: cover; /* Ensure the image covers the banner */
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Prevent repetition */
-        position: relative; /* For positioning text on top */
+        position: relative; /* Position text above */
+        display: flex; /* Ensure content inside can align */
+        align-items: center; /* Vertically center text */
+        justify-content: center; /* Horizontally center text */
     }
 
     body.home-page .banner-text {
-        position: absolute; /* Position text over the banner */
-        top: 50%; /* Center vertically */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Perfect centering */
-        z-index: 2; /* Ensure text appears above the background */
+        z-index: 2; /* Ensure text is above the background */
         text-align: center;
         color: white; /* Ensure text is readable */
         padding: 10px;
@@ -1448,7 +1448,7 @@ html, body {
         box-sizing: border-box;
     }
 
-    /* Ensure No Margins or Overflow */
+    /* Reset Margins or Overflow */
     body.home-page .container,
     body.home-page .content,
     body.home-page section,
