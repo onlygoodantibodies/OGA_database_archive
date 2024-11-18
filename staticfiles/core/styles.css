@@ -1395,18 +1395,18 @@ html, body {
     }
 
     body.home-page .banner {
-        height: 100vh; /* Make the banner fill the full viewport height */
+        height: 100vh; /* Full viewport height */
         width: 100%; /* Full width */
         margin: 0;
         padding: 0;
-        background-size: cover; /* Stretch the image to cover the banner */
+        background-size: cover; /* Ensure the image fully covers the banner */
         background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Prevent image repetition */
-        position: relative; /* For positioning text above */
+        background-repeat: no-repeat; /* Prevent repetition */
+        position: relative; /* For positioning text on top */
     }
 
     body.home-page .banner-text {
-        position: absolute; /* Position the text over the banner */
+        position: absolute; /* Position text over the banner */
         top: 50%; /* Center vertically */
         left: 50%; /* Center horizontally */
         transform: translate(-50%, -50%); /* Perfect centering */
@@ -1417,7 +1417,7 @@ html, body {
     }
 
     body.home-page .banner-text h2 {
-        font-size: 1.8rem; /* Adjust font size for smaller screens */
+        font-size: 1.8rem; /* Adjust font size */
         margin: 0 0 15px; /* Add spacing below the heading */
     }
 
@@ -1426,14 +1426,14 @@ html, body {
         font-size: 1rem; /* Adjust button size */
         padding: 10px 20px;
         color: white;
-        background-color: var(--main-blue); /* Your brand's main color */
+        background-color: var(--main-blue); /* Brand's main color */
         text-decoration: none;
         border-radius: 5px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Optional shadow */
     }
 
     body.home-page .cta-button:hover {
-        background-color: #003366; /* Darken color on hover */
+        background-color: #003366; /* Darken button on hover */
     }
 
     /* Prevent Horizontal Scrolling (No Wobble) */
@@ -1443,7 +1443,7 @@ html, body {
         overflow-x: hidden; /* Disable horizontal scrolling */
     }
 
-    /* Ensure All Content Fits */
+    /* Ensure All Elements Fit */
     body.home-page * {
         box-sizing: border-box;
     }
