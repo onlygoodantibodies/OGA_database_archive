@@ -1394,49 +1394,62 @@ html, body {
         margin-right: auto;
     }
 
-    body.home-page .banner {
-        height: 100vh; /* Full viewport height */
-        width: 100%; /* Full width */
-        margin: 0;
-        padding: 0;
-        background-image: url("{% static 'core/your-banner-image.jpg' %}"); /* Path to your image */
-        background-size: cover; /* Stretch image to cover entire section */
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Prevent repeating */
-        position: relative; /* Position for text overlay */
-    }
-    
-    body.home-page .banner-text {
-        position: absolute; /* Position text over the banner */
-        top: 50%; /* Center vertically */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Perfect centering */
-        z-index: 2; /* Ensure text appears above the image */
-        text-align: center;
-        color: white; /* Text color */
-        padding: 10px;
-    }
-    
-    body.home-page .banner-text h2 {
-        font-size: 1.8rem; /* Adjust font size for mobile */
-        margin: 0 0 15px; /* Spacing below heading */
-    }
-    
-    body.home-page .cta-button {
-        display: inline-block;
-        font-size: 1rem;
-        padding: 10px 20px;
-        color: white;
-        background-color: var(--main-blue); /* Your brand color */
-        text-decoration: none;
-        border-radius: 5px;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    }
-    
-    body.home-page .cta-button:hover {
-        background-color: #003366; /* Darken on hover */
-    }
-    
+/* Home Page Banner Styling */
+section.banner.home-banner {
+    position: relative; /* Allow positioning of text over the banner */
+    width: 100%; /* Full width of the section */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Prevent any content overflow */
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner Image Styling */
+section.banner.home-banner img {
+    width: 100%; /* Stretch image to fit the width of the section */
+    height: 100%; /* Stretch image to fit the height of the section */
+    object-fit: cover; /* Ensure the image covers the section without distortion */
+    object-position: center; /* Center the image within the section */
+    display: block; /* Remove any inline gaps caused by images */
+}
+
+/* Text and Button Overlay Styling */
+section.banner.home-banner .banner-text {
+    position: absolute; /* Position text over the banner */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Ensure perfect centering */
+    text-align: center; /* Align text and button in the center */
+    z-index: 2; /* Ensure it appears above the banner image */
+    color: white; /* Ensure text is readable */
+    padding: 10px; /* Add padding for spacing */
+}
+
+/* Banner Heading Styling */
+section.banner.home-banner .banner-text h2 {
+    font-size: 1.8rem; /* Adjust font size for better readability */
+    margin-bottom: 15px; /* Add space below the heading */
+    line-height: 1.4; /* Adjust line height for better readability */
+}
+
+/* Call-to-Action Button Styling */
+section.banner.home-banner .banner-text .cta-button {
+    display: inline-block; /* Ensure the button stays inline */
+    font-size: 1rem; /* Adjust font size */
+    padding: 10px 20px; /* Adjust padding for a clickable area */
+    color: white; /* Text color */
+    background-color: var(--main-blue); /* Use your brand color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Round corners */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Button Hover Effect */
+section.banner.home-banner .banner-text .cta-button:hover {
+    background-color: #003366; /* Slightly darken color on hover */
+}
+
 
     /* Prevent Horizontal Scrolling (No Wobble) */
     body.home-page {
