@@ -1355,54 +1355,24 @@ html, body {
 }
 
 
+/* Fix Horizontal Wobble for Pages with `no-wobble` Class */
 @media (max-width: 768px) {
-    /* Apply only to pages with .no-wobble class on body */
     body.no-wobble {
         margin: 0;
         padding: 0;
-        overflow-x: hidden; /* Disable horizontal scrolling */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
-    body.no-wobble * {
-        box-sizing: border-box; /* Normalize box-sizing */
-    }
-
-    /* Ensure sections, containers, and nav don't overflow */
-    body.no-wobble .container, 
-    body.no-wobble .content, 
-    body.no-wobble section, 
+    body.no-wobble .container,
+    body.no-wobble .content,
+    body.no-wobble section,
     body.no-wobble nav {
-        max-width: 100%;
-        overflow-x: hidden; /* Prevent overflow */
-        margin: 0 auto; /* Center content */
+        max-width: 100%; /* Keep everything within bounds */
     }
 
-    /* Prevent media elements from causing overflow */
     body.no-wobble img, 
     body.no-wobble video {
-        max-width: 100%;
+        max-width: 100%; /* Prevent media from overflowing */
         height: auto;
-        display: block; /* Avoid inline margin issues */
-    }
-
-    /* Address grid layouts specifically */
-    body.no-wobble .grid, 
-    body.no-wobble .team-grid, 
-    body.no-wobble .partners-grid {
-        max-width: 100%;
-        overflow-x: hidden;
-        padding: 0 10px; /* Add padding to avoid edge overflow */
-    }
-
-    /* Remove unintended margin/padding on all child elements */
-    body.no-wobble * {
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Ensure html and body don't overflow */
-    html, body.no-wobble {
-        width: 100%;
-        overflow-x: hidden;
     }
 }
