@@ -1394,62 +1394,82 @@ html, body {
         margin-right: auto;
     }
 
- /* Home Page Banner Section */
- body.home-page .banner {
-    height: auto; /* Automatically adjust to image size */
-    width: 100%; /* Full width */
-    margin: 0;
-    padding: 0;
-    background-size: cover; /* Stretch the image to cover the section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating */
-    position: relative; /* Allow positioning of text above */
-}
+    body.home-page .banner {
+        height: 100vh; /* Make the banner fill the full viewport height */
+        width: 100%; /* Full width */
+        margin: 0;
+        padding: 0;
+        background-size: cover; /* Stretch the image to cover the banner */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent image repetition */
+        position: relative; /* For positioning text above */
+    }
 
-/* Restore Text and Button */
-body.home-page .banner-text {
-    position: absolute; /* Place text relative to the banner */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
-    text-align: center;
-    color: white; /* Ensure text is readable */
-    z-index: 2; /* Ensure text appears above the image */
-}
+    body.home-page .banner-text {
+        position: absolute; /* Position the text over the banner */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Perfect centering */
+        z-index: 2; /* Ensure text appears above the background */
+        text-align: center;
+        color: white; /* Ensure text is readable */
+        padding: 10px;
+    }
 
-/* Text Styling */
-body.home-page .banner-text h2 {
-    font-size: 1.8rem; /* Adjust font size for mobile */
-    margin: 0 0 15px; /* Add spacing below the heading */
-}
+    body.home-page .banner-text h2 {
+        font-size: 1.8rem; /* Adjust font size for smaller screens */
+        margin: 0 0 15px; /* Add spacing below the heading */
+    }
 
-/* Button Styling */
-body.home-page .cta-button {
-    display: inline-block;
-    font-size: 1rem;
-    padding: 10px 20px;
-    color: white;
-    background-color: var(--main-blue); /* Use your primary color */
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-}
+    body.home-page .cta-button {
+        display: inline-block;
+        font-size: 1rem; /* Adjust button size */
+        padding: 10px 20px;
+        color: white;
+        background-color: var(--main-blue); /* Your brand's main color */
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    }
 
-body.home-page .cta-button:hover {
-    background-color: #003366; /* Darken color on hover */
-}
+    body.home-page .cta-button:hover {
+        background-color: #003366; /* Darken color on hover */
+    }
 
-/* Prevent Horizontal Scrolling */
-body.home-page {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Disable horizontal scrolling */
-    width: 100%;
-}
+    /* Prevent Horizontal Scrolling (No Wobble) */
+    body.home-page {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Disable horizontal scrolling */
+    }
 
-/* Ensure media elements (e.g., images) do not overflow */
-body.home-page img {
-    max-width: 100%;
-    height: auto;
-}
+    /* Ensure All Content Fits */
+    body.home-page * {
+        box-sizing: border-box;
+    }
+
+    /* Ensure No Margins or Overflow */
+    body.home-page .container,
+    body.home-page .content,
+    body.home-page section,
+    body.home-page nav {
+        max-width: 100%;
+        overflow-x: hidden;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Ensure Media Elements Do Not Overflow */
+    body.home-page img,
+    body.home-page video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Avoid Extra Margins */
+    body.home-page * {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
 }
