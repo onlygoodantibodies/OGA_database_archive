@@ -828,6 +828,12 @@ html, body {
     margin-bottom: 15px;
 }
 
+/* Bold Text for Emphasis */
+.news-content strong {
+    color: var(--main-blue);
+    font-weight: bold;
+}
+
 .styled-list {
     list-style-type: disc; 
     padding-left: 20px; 

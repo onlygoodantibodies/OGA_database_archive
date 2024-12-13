@@ -49,3 +49,7 @@ def success(request):
 
 def news(request):
     return render(request, 'core/news.html')
+
+
+def projects(request):
+    return render(request, 'core/projects.html')

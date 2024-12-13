@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Our Projects - Only Good Antibodies Community</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'core/up-logo.ico' %}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+</head>
+<body class="no-wobble">
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'core/logo.png' %}" alt="Logo" class="logo-img">
+            </a>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger">☰</div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="menu">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'publications' %}">Publications</a></li>
+                <li><a href="{% url 'projects' %}"class="active">Projects</a></li>
+                <li><a href="{% url 'news' %}">News</a></li>
+                <li><a href="{% url 'data' %}">Data</a></li>
+                <li><a href="{% url 'partners' %}">Partners</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner about-banner">
+        <div class="banner-text">
+            <h2 style="color: white;">Our Projects</h2>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="news-section projects-section">
+        <div class="news-container">
+
+            <!-- Project 1: Better Antibodies -->
+            <div class="news-card">
+                <div class="news-content">
+                    <h3>Better Antibodies</h3>
+                    <p>
+                        We are very grateful to the NC3Rs for strategic funding for our project to identify robust reagents to study key targets of interest to research groups based across the Midlands. For more information, please see thier <a href="https://nc3rs.org.uk" target="_blank">Website</a>.
+                    </p>
+                    <a href="https://nc3rs.org.uk" class="read-more" target="_blank">Learn More</a>
+                </div>
+                <div class="news-image-container">
+                    <img src="{% static 'core/1.png' %}" alt="Better Antibodies Project" class="news-image">
+                </div>
+            </div>
+
+            <!-- Project 2: Better Science -->
+            <div class="news-card">
+                <div class="news-content">
+                    <h3>Better Science</h3>
+                    <p>
+                        The OGA partnership is supported by funding from the MRC-NIHR Better Methods, Better Research panel for our project to drive better standards in antibody choice and use. For more information, please see  <a href="https://leicesterbrc.nihr.ac.uk"  target="_blank">NIHR Leicester BRC announcement</a>.
+                    </p>
+                    <a href="https://leicesterbrc.nihr.ac.uk" class="read-more" target="_blank">Learn More</a>
+                </div>
+                <div class="news-image-container">
+                    <img src="{% static 'core/2.png' %}" alt="Better Science Project" class="news-image">
+                </div>
+            </div>
+
+            <!-- Project 3: Better Patients Outcomes -->
+            <div class="news-card">
+                <div class="news-content">
+                    <h3>Better Patients Outcomes</h3>
+                    <p>
+                        Our lab team is supported by the Leicester Institute for Precision Health and an MRC Impact Accelerator Award to identify robust antibodies that can measure proteins predicting treatment responses in ILD patients. This work aims to improve diagnosis and treatment of ILD. This work has the potential to improve how patients with IDL are disgnosed and treated. For more information, contact <strong>hsv6@leicester.ac.uk</strong>.
+                    </p>
+                    <a href="mailto:hsv6@leicester.ac.uk" class="read-more">Contact Us</a>
+                </div>
+                <div class="news-image-container">
+                    <img src="{% static 'core/3.png' %}" alt="ILD Diagnosis and Treatment Project" class="news-image">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About Us</a>
+                <a href="{% url 'publications' %}">Publications</a>
+                <a href="{% url 'projects' %}">Projects</a>
+                <a href="{% url 'news' %}">News</a>
+                <a href="{% url 'data' %}">Data</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </div>
+
+            <!-- Contact Information Column -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:onlygoodantibodies@gmail.com">onlygoodantibodies@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">Visit our LinkedIn</a></p>
+                <p>X: <a href="https://x.com/OGA_Community" target="_blank">Visit us on X</a></p>
+            </div>
+
+            <!-- Social Media Column -->
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">
+                    <img src="{% static 'core/linkedin-logo.webp' %}" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://x.com/OGA_Community" target="_blank">
+                    <img src="{% static 'core/x.png' %}" alt="X Social Media" class="social-icon">
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Better Antibodies Community. All Rights Reserved.</p>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">Back to Top</button>
+        </div>
+    </footer>
+
+    <script src="{% static 'core/script.js' %}"></script>
+
+</body>
+</html>
