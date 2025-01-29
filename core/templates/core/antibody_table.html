@@ -1,0 +1,266 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=900, initial-scale=1.0">
+    <title>{{ gene.name }} - Antibodies and Experiments</title>
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+</head>
+<body class="antibody-table-page">
+
+    <!-- Header Section -->
+<header class="header">
+    <div class="logo">
+        <a href="{% url 'home' %}"> <!-- Link to the home page -->
+            <img src="{% static 'core/logo.png' %}" alt="Logo" class="logo-img">
+        </a>
+    </div> 
+    
+              <!-- Hamburger Icon -->
+<div class="hamburger">☰</div>
+
+<!-- Navigation Menu -->
+    <nav>
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'publications' %}">Publications</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'news' %}">News</a></li>
+            <li><a href="{% url 'partners' %}">Partners</a></li>
+            <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Banner Section -->
+    <section class="banner about-banner">
+        <div class="banner-text">
+            <h2>Data</h2>
+        </div>
+    </section>
+
+    <div class="content">
+        <div class="container">
+            <aside class="filter-sidebar">
+                <!-- F1000 Report Link -->
+                <div class="f1000-report">
+                    <a href="{{ gene.f1000_report_link }}" target="_blank" class="f1000-link">
+                        Full Report 
+                    </a>
+                </div>
+
+                <!-- Filter Sidebar -->
+                <form method="get">
+                    <h3>Filter Antibodies</h3>
+                    
+                    <!-- Host Filter -->
+                    <div class="filter-group">
+                        <label for="host">Host</label>
+                        <select name="host" id="host">
+                            <option value="">-- Select Host --</option>
+                            {% for host in hosts %}
+                                <option value="{{ host }}" {% if request.GET.host == host %}selected{% endif %}>{{ host }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Clonality Filter -->
+                    <div class="filter-group">
+                        <label for="clonality">Clonality</label>
+                        <select name="clonality" id="clonality">
+                            <option value="">-- Select Clonality --</option>
+                            {% for clonality in clonality_options %}
+                                <option value="{{ clonality }}" {% if request.GET.clonality == clonality %}selected{% endif %}>{{ clonality }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Recombinant Filter -->
+                    <div class="filter-group">
+                        <label for="recombinant">Recombinant</label>
+                        <select name="recombinant" id="recombinant">
+                            <option value="">-- Select Recombinant --</option>
+                            {% for recombinant in recombinant_options %}
+                                <option value="{{ recombinant }}" {% if request.GET.recombinant == recombinant %}selected{% endif %}>
+                                    {{ recombinant }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit" class="filter-button">Filter</button>
+                </form>
+
+                      <!-- Divider Section -->
+        <section class="section-divider">
+            <div class="divider-line"></div>
+          </section>   
+  
+          <div class="filter-group"> 
+              <p>Antibody order is completely randomise and unbiased</p>
+          </div> 
+          
+          <!-- Divider Section -->
+          <section class="section-divider">
+              <div class="divider-line"></div>
+            </section>     
+  
+            <div class="cite-data-section">
+              <h1>Cite this Data</h1>
+              <p>Something will go here</p>
+              <p>Something will go here</p>
+              <p>Something will go here</p>
+          </div>      
+      </aside>  
+            <!-- Table Container -->
+            <main class="table-container">
+                <!-- Ideal Antibody Row -->
+                <div class="row-box ideal-antibody-row"> 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="header-label">WB</th>
+                                <th class="header-label">IP</th>
+                                <th class="header-label">ICC-IF</th>
+                                <th class="header-label">FC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="antibody-details">
+                                    <h3>High-performing Antibody</h3>
+                                    <p>An example of a high-performing antibody.</p>
+                                </td>
+                                <td><div class="experiment-box"><img src="{% static 'core/Ideal-WB-1.png' %}" alt="WB Image"></div></td>
+                                <td><div class="experiment-box"><img src="{% static 'core/Ideal-IP-1.png' %}" alt="IP Image"></div></td>
+                                <td><div class="experiment-box"><img src="{% static 'core/Ideal-IF-1.png' %}" alt="ICC-IF Image"></div></td>
+                                <td><div class="experiment-box"><img src="{% static 'core/Ideal-FC-1.png' %}" alt="FC Image"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                   <!-- Dynamic Antibody Rows -->
+            {% for antibody in antibody_data %}
+            <div class="row-box"> <!-- Big square around each antibody -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th> <!-- Leave this square empty -->
+                            <th class="header-label">WB</th>
+                            <th class="header-label">IP</th>
+                            <th class="header-label">ICC-IF</th>
+                            <th class="header-label">FC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- Antibody Details -->
+                            <td class="antibody-details">
+                                <h3>{{ antibody.name }}</h3>
+                                {% if antibody.description %}
+                                    <p>RRID: {{ antibody.description.rrid }}</p>
+                                    <p>Supplier: {{ antibody.description.supplier }}</p>
+                                    <p>Host: {{ antibody.description.host }}</p>
+                                    <p>Clonality: {{ antibody.description.clonality }}</p>
+                                    <p>Recombinant: {{antibody.description.recombinant}}</p>
+                                {% endif %}
+                            </td>
+
+                            <!-- WB Experiment -->
+                            <td>
+                                <div class="experiment-box">
+                                    {% if antibody.experiments.WB %}
+                                        <img src="{{ antibody.experiments.WB }}" alt="WB Image">
+                                    {% else %}
+                                        <img src="{% static 'core/Not_Available.png' %}" alt="No Data Available">
+                                    {% endif %}
+                                </div>
+                            </td>
+
+                            <!-- IP Experiment -->
+                            <td>
+                                <div class="experiment-box">
+                                    {% if antibody.experiments.IP %}
+                                        <img src="{{ antibody.experiments.IP }}" alt="IP Image">
+                                    {% else %}
+                                        <img src="{% static 'core/Not_Available.png' %}" alt="No Data Available">
+                                    {% endif %}
+                                </div>
+                            </td>
+
+                            <!-- ICC-IF Experiment -->
+                            <td>
+                                <div class="experiment-box">
+                                    {% if antibody.experiments.ICC_IF %}
+                                        <img src="{{ antibody.experiments.ICC_IF }}" alt="ICC-IF Image">
+                                    {% else %}
+                                        <img src="{% static 'core/Not_Available.png' %}" alt="No Data Available">
+                                    {% endif %}
+                                </div>
+                            </td>
+
+                            <!-- FC Experiment -->
+                            <td>
+                                <div class="experiment-box">
+                                    {% if antibody.experiments.FC %}
+                                        <img src="{{ antibody.experiments.FC }}" alt="FC Image">
+                                    {% else %}
+                                        <img src="{% static '/core/Not_Available.png' %}" alt="No Data Available">
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+        </main>
+    </div>
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'publications' %}">Publications</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'news' %}">News</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+
+        <!-- Contact Information Column -->
+        <div class="footer-column">
+            <h4>Contact Us</h4>
+            <p>Email: <a href="onlygoodantibodies@gmail.com">onlygoodantibodies@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">Follow us on LinkedIn</a></p>
+            <p>X: <a href="https://x.com/OGA_Community" target="_blank">Follow us on X</a></p>
+        </div>
+
+        <!-- Social Media Column -->
+        <div class="footer-column">
+            <h4>Follow Us</h4>
+            <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">
+                <img src="{% static 'core/linkedin-logo.webp' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://x.com/OGA_Community" target="_blank">
+                <img src="{% static 'core/x.png' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <!-- Add other social media icons here -->
+        </div>
+    </div>
+
+    <!-- Bottom Footer with Copyright and Back to Top -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Better Antibodies Community. All Rights Reserved.</p>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">Back to Top</button>
+    </div>
+</footer>
+<script src="{% static 'core/script.js' %}"></script>
+</body>
+</html>

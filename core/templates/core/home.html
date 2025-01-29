@@ -9,10 +9,54 @@
     <link rel="stylesheet" href="{% static 'core/styles.css' %}">
     <title>OGA - Only Good Antibodies Community</title>
     <link rel="icon" type="image/x-icon" href="{% static 'core/up-logo.ico' %}">
+    <script>
+        let geneCache = []; // Cache for gene names and elements
 
+// Debounce function to optimize input events
+function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+}
 
+// Filter genes based on the search query
+function filterGenes() {
+    const query = document.querySelector('.search-bar').value.toLowerCase().trim(); // Get user input
+    const noResultsMessage = document.getElementById('no-results-message'); // Get the no-results message container
+    let hasResults = false; // Track if any gene matches
+
+    geneCache.forEach(({ geneName, element }) => {
+        if (geneName.includes(query)) {
+            element.style.display = ''; // Show matching box
+            hasResults = true; // Found a match
+        } else {
+            element.style.display = 'none'; // Hide non-matching box
+        }
+    });
+
+    // Toggle "No Results" message based on results
+    noResultsMessage.style.display = query && !hasResults ? 'block' : 'none';
+}
+
+// Cache the gene names and DOM elements on page load
+document.addEventListener('DOMContentLoaded', function () {
+    const geneBoxes = document.querySelectorAll('.gene-box');
+
+    // Cache gene names and elements
+    geneBoxes.forEach((box) => {
+        const geneName = box.querySelector('h3').innerText.toLowerCase();
+        geneCache.push({ geneName, element: box });
+    });
+
+    const searchBar = document.querySelector('.search-bar');
+    searchBar.addEventListener('input', debounce(filterGenes, 300)); // Add event listener with debounce
+});
+    </script>
 </head>
 <body class="home-page">
+    
     <!-- Header Section -->
     <header class="header">
         <div class="logo">
@@ -32,37 +76,60 @@
                 <li><a href="{% url 'publications' %}">Publications</a></li>
                 <li><a href="{% url 'projects' %}">Projects</a></li>
                 <li><a href="{% url 'news' %}">News</a></li>
-                <li><a href="{% url 'data' %}">Data</a></li>
                 <li><a href="{% url 'partners' %}">Partners</a></li>
                 <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
             </ul>
         </nav>
     </header>
-<!-- Banner Section with Extended Height -->
-<section class="banner home-banner">
-    <img src="{% static 'core/banner1.png' %}" alt="Banner Image">
-    <div class="banner-text">
-        <h2 style="color: white;">Better antibodies, better science, better patient outcomes.</h2>
-        <div class="buttons">
-            <a href="{% url 'about' %}" class="cta-button">Learn More</a>
-        </div>
+
+
+    <!-- Search Bar -->
+    <div class="search-bar-wrapper">
+     <form method="get" class="search-container">
+        <input 
+            class="search-bar" 
+            type="text" 
+            placeholder="Search" 
+            name="search" 
+            value="{{ search_query|default:'' }}" 
+        >
+     </form>
     </div>
-</section>
 
-    <!-- Introduction Section -->
-    <section class="introduction">
-        <p>The Only Good Antibodies (OGA) community was established in April 2023 to address the antibody reproducibility crisis that affects scientific research and drug development.</p>
-        <p>We collaborate with researchers, industry leaders, publishers, funders,  and patient advocacy groups to increase the availability of high-quality antibodies. </p>
-        <p>Join us to ensure better science, diagnostics and treatments.</p>
+    <!-- Educational Material Section -->
+    <section class="educational-section">
+     <div class="edu-box">
+        <h3>Choosing the Right Antibody for Your Application</h3>
+        <p>Learn how to choose the right antibody for techniques like Western blot, IP, IF, and flow cytometry</p>
+        <a href="{% url 'resources' %}" class="learn-more-button">Learn More</a>
+     </div>
+     <div class="edu-box">
+        <h3>Leveraging YCharOS Open Antibody Data</h3>
+        <p>Gain insights from YCharOS's open antibody data to improve antibody selection</p>
+        <a href="https://f1000research.com/articles/12-1344" class="learn-more-button" target="_blank" rel="noopener noreferrer">Learn More</a>
+     </div>
+    
     </section>
 
-    <!-- Browse Button at the Bottom -->
-    <section class="browse-section">
-        <div class="buttons">
-            <a href="{% url 'data' %}" class="cta-button">Browse Data</a>
-        </div>
+    <!-- Gene List Section -->
+    <section class="gene-list">
+      <h2>Genes Available</h2>
+      <div class="gene-list-container">
+      {% for gene in genes %}
+      <div class="gene-box" data-name="{{ gene.name }}">
+         <h3>{{ gene.name }}</h3>
+         <p>Related Antibodies: {{ gene.antibodies.count }}</p>
+         <a href="{% url 'antibody_table' gene.id %}" class="details-button">View Details</a>
+      </div>
+    {% endfor %}
+    </div>
     </section>
 
+    <!-- No Results Message -->
+    <div id="no-results-message" class="no-results">
+      <p>Didn't find what you're looking for?</p>
+      <a href="{% url 'contact' %}" class="nominate-target-button">Nominate a Target</a>
+    </div>
 
 <!-- Footer -->
 <footer class="footer">
@@ -75,7 +142,6 @@
             <a href="{% url 'publications' %}">Publications</a>
             <a href="{% url 'projects' %}">Projects</a>
             <a href="{% url 'news' %}">News</a>
-            <a href="{% url 'data' %}">Data</a>
             <a href="{% url 'contact' %}">Contact</a>
         </div>
 

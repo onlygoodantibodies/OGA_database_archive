@@ -32,7 +32,6 @@
                 <li><a href="{% url 'publications' %}">Publications</a></li>
                 <li><a href="{% url 'projects' %}">Projects</a></li>
                 <li><a href="{% url 'news' %}">News</a></li>
-                <li><a href="{% url 'data' %}">Data</a></li>
                 <li><a href="{% url 'partners' %}">Partners</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
@@ -46,55 +45,27 @@
         </div>
     </section>
 
-
-    <!-- Our Team Section -->
-    <section class="our-team">
-        <h2>Meet the Team</h2>
-        
-        <div class="team-grid">
-            <!-- Team Member 1 -->
-            <div class="team-member">
-                <img src="{% static 'core/team1.png' %}" alt="Team Member 1">
-                <h3>Harvinder Virk</h3>
-                <p>Co-lead (Clinical)</p>
-            </div>
-
-            <!-- Team Member 2 -->
-            <div class="team-member">
-                <img src="{% static 'core/team11.png' %}" alt="Team Member 2">
-                <h3>Michael Biddle</h3>
-                <p>Co-lead (Molecular Biology)</p>
-            </div>
-
-             <!-- Team Member 3 -->
-            <div class="team-member">
-                <img src="{% static 'core/team4.png' %}" alt="Team Member 4">
-                <h3>Eva Krockow</h3>
-                <p>Co-lead (Behavioural Science)</p>
-            </div>
-
-            <!-- Team Member 4 -->
-            <div class="team-member">
-                <img src="{% static 'core/team3.png' %}" alt="Team Member 3">
-                <h3>Carolyn Jones</h3>
-                <p>Characterisation and biomarker project support</p>
-            </div>
-
-            <!-- Team Member 5 -->
-             <div class="team-member">
-                <img src="{% static 'core/team5.png' %}" alt="Team Member 4">
-                <h3>Bárbara Ferreira</h3>
-                <p>Bioinformatics</p>
-             </div>
-        </div>
-    </section>
-
-<!-- Introduction Section -->
+    <!-- Introduction Section -->
 <section class="our-approach">
     <div class="content-container">
         <h2>Only Good Antibodies (OGA) Community</h2>
         <p>
             The OGA community is a diverse collaboration of basic, clinical, data, and behavioural scientists and technicians from academia, industry, and non-profit organisations, led from the University of Leicester. We are part of the wider movement to improve research integrity and reproducibility, and we are an affiliate stakeholder in the UK Reproducibility Network. We are learning from this wider community, and our work also represents an opportunity for learning in the wider context of research reproducibility and integrity. Together we will improve patients outcomes by supporting trustworthy research and reliable diagnostics
+        </p>
+    </div>
+</section>
+
+<!-- Divider Section -->
+<section class="section-divider">
+    <div class="divider-line"></div>
+</section>
+
+<!-- Open Science Partnership Section -->
+<section class="our-approach">
+    <div class="content-container">
+        <h2>Open Science Partnership</h2>
+        <p>
+            We are an open science partnership with 26 major science stakeholders in institutions, commercial manufacturing, reagent databases, research funding, and publishers. Come to us for help finding the most robust antibodies for your experimental needs.
         </p>
     </div>
 </section>
@@ -117,28 +88,52 @@
     </div>
 </section>
 
-<!-- Divider Section -->
-<section class="section-divider">
-    <div class="divider-line"></div>
-</section>
+ <!-- Our Team Section -->
+ <section class="our-team">
+    <h2>Meet the Team</h2>
+    
+    <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+            <img src="{% static 'core/team1.png' %}" alt="Team Member 1">
+            <h3>Harvinder Virk</h3>
+            <p>Co-lead (Clinical)</p>
+        </div>
 
-<!-- Open Science Partnership Section -->
-<section class="our-approach">
-    <div class="content-container">
-        <h2>Open Science Partnership</h2>
-        <p>
-            We are an open science partnership with 26 major science stakeholders in institutions, commercial manufacturing, reagent databases, research funding, and publishers. Come to us for help finding the most robust antibodies for your experimental needs.
-        </p>
+        <!-- Team Member 2 -->
+        <div class="team-member">
+            <img src="{% static 'core/team11.png' %}" alt="Team Member 2">
+            <h3>Michael Biddle</h3>
+            <p>Co-lead (Molecular Biology)</p>
+        </div>
+
+         <!-- Team Member 3 -->
+        <div class="team-member">
+            <img src="{% static 'core/team4.png' %}" alt="Team Member 4">
+            <h3>Eva Krockow</h3>
+            <p>Co-lead (Behavioural Science)</p>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-member">
+            <img src="{% static 'core/team3.png' %}" alt="Team Member 3">
+            <h3>Carolyn Jones</h3>
+            <p>Characterisation and biomarker project support</p>
+        </div>
+
+        <!-- Team Member 5 -->
+         <div class="team-member">
+            <img src="{% static 'core/team5.png' %}" alt="Team Member 4">
+            <h3>Bárbara Ferreira</h3>
+            <p>Bioinformatics</p>
+         </div>
     </div>
 </section>
 
-
 <!-- Divider Section -->
 <section class="section-divider">
     <div class="divider-line"></div>
 </section>
-
-
 
 <!-- Footer -->
 <footer class="footer">
@@ -151,7 +146,6 @@
             <a href="{% url 'publications' %}">Publications</a>
             <a href="{% url 'projects' %}">Projects</a>
             <a href="{% url 'news' %}">News</a>
-            <a href="{% url 'data' %}">Data</a>
             <a href="{% url 'contact' %}">Contact</a>
         </div>
 

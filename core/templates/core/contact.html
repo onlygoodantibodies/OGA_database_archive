@@ -32,7 +32,6 @@
                 <li><a href="{% url 'publications' %}">Publications</a></li>
                 <li><a href="{% url 'projects' %}">Projects</a></li>
                 <li><a href="{% url 'news' %}">News</a></li>
-                <li><a href="{% url 'data' %}">Data</a></li>
                 <li><a href="{% url 'partners' %}">Partners</a></li>
                 <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
             </ul>
@@ -76,26 +75,41 @@
     </div>
 </section>
 
-    <!-- Contact Form Section -->
-    <section class="contact-form">
-        <div class="content">
-            <h2>Send Us a Message</h2>
-            <form action="#" method="POST">
-                {% csrf_token %}
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+   
+ <!-- Contact Form Section -->
+ <section class="contact-form">
+    <div class="content">
+        <form action="#" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="enquiry-type">Enquiry Type:</label>
+            <select id="enquiry-type" name="enquiry-type" onchange="toggleFields()">
+                <option value="general">General Inquiry</option>
+                <option value="suggest-target">Suggest a Target</option>
+            </select>
+
+            <div id="suggest-target-fields" style="display: none;">
+                <label for="gene">Gene of Interest:</label>
+                <input type="text" id="gene" name="gene">
     
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="antibody">Application of Interest:</label>
+                <input type="text" id="antibody" name="antibody">
     
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-    
-                <button type="submit" class="cta-button">Submit</button>
-            </form>
-        </div>
-    </section>
-    
+                <label for="target-details">Additional Details:</label>
+                <textarea id="target-details" name="target-details" rows="5"></textarea>
+            </div>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="cta-button">Submit</button>
+        </form>
+    </div>
+</section>
 
 <!-- Footer -->
 <footer class="footer">
@@ -108,7 +122,6 @@
             <a href="{% url 'publications' %}">Publications</a>
             <a href="{% url 'projects' %}">Projects</a>
             <a href="{% url 'news' %}">News</a>
-            <a href="{% url 'data' %}">Data</a>
             <a href="{% url 'contact' %}">Contact</a>
         </div>
 
@@ -140,8 +153,15 @@
     </div>
 </footer>
 
+<!-- JavaScript -->
+<script>
+    function toggleFields() {
+        const enquiryType = document.getElementById('enquiry-type').value;
+        const targetFields = document.getElementById('suggest-target-fields');
+        targetFields.style.display = enquiryType === 'suggest-target' ? 'block' : 'none';
+    }
+</script>
 <script src="{% static 'core/script.js' %}"></script>
-
 </body>
 </html>
 
