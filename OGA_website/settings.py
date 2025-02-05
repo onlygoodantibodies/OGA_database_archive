@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mb78)#ej_8g=30ain=bx$k#15=c0kw(^ircfzudzkqzyy_yq90
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['onlygoodantibodies.com', 'only-good-antibodies.onrender.com', '127.0.0.1', 'https://oga-website.onrender.com']
+ALLOWED_HOSTS = ['onlygoodantibodies.com', 'only-good-antibodies.onrender.com', '127.0.0.1', 'oga-website.onrender.com']
 
 
 # Application definition
