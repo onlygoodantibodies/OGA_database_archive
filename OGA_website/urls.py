@@ -36,5 +36,5 @@ if not settings.DEBUG:
     urlpatterns += [
         path('media/<path:path>/', serve, {'document_root': settings.MEDIA_ROOT}),
     ]
-]
+
 
