@@ -19,6 +19,7 @@ from django.urls import path, include  # Include is needed to link app-specific 
 from core import views  # Import your view for the home page
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve  
 
 from django.conf import settings
 from django.conf.urls.static import static
