@@ -26,5 +26,15 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')), 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+# Serve media files in development mode (DEBUG=True)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Serve media files manually in production (DEBUG=False)
+if not settings.DEBUG:
+    urlpatterns += [
+        path('media/<path:path>/', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
+]
 
