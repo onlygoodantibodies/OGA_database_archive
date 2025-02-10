@@ -21,28 +21,65 @@ function debounce(func, delay) {
     };
 }
 
-// Filter genes based on the search query
-function filterGenes() {
-    const query = document.querySelector('.search-bar').value.toLowerCase().trim(); // Get user input
-    const noResultsMessage = document.getElementById('no-results-message'); // Get the no-results message container
-    let hasResults = false; // Track if any gene matches
+// Filter and display suggestions under the search bar
+function showSuggestions() {
+    const query = document.querySelector('.search-bar').value.toLowerCase().trim();
+    const suggestionBox = document.querySelector('.suggestion-box');
+    suggestionBox.innerHTML = ''; // Clear previous suggestions
 
-    geneCache.forEach(({ geneName, element }) => {
-        if (geneName.includes(query)) {
-            element.style.display = ''; // Show matching box
-            hasResults = true; // Found a match
-        } else {
-            element.style.display = 'none'; // Hide non-matching box
-        }
-    });
+    let hasSuggestions = false;
 
-    // Toggle "No Results" message based on results
-    noResultsMessage.style.display = query && !hasResults ? 'block' : 'none';
+    if (query) {
+        geneCache.forEach(({ geneName }) => {
+            if (geneName.includes(query)) {
+                const suggestion = document.createElement('div');
+                suggestion.classList.add('suggestion');
+                suggestion.innerText = geneName;
+                suggestion.addEventListener('click', () => {
+                    const searchBar = document.querySelector('.search-bar');
+                    searchBar.value = geneName;  // Fill the search bar with the clicked suggestion
+                    suggestionBox.innerHTML = ''; // Clear suggestions
+                    document.querySelector('.search-container').submit();  // Automatically submit the form
+                });
+                suggestionBox.appendChild(suggestion);
+                hasSuggestions = true;
+            }
+        });
+    }
+
+    suggestionBox.style.display = hasSuggestions ? 'block' : 'none';
+}
+
+
+// Handle search on Enter key
+function handleSearch(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        const query = document.querySelector('.search-bar').value.toLowerCase().trim();
+        const noResultsMessage = document.getElementById('no-results-message');
+        let hasResults = false;
+
+        geneCache.forEach(({ geneName, element }) => {
+            if (geneName.includes(query)) {
+                element.style.display = '';  // Show matching boxes
+                hasResults = true;
+            } else {
+                element.style.display = 'none';  // Hide non-matching boxes
+            }
+        });
+
+        noResultsMessage.style.display = query && !hasResults ? 'block' : 'none';
+        document.querySelector('.suggestion-box').style.display = 'none'; // Hide suggestions after search
+    }
 }
 
 // Cache the gene names and DOM elements on page load
 document.addEventListener('DOMContentLoaded', function () {
     const geneBoxes = document.querySelectorAll('.gene-box');
+    const searchBar = document.querySelector('.search-bar');
+    const suggestionBox = document.createElement('div');
+    suggestionBox.classList.add('suggestion-box');
+    document.querySelector('.search-container').appendChild(suggestionBox); // Add the suggestion box below the search bar
 
     // Cache gene names and elements
     geneBoxes.forEach((box) => {
@@ -50,8 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
         geneCache.push({ geneName, element: box });
     });
 
-    const searchBar = document.querySelector('.search-bar');
-    searchBar.addEventListener('input', debounce(filterGenes, 300)); // Add event listener with debounce
+    searchBar.addEventListener('input', debounce(showSuggestions, 300));
+    searchBar.addEventListener('keypress', handleSearch);
 });
     </script>
 </head>
@@ -84,18 +121,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     <!-- Search Bar -->
-    <div class="search-bar-wrapper">
-     <form method="get" class="search-container">
-        <input 
-            class="search-bar" 
-            type="text" 
-            placeholder="Search" 
-            name="search" 
-            value="{{ search_query|default:'' }}" 
-        >
-     </form>
+    <div class="search-bar-wrapper" style="position: relative;">
+        <form method="get" class="search-container">
+            <input 
+                class="search-bar" 
+                type="text" 
+                placeholder="Search" 
+                name="search" 
+                value="{{ search_query|default:'' }}"
+            >
+        </form>
+        <div class="suggestion-box"></div> <!-- Suggestion box outside the form -->
     </div>
-
+    
     <!-- Educational Material Section -->
     <section class="educational-section">
      <div class="edu-box">
