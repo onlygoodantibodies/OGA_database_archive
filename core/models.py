@@ -9,6 +9,7 @@ class Gene(models.Model):
     icc_if_image = models.ImageField(upload_to="gene_experiments/", null=True, blank=True)  # ICC-IF
     fc_image = models.ImageField(upload_to="gene_experiments/", null=True, blank=True)  # FC
     f1000_report_link = models.URLField(blank=True, null=True)  # Add field for F1000 report link
+    
 
     def __str__(self):
         return self.name
@@ -43,6 +44,7 @@ class Description(models.Model):
     host = models.CharField(max_length=100, blank=True, null=True)
     clonality = models.CharField(max_length=100, blank=True, null=True)
     recombinant = models.CharField(max_length=100, blank=True, null=True)
+    product_link= models.CharField(max_length=255, blank=True, null=True )
 
     def __str__(self):
         return f"Description for {self.antibody.name}"

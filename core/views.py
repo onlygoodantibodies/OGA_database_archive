@@ -114,7 +114,8 @@ def antibody_table(request, gene_id):
                 "supplier": antibody.description.supplier,
                 "host": antibody.description.host,
                 "clonality": antibody.description.clonality,
-                "recombinant": antibody.description.recombinant
+                "recombinant": antibody.description.recombinant,
+                "product_link": antibody.description.product_link
             }
 
         antibody_data.append({

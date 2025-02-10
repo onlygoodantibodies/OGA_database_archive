@@ -17,7 +17,7 @@
         </a>
     </div> 
     
-              <!-- Hamburger Icon -->
+ <!-- Hamburger Icon -->
 <div class="hamburger">☰</div>
 
 <!-- Navigation Menu -->
@@ -168,6 +168,12 @@
                                     <p>Host: {{ antibody.description.host }}</p>
                                     <p>Clonality: {{ antibody.description.clonality }}</p>
                                     <p>Recombinant: {{antibody.description.recombinant}}</p>
+                                    {% if antibody.description.product_link %}
+                                      <a href="{{ antibody.description.product_link }}" target="_blank" class="product-link">
+                                         Find product here
+                                      </a>
+                                    {% endif %}
+
                                 {% endif %}
                             </td>
 
