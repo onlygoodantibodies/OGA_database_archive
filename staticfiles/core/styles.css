@@ -2324,3 +2324,16 @@ option {
     background-color: #f4f4f4;
 }
 
+.logo-home {
+    display: flex;
+    justify-content: left; /* Centers logo horizontally */
+    align-items: left; /* Centers logo vertically */
+    height: 100px; /* Adjust header height if needed */
+}
+
+.logo-home .logo-img {
+    width: 300px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent it from exceeding container */
+}
+
