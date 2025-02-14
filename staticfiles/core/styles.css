@@ -1955,30 +1955,30 @@ body.no-wobble .partner-grid {
     box-shadow: 0 0 0 2px rgba(0, 51, 153, 0.2);
 }
 /* Prevent scaling for the antibody table page */
+/* Prevent scaling for the antibody table page */
 .antibody-table-page {
-    min-width: 1024px; /* Set a minimum width for desktop layout */
+    width: 1024px; /* Use width instead of min-width */
     overflow-x: auto; /* Allow horizontal scrolling if needed */
+    transform: none; /* Ensure no scaling is applied */
 }
 
 /* Adjust Banner */
 .antibody-banner {
-    height: 150px; /* Reduce banner height */
+    height: 150px;
 }
 
 .antibody-banner .banner-text h2 {
-    font-size: 1.5rem; /* Smaller banner title */
-    line-height: 1.3; /* Adjust line height for readability */
+    font-size: 1.5rem;
+    line-height: 1.3;
 }
 
-
-/* Target the specific page with the 'antibody-table-page' class for small screens */
+/* Media Query for Small Screens */
 @media (max-width: 768px) {
     .antibody-table-page {
-        width: 1024px;        /* Keep the desktop width */
-        height: auto;         /* Ensure height adapts to content */
-        transform: none;      /* Remove scaling */
-        overflow-x: scroll;   /* Allow horizontal scrolling for wider content */
-        margin: 0 auto;       /* Center the page */
+        width: 100vw; /* Use full viewport width */
+        height: auto;
+        overflow-x: scroll; /* Horizontal scrolling for content overflow */
+        margin: 0 auto;
     }
 
     .antibody-table-page .container,
@@ -1986,9 +1986,10 @@ body.no-wobble .partner-grid {
     .antibody-table-page .filter-sidebar,
     .antibody-table-page .table-container,
     .antibody-table-page .antibody-banner {
-        width: 1024px;        /* Ensure all sections maintain the desktop width */
+        width: 100%; /* Stretch each section to fit the viewport width */
     }
 }
+
 
 /* No Results Message Styling */
 .no-results {
