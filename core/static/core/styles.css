@@ -448,6 +448,120 @@ nav ul li a:hover {
     }
 }
 
+/* Antibody Page Footer */
+/* Antibody Footer Styling */
+.antibody-footer {
+    width: 100vw;
+    padding: 40px 20px;
+    background-color: var(--main-blue);
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Footer Inner Container */
+.antibody-footer .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .antibody-footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Footer Columns */
+.antibody-footer {
+    width: 100%;               /* Full width */
+    padding: 40px 20px;
+    background-color: var(--main-blue);
+    color: #ffffff;
+    margin: 0;
+    box-sizing: border-box;    /* Ensure padding is included in the width calculation */
+}
+
+.antibody-footer .footer-column h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.antibody-footer .footer-column a {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.antibody-footer .footer-column a:hover {
+    color: #ffffff;
+}
+
+/* Social Media Icon */
+.antibody-footer .social-icon {
+    width: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.antibody-footer .social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Bottom Footer Styling */
+.antibody-footer .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #cccccc;
+    font-size: 0.9rem;
+}
+
+.antibody-footer .back-to-top {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.antibody-footer .back-to-top:hover {
+    color: #e0e0e0;
+}
+
+/* Footer Inner Container */
+.antibody-footer .footer-container {
+    max-width: 100%;           /* Ensure container stretches to full width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .antibody-footer {
+        width: 100vw;          /* Full viewport width */
+    }
+
+    .antibody-footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 /* Our Team Section */
 .our-team {
     text-align: center;
@@ -1991,7 +2105,24 @@ body.no-wobble .partner-grid {
     height: 150px;
     width: 100%;       /* Ensure it stretches the full width of its parent */
     background-size: cover; /* Cover the entire space if you are using a background image */
-    background-color: #005a8d; /* Add a background color if needed */
+    background-color: var(--main-blue); /* Add a background color if needed */
+}
+
+.antibody-banner .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    z-index: 2;
+    color: white;
+}
+
+.antibody-banner .banner-text h2 {
+    font-size: 2.5rem;
+    color: white !important;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
