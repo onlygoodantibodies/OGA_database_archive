@@ -1971,14 +1971,12 @@ body.no-wobble .partner-grid {
 }
 
 
-/* Target the specific page with the 'antibody-table-page' class for small screens */
 @media (max-width: 768px) {
     .antibody-table-page {
-        width: 1024px;        /* Keep the desktop width */
-        height: auto;         /* Ensure height adapts to content */
-        transform: none;      /* Remove scaling */
-        overflow-x: scroll;   /* Allow horizontal scrolling for wider content */
-        margin: 0 auto;       /* Center the page */
+        width: 1024px;  /* Fixed desktop-like width */
+        height: auto;
+        overflow-x: auto;  /* Allow horizontal scrolling */
+        margin: 0 auto;
     }
 
     .antibody-table-page .container,
@@ -1986,9 +1984,10 @@ body.no-wobble .partner-grid {
     .antibody-table-page .filter-sidebar,
     .antibody-table-page .table-container,
     .antibody-table-page .antibody-banner {
-        width: 1024px;        /* Ensure all sections maintain the desktop width */
+        width: 1024px;  /* Ensure all sections stay in desktop width */
     }
 }
+
 
 /* No Results Message Styling */
 .no-results {
