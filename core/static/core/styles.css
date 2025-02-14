@@ -2098,7 +2098,7 @@ body.no-wobble .partner-grid {
     .antibody-table-page .filter-sidebar,
     .antibody-table-page .table-container,
     .antibody-table-page .antibody-banner {
-        width: 1024px;  /* Ensure all sections stay in desktop width */
+        max-width: 1024px;  /* Ensure all sections stay in desktop width */
     }
 }
 .antibody-banner {
