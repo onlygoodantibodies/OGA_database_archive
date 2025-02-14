@@ -1987,6 +1987,29 @@ body.no-wobble .partner-grid {
         width: 1024px;  /* Ensure all sections stay in desktop width */
     }
 }
+.antibody-banner {
+    height: 150px;
+    width: 100%;       /* Ensure it stretches the full width of its parent */
+    background-size: cover; /* Cover the entire space if you are using a background image */
+    background-color: #005a8d; /* Add a background color if needed */
+}
+
+@media (max-width: 768px) {
+    .antibody-table-page {
+        width: 100vw;       /* Use the full viewport width */
+        height: auto;
+        overflow-x: auto;
+        margin: 0 auto;
+    }
+
+    .antibody-banner {
+        width: 100vw;       /* Ensure the banner stretches across the full viewport width */
+    }
+
+    .antibody-banner .banner-text h2 {
+        font-size: 1.2rem;
+    }
+}
 
 
 /* No Results Message Styling */
