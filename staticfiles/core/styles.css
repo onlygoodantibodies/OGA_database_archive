@@ -2251,17 +2251,39 @@ strong {
     color: var(--main-blue);
     font-weight: bold;
 }
+
 /* Responsive Design for Small Screens */
 @media (max-width: 768px) {
     .edu-container {
-        width: 90%; /* Make the container take more width on smaller screens */
-        align-items: center; /* Center the cards within the container */
+        width: 90%; /* Keep the container taking most of the width */
+        align-items: center; /* Center the cards */
     }
 
     .card {
-        width: 100%; /* Make cards take full width on small screens */
-        padding: 1.5rem; /* Reduce padding for smaller screens */
-        text-align: center; /* Center the text content */
+        width: 100%; /* Keep full width for better responsiveness */
+        padding: 1rem; /* Reduce padding to shrink the size */
+        text-align: center; /* Ensure text is centered */
+    }
+
+    .edu-box {
+        padding: 12px; /* Reduce padding for smaller size */
+        font-size: 14px; /* Adjust text size */
+        max-width: 90%; /* Keep them from taking up full width */
+        margin: 8px auto; /* Reduce margin for better spacing */
+    }
+
+    .edu-box h3 {
+        font-size: 1.1rem; /* Decrease heading size */
+    }
+
+    .edu-box p {
+        font-size: 0.9rem; /* Smaller paragraph text */
+        line-height: 1.3; /* Adjust spacing */
+    }
+
+    .learn-more-button {
+        padding: 6px 10px; /* Reduce button padding */
+        font-size: 0.85rem; /* Slightly smaller button text */
     }
 
     .edu-banner .banner-image {
@@ -2269,14 +2291,15 @@ strong {
     }
 
     .edu-content h2 {
-        font-size: 1.2rem; /* Smaller font size for headings */
-        text-align: center; /* Center the heading */
+        font-size: 1.2rem; /* Keep heading smaller */
+        text-align: center;
     }
 
     .edu-content p {
-        text-align: left; /* Keep paragraphs left-aligned */
+        text-align: left;
     }
 }
+
 
 /* General container for better layout */
 label {
