@@ -12,84 +12,82 @@
     <script>
         let geneCache = []; // Cache for gene names and elements
 
-// Debounce function to optimize input events
-function debounce(func, delay) {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), delay);
-    };
-}
-
-// Filter and display suggestions under the search bar
-function showSuggestions() {
-    const query = document.querySelector('.search-bar').value.toLowerCase().trim();
-    const suggestionBox = document.querySelector('.suggestion-box');
-    suggestionBox.innerHTML = ''; // Clear previous suggestions
-
-    let hasSuggestions = false;
-
-    if (query) {
-        geneCache.forEach(({ geneName }) => {
-            if (geneName.includes(query)) {
-                const suggestion = document.createElement('div');
-                suggestion.classList.add('suggestion');
-                suggestion.innerText = geneName;
-                suggestion.addEventListener('click', () => {
-                    const searchBar = document.querySelector('.search-bar');
-                    searchBar.value = geneName;  // Fill the search bar with the clicked suggestion
-                    suggestionBox.innerHTML = ''; // Clear suggestions
-                    document.querySelector('.search-container').submit();  // Automatically submit the form
+        // Debounce function to optimize input events
+        function debounce(func, delay) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+        
+        // Filter and display suggestions under the search bar
+        function showSuggestions() {
+            const query = document.querySelector('.search-bar').value.toLowerCase().trim();
+            const suggestionBox = document.querySelector('.suggestion-box');
+            suggestionBox.innerHTML = ''; // Clear previous suggestions
+        
+            let hasSuggestions = false;
+        
+            if (query) {
+                geneCache.forEach(({ geneName, geneId }) => {  // Include geneId for URL generation
+                    if (geneName.includes(query)) {
+                        const suggestion = document.createElement('div');
+                        suggestion.classList.add('suggestion');
+                        suggestion.innerText = geneName;
+                        suggestion.addEventListener('click', () => {
+                            window.location.href = `/${geneId}/`; // Redirect to the antibody page
+                        });
+                        suggestionBox.appendChild(suggestion);
+                        hasSuggestions = true;
+                    }
                 });
-                suggestionBox.appendChild(suggestion);
-                hasSuggestions = true;
             }
-        });
-    }
-
-    suggestionBox.style.display = hasSuggestions ? 'block' : 'none';
-}
-
-
-// Handle search on Enter key
-function handleSearch(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        const query = document.querySelector('.search-bar').value.toLowerCase().trim();
-        const noResultsMessage = document.getElementById('no-results-message');
-        let hasResults = false;
-
-        geneCache.forEach(({ geneName, element }) => {
-            if (geneName.includes(query)) {
-                element.style.display = '';  // Show matching boxes
-                hasResults = true;
-            } else {
-                element.style.display = 'none';  // Hide non-matching boxes
+        
+            suggestionBox.style.display = hasSuggestions ? 'block' : 'none';
+        }
+        
+        // Handle search on Enter key
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const query = document.querySelector('.search-bar').value.toLowerCase().trim();
+                const noResultsMessage = document.getElementById('no-results-message');
+                let hasResults = false;
+        
+                geneCache.forEach(({ geneName, element }) => {
+                    if (geneName.includes(query)) {
+                        element.style.display = '';  // Show matching boxes
+                        hasResults = true;
+                    } else {
+                        element.style.display = 'none';  // Hide non-matching boxes
+                    }
+                });
+        
+                noResultsMessage.style.display = query && !hasResults ? 'block' : 'none';
+                document.querySelector('.suggestion-box').style.display = 'none'; // Hide suggestions after search
             }
+        }
+        
+        // Cache the gene names and DOM elements on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const geneBoxes = document.querySelectorAll('.gene-box');
+            const searchBar = document.querySelector('.search-bar');
+            const suggestionBox = document.createElement('div');
+            suggestionBox.classList.add('suggestion-box');
+            document.querySelector('.search-container').appendChild(suggestionBox); // Add the suggestion box below the search bar
+        
+            // Cache gene names and elements
+            geneBoxes.forEach((box) => {
+                const geneName = box.querySelector('h3').innerText.toLowerCase();
+                const geneId = box.getAttribute('data-gene-id'); // Get the gene's unique ID
+                geneCache.push({ geneName, geneId, element: box });
+            });
+        
+            searchBar.addEventListener('input', debounce(showSuggestions, 300));
+            searchBar.addEventListener('keypress', handleSearch);
         });
-
-        noResultsMessage.style.display = query && !hasResults ? 'block' : 'none';
-        document.querySelector('.suggestion-box').style.display = 'none'; // Hide suggestions after search
-    }
-}
-
-// Cache the gene names and DOM elements on page load
-document.addEventListener('DOMContentLoaded', function () {
-    const geneBoxes = document.querySelectorAll('.gene-box');
-    const searchBar = document.querySelector('.search-bar');
-    const suggestionBox = document.createElement('div');
-    suggestionBox.classList.add('suggestion-box');
-    document.querySelector('.search-container').appendChild(suggestionBox); // Add the suggestion box below the search bar
-
-    // Cache gene names and elements
-    geneBoxes.forEach((box) => {
-        const geneName = box.querySelector('h3').innerText.toLowerCase();
-        geneCache.push({ geneName, element: box });
-    });
-
-    searchBar.addEventListener('input', debounce(showSuggestions, 300));
-    searchBar.addEventListener('keypress', handleSearch);
-});
+        
     </script>
 </head>
 <body class="home-page">
@@ -151,18 +149,19 @@ document.addEventListener('DOMContentLoaded', function () {
     </section>
 
     <!-- Gene List Section -->
-    <section class="gene-list">
-      <h2>Genes Available</h2>
-      <div class="gene-list-container">
-      {% for gene in genes %}
-      <div class="gene-box" data-name="{{ gene.name }}">
-         <h3>{{ gene.name }}</h3>
-         <p>Related Antibodies: {{ gene.antibodies.count }}</p>
-         <a href="{% url 'antibody_table' gene.id %}" class="details-button">View Details</a>
-      </div>
-    {% endfor %}
+<section class="gene-list">
+    <h2>Genes Available</h2>
+    <div class="gene-list-container">
+        {% for gene in genes %}
+        <div class="gene-box" data-name="{{ gene.name }}" data-gene-id="{{ gene.id }}">
+            <h3>{{ gene.name }}</h3>
+            <p>Related Antibodies: {{ gene.antibodies.count }}</p>
+            <a href="{% url 'antibody_table' gene.id %}" class="details-button">View Details</a>
+        </div>
+        {% endfor %}
     </div>
-    </section>
+</section>
+
 
     <!-- No Results Message -->
     <div id="no-results-message" class="no-results">
