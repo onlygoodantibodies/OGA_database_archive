@@ -2454,31 +2454,46 @@ option {
     transform: translateY(-2px); /* Add a slight lift effect */
 }
 
+/* Ensure the blue background stretches full width */
 .search-bar-wrapper {
     position: relative;
+    width: 100%; /* Ensures the blue background spans the full width */
+    background-color: var(--main-blue); /* Keep the blue background */
+    padding: 20px 0; /* Add padding to make the area look balanced */
+    display: flex;
+    justify-content: center; /* Center the search bar */
 }
 
+/* Fix search bar size */
+.search-bar {
+    width: 100%; /* Make sure it fills the available space */
+    max-width: 700px; /* Increased by 50px from previous 440px */
+    padding: 16px; /* Keeps the latest increased padding */
+    font-size: 16px; /* Keep text size the same */
+    border-radius: 5px; /* Keep nice rounded edges */
+}
+
+/* Ensure the suggestion box matches the search bar */
 .suggestion-box {
     display: none;
     position: absolute;
-    top: calc(100% + 5px);  /* Directly below the search bar with 5px spacing */
-    left: 0;
-    width: 100%;  /* Matches the width of the search bar */
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%); /* Center it under the search bar */
+    width: 100%;
+    max-width: 700px; /* Increased by 50px from previous 440px */
     background-color: white;
     border: 1px solid #ddd;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    max-height: 200px;
+    max-height: 250px; /* Keeps it taller for better visibility */
     overflow-y: auto;
     border-radius: 4px;
 }
 
-.search-bar-wrapper {
-    position: relative;  /* Ensures the suggestion box is positioned relative to this wrapper */
-}
-
+/* Style for each suggestion */
 .suggestion {
-    padding: 12px 15px;
+    padding: 16px 15px; /* Keep the padding consistent */
     font-size: 14px;
     text-transform: uppercase;
     color: #333;
@@ -2489,6 +2504,29 @@ option {
 .suggestion:hover {
     background-color: #f4f4f4;
 }
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .search-bar-wrapper {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .search-bar {
+        max-width: 390px; /* Increased mobile width by 50px */
+        padding: 16px; /* Keep increased padding for uniformity */
+    }
+
+    .suggestion-box {
+        max-width: 500px; /* Match mobile search bar width */
+        max-height: 250px; /* Keep visibility consistent */
+    }
+
+    .suggestion {
+        padding: 16px 15px; /* Keep suggestion padding consistent with search bar */
+    }
+}
+
 
 .logo-home {
     display: flex;
