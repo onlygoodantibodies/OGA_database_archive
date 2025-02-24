@@ -2704,3 +2704,13 @@ option {
         font-size: 1.1rem; /* Slightly smaller for mobile */
     }
 }
+/* Beta Test Banner */
+.beta-test-notice {
+    text-align: center;
+    background-color: #f0f0f0; /* Light gray for subtle contrast */
+    color: #333;
+    font-weight: 500;
+    font-size: 0.65rem;  /* Slightly smaller font size */
+    margin-top: 5px;
+    border-radius: 2px;
+}

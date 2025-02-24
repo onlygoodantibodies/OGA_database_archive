@@ -4,6 +4,7 @@ from django.db import models
 
 class Gene(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    citation = models.TextField(blank=True, null=True)
     wb_image = models.ImageField(upload_to="gene_experiments/", null=True, blank=True)  # Western Blot
     ip_image = models.ImageField(upload_to="gene_experiments/", null=True, blank=True)  # IP
     icc_if_image = models.ImageField(upload_to="gene_experiments/", null=True, blank=True)  # ICC-IF

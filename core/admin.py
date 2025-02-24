@@ -6,7 +6,7 @@ from .models import Gene, Antibody, Experiment, Description
 
 # Gene Admin
 class GeneAdmin(admin.ModelAdmin):
-    fields = ('name', 'wb_image', 'ip_image', 'icc_if_image', 'fc_image', 'f1000_report_link')
+    fields = ('name', 'wb_image', 'ip_image', 'icc_if_image', 'fc_image', 'f1000_report_link', 'citation')
 
 
 # Inline class for Description
