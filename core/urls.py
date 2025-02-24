@@ -1,6 +1,5 @@
-
 from django.urls import path
-from . import views  
+from . import views 
 
 urlpatterns = [
     path('', views.home, name='home'),  # Home page
@@ -13,4 +12,5 @@ urlpatterns = [
     path('publications/', views.publications, name='publications'),  # Publications page
     path('resources/', views.resources, name='resources'),
     path('<int:gene_id>/', views.antibody_table, name='antibody_table'),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
 ]

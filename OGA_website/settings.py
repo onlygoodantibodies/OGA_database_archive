@@ -138,3 +138,30 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'onlygoodantibodies@gmail.com'  
 EMAIL_HOST_PASSWORD = 'xaeedguhnmgunirk'
 
+####################
+## Todo: Fix this ##
+####################
+
+# Protect Session and CSRF Cookies
+SESSION_COOKIE_HTTPONLY = True  # Prevents JavaScript from accessing session cookies
+CSRF_COOKIE_HTTPONLY = True     # Prevents JavaScript from accessing CSRF tokens
+
+# Enforce Secure Cookies (Only over HTTPS)
+SESSION_COOKIE_SECURE = True  # Forces HTTPS-only cookies (prevents theft over HTTP)
+CSRF_COOKIE_SECURE = True     # Forces CSRF cookie over HTTPS
+
+# Restrict Cookie Access to Your Website (Prevents Cross-Site Attacks)
+SESSION_COOKIE_SAMESITE = 'Lax'  # Allows normal login but prevents CSRF attacks
+CSRF_COOKIE_SAMESITE = 'Strict'  # Ensures CSRF token is only sent from your site
+
+# Set Session Expiry (Auto Logout After 30 Minutes)
+SESSION_COOKIE_AGE = 1800  # 30 minutes 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # Logs out when browser closes
+
+# Secure Django session cookie
+SESSION_COOKIE_NAME = "sessionid"  # Default session cookie name
+SESSION_COOKIE_HTTPONLY = True  # Prevent JavaScript from accessing session
+SESSION_COOKIE_SECURE = True  # Only send session cookie over HTTPS
+SESSION_COOKIE_SAMESITE = "Lax"  # Prevent cross-site attacks
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # Destroy session when browser closes
+SESSION_COOKIE_AGE = 1800  # Auto logout after 30 minutes

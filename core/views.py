@@ -138,3 +138,21 @@ def antibody_table(request, gene_id):
         "recombinant_options": recombinant_options,
     })
 
+from django.shortcuts import render, redirect
+
+def set_dark_mode(request):
+    response = redirect('home')  # Redirect back to homepage
+    response.set_cookie(
+        'dark_mode',  # Cookie name
+        'enabled',  # Cookie value
+        max_age=60*60*24*30,  # 30 days expiration
+        secure=True,  # Works only on HTTPS
+        httponly=True,  # Cannot be accessed by JavaScript
+        samesite='Lax'  # Restrict cookie sharing across sites
+    )
+    return response
+
+from django.shortcuts import render
+
+def privacy_policy(request):
+    return render(request, 'core/privacy_policy.html')

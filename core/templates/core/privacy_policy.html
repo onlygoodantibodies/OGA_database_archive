@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Load Static Files -->
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+    <titl<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Load Static Files -->
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+    <title>Privacy Policy</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'core/up-logo.ico' %}">
+
+</head>
+<body class="policy-page">
+
+        {% include 'core/cookie_banner.html' %}
+        <script src="{% static 'core/script.js' %}"></script>
+        
+            <!-- Header Section -->
+            <header class="header">
+                <div class="logo">
+                    <a href="{% url 'home' %}"> <!-- Link to the home page -->
+                        <img src="{% static 'core/logo.png' %}" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+               
+        
+            <!-- Hamburger Icon -->
+            <div class="hamburger">☰</div>
+        
+            <!-- Navigation Menu -->
+                <nav>
+                    <ul class="menu">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'publications' %}">Publications</a></li>
+                        <li><a href="{% url 'projects' %}">Projects</a></li>
+                        <li><a href="{% url 'news' %}">News</a></li>
+                        <li><a href="{% url 'partners' %}" class="active">Partners</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        
+            <!-- Banner Section for Partners Page -->
+            <section class="banner about-banner">
+                <div class="banner-text">
+                    <h2 style="color: white;">Privacy Policy</h2>
+                </div>
+            </section>
+        
+    <section class="policy-content">
+        <p>The Only Good Antibodies Community (OGA) is committed to protecting your privacy in accordance with the <strong>UK General Data Protection Regulation (UK GDPR)</strong> and the <strong>Privacy and Electronic Communications Regulations (PECR)</strong>. This policy outlines how we collect, use, and safeguard your personal data when you use this website.</p>
+
+        <div class="policy-section">
+            <h2>Who We Are</h2>
+            <p>This website is operated by Only Good Antibodies Community. For any queries, contact us at:</p>
+            <p>Email: onlygoodantibodies@gmail.com</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Information We Collect</h2>
+            <p>We collect and process personal data when you interact with our website, such as:</p>
+            <p>- Data provided via contact forms.</p>
+            <p>- Technical data like IP addresses, browser type, and usage analytics.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Use of Cookies</h2>
+            <p>Cookies are small text files stored on your device to enhance user experience.</p>
+            <p><strong>Essential Cookies:</strong> Required for core website functionality.</p>
+            <p><strong>Analytics Cookies:</strong> Help us understand user behavior through tools like Google Analytics.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Google Analytics</h2>
+            <p>We use Google Analytics to measure website usage and improve functionality.</p>
+            <table>
+                <tr>
+                    <th>Cookie</th>
+                    <th>Purpose</th>
+                    <th>Expiration</th>
+                </tr>
+                <tr>
+                    <td>_ga</td>
+                    <td>Distinguishes users</td>
+                    <td>2 years</td>
+                </tr>
+                <tr>
+                    <td>_gid</td>
+                    <td>Tracks user sessions</td>
+                    <td>24 hours</td>
+                </tr>
+            </table>
+            <p>Google anonymizes IP addresses where possible. You can opt-out via the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Opt-Out Tool</a> or manage your cookie preferences on our site.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>How We Use Your Data</h2>
+            <p>We use collected data to:</p>
+            <p>- Improve website functionality.</p>
+            <p>- Monitor site performance.</p>
+            <p>- Ensure website security.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Your Rights</h2>
+            <p>Under UK GDPR, you have rights over your personal data, including:</p>
+            <p>- Right to access, correct, or delete your data.</p>
+            <p>- Right to withdraw consent.</p>
+            <p>- Right to object to data processing.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Managing Cookies</h2>
+            <p>Control cookies via your browser settings or through our Cookie Banner. Additional opt-out options:</p>
+            <p>- <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-Out</a></p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Updates to This Policy</h2>
+            <p>This policy may be updated to reflect legal or website changes. The most recent version will always be available here.</p>
+        </div>
+    </section>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Quick Links Column -->
+        <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="{% url 'home' %}"class="active">Home</a>
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'publications' %}">Publications</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'news' %}">News</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+
+        <!-- Contact Information Column -->
+        <div class="footer-column">
+            <h4>Contact Us</h4>
+            <p>Email: onlygoodantibodies@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">Follow us on LinkedIn</a></p>
+            <p>X: <a href="https://x.com/OGA_Community" target="_blank">Follow us on X</a></p>
+        </div>
+
+        <!-- Social Media Column -->
+        <div class="footer-column">
+            <h4>Follow Us</h4>
+            <a href="https://www.linkedin.com/company/onlygoodantibodies-community-and-forum/posts/?feedView=all" target="_blank">
+                <img src="{% static 'core/linkedin-logo.webp' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://x.com/OGA_Community" target="_blank">
+                <img src="{% static 'core/x.png' %}" alt="LinkedIn" class="social-icon">
+            </a>
+            <!-- Add other social media icons here -->
+        </div>
+    </div>
+
+    <!-- Bottom Footer with Copyright and Back to Top -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Better Antibodies Community. All Rights Reserved.</p>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">Back to Top</button>
+    </div>
+</footer>
+
+<script src="{% static 'core/script.js' %}"></script>
+    
+
+</body>
+</html>

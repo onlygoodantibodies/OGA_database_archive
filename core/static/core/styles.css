@@ -2565,3 +2565,142 @@ option {
     max-width: 100%; /* Prevent it from exceeding container */
 }
 
+/* Cookie Banner Styling */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.95); /* Light and modern look */
+    color: #333; /* Dark text for readability */
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    z-index: 9999;
+}
+
+/* Cookie Banner Buttons */
+.cookie-banner button {
+    background: var(--main-blue); /* Your primary color */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 8px 5px;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.cookie-banner button:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Link Styling */
+.cookie-banner a {
+    color: var(--main-blue);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.cookie-banner a:hover {
+    color: #0056b3;
+}
+
+/* Privacy & Cookie Policy Styling */
+.policy-page {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.policy-header {
+    background-color: var(--main-blue);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.policy-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.policy-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for policy sections */
+.policy-section {
+    border-left: 4px solid var(--main-blue); /* Side border for styling */
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+/* Style for headers to be smaller and to the side */
+.policy-section h2 {
+    font-size: 1.3rem;
+    color: var(--main-blue);
+    margin-bottom: 5px;
+}
+
+.policy-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Table Styling */
+.policy-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.policy-content table, .policy-content th, .policy-content td {
+    border: 1px solid #ddd;
+}
+
+.policy-content th, .policy-content td {
+    padding: 10px;
+    text-align: left;
+}
+
+.policy-footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--main-blue);
+    color: white;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .policy-content {
+        width: 90%;
+    }
+
+    .policy-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .policy-footer {
+        font-size: 0.9rem;
+    }
+
+    .policy-section h2 {
+        font-size: 1.1rem; /* Slightly smaller for mobile */
+    }
+}

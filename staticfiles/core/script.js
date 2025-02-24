@@ -20,3 +20,54 @@ document.querySelectorAll('nav ul li a').forEach(function (link) {
         document.querySelector('nav ul').classList.remove('show'); // Close menu
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cookieBanner = document.getElementById("cookie-banner");
+    const acceptButton = document.getElementById("accept-cookies");
+    const rejectButton = document.getElementById("reject-cookies");
+
+    // Check if user already made a choice
+    const cookiesAccepted = document.cookie.includes("cookies_accepted=true");
+
+    if (cookiesAccepted || document.cookie.includes("cookies_accepted=false")) {
+        cookieBanner.style.display = "none"; // Hide banner if choice was made
+    }
+
+// Function to load Google Analytics if cookies are accepted
+function loadGoogleAnalytics() {
+    // Load the Google Analytics script
+    const scriptTag = document.createElement("script");
+    scriptTag.async = true;
+    scriptTag.src = "https://www.googletagmanager.com/gtag/js?id=G-10W2PEF9SW";
+    document.head.appendChild(scriptTag);
+
+    scriptTag.onload = function () {
+        // Initialize Google Analytics
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        
+        gtag('js', new Date());
+
+        // Configure Google Analytics with your Measurement ID
+        gtag('config', 'G-10W2PEF9SW', { 'anonymize_ip': true }); // GDPR compliance
+    };
+}
+
+    // If cookies are already accepted, load Google Analytics
+    if (cookiesAccepted) {
+        loadGoogleAnalytics();
+    }
+
+    // Accept Cookies
+    acceptButton.addEventListener("click", function () {
+        document.cookie = "cookies_accepted=true; max-age=" + 60 * 60 * 24 * 30 + "; path=/";
+        cookieBanner.style.display = "none";
+        loadGoogleAnalytics(); // Load Google Analytics immediately without refreshing
+    });
+
+    // Reject Cookies
+    rejectButton.addEventListener("click", function () {
+        document.cookie = "cookies_accepted=false; max-age=" + 60 * 60 * 24 * 30 + "; path=/";
+        cookieBanner.style.display = "none";
+    });
+});
