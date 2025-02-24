@@ -46,6 +46,11 @@
         </div>
     </section>
 
+    <div class="beta-test-notice" style="padding: 10px 0; font-size: 0.9rem; margin-top: 3px; margin-bottom: 3px; line-height: 1;">
+        This website is a beta test
+    </div>
+    
+
     <div class="content">
         <div class="container">
             <aside class="filter-sidebar">
@@ -59,7 +64,7 @@
                 <!-- Filter Sidebar -->
                 <form method="get">
                     <h3>Filter Antibodies</h3>
-                    
+
                     <!-- Host Filter -->
                     <div class="filter-group">
                         <label for="host">Host</label>
@@ -112,12 +117,13 @@
               <div class="divider-line"></div>
             </section>     
   
-            <div class="cite-data-section">
-              <h1>Cite this Data</h1>
-              <p>Something will go here</p>
-              <p>Something will go here</p>
-              <p>Something will go here</p>
-          </div>      
+            {% if gene.citation %}
+    <div class="cite-data-section">
+        <h1>Cite this Data</h1>
+        <p>{{ gene.citation|linebreaks }}</p> <!-- Ensures line breaks appear properly -->
+    </div>
+            {% endif %}
+
       </aside>  
             <!-- Table Container -->
             <main class="table-container">
