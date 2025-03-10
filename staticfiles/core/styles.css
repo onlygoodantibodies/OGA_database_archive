@@ -1823,27 +1823,36 @@ body.no-wobble .partner-grid {
     }
 }
 
-
 /* Sticky Filter Sidebar */
 .filter-sidebar {
-    position: sticky; /* Make the sidebar stick */
-    top: 20px; /* Distance from the top of the viewport */
-    width: 250px; /* Maintain the width */
+    position: sticky; /* Keep sidebar sticky */
+    top: 20px; /* Start sticking from here */
+    width: 220px; /* Keep consistent width */
     padding: 15px;
-    background-color: var(--light-gray); /* Light gray background */
+    background-color: var(--light-gray); /* Background color */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for modern look */
-    font-family: Arial, sans-serif; /* Ensure a clean font */
-    color: var(--text-gray); /* Text gray */
-    margin-right: 20px; /* Add space to the right */
-    height: fit-content; /* Adjust height dynamically */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    font-family: Arial, sans-serif; /* Clean font */
+    color: var(--text-gray); /* Keep text consistent */
+    margin-right: 20px; /* Right margin */
+    
+    /*  Make sure it scrolls when needed */
+    max-height: calc(100vh - 40px); /* Adjust based on viewport height */
+    overflow-y: auto; /* Enable internal scrolling if content is too long */
+    padding-bottom: 20px; /* Ensure spacing */
+}
+
+/*  Prevent main content from overlapping */
+.main-content {
+    margin-left: 220px; /* Ensure sidebar and content don't overlap */
+    padding: 20px;
 }
 
 .cite-data-section {
     background-color: var(--main-blue); /* Blue background */
     color: #fff; /* White text color */
-    padding: 20px; /* Add padding for spacing inside the box */
-    border: 2px solid var(--main-blue); /* Main blue border */
+    padding: 10px; /* Add padding for spacing inside the box */
+    border: 1px solid var(--main-blue); /* Main blue border */
     border-radius: 8px; /* Optional: rounded corners */
 }
 
@@ -1857,7 +1866,7 @@ body.no-wobble .partner-grid {
 
 .cite-data-section p {
     color: var(--light-gray); /* Optional: light gray text for paragraph */
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 14px; /* Adjust font size as needed */
     text-align: center;
 }
 

@@ -71,3 +71,4 @@ function loadGoogleAnalytics() {
         cookieBanner.style.display = "none";
     });
 });
+
