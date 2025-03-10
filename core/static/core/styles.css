@@ -1565,10 +1565,12 @@ body.no-wobble .partner-grid {
     position: sticky; /* Makes the row sticky */
     top: 0; /* Sticks to the top of the viewport */
     z-index: 10; /* Ensures it stays above other rows */
-    background-color: white; /* Keeps a consistent background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds subtle shadow to differentiate it */
+    background-color:  #eef2f5; /* Light blue tint for subtle contrast */
+    border: 2px solid #10428a; /* Slightly stronger blue border */
+    border-radius: 8px; /* Soft rounded edges */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    padding: 18px; /* Keeps spacing consistent */
 }
-
 
 /* Header Labels */
 .header-label {
@@ -1962,25 +1964,14 @@ body.no-wobble .partner-grid {
 }
 
 .f1000-link {
-    display: inline-block; /* Allows width to be content-based */
-    max-width: 90%; /* Prevent stretching across entire sidebar */
-    text-align: center; /* Center text within the link */
-    text-decoration: underline z\\; /* Remove the underline */
-    background-color: #10428a; /* Maintain background color */
-    color: white; /* Maintain text color */
-    padding: 12px 15px; /* Add padding for a button-like appearance */
-    border-radius: 4px; /* Rounded corners */
-    transition: 
-        background-color 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.2s ease;
+    display: inline; /* Inline makes it behave like a normal link */
+    text-decoration: underline; /* Adds a proper underline */
+    font-weight: bold; /* Enhances visibility */
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
-.f1000-link:hover {
-    background-color: #10428a; /* Darker blue on hover */
-    box-shadow: 0 4px 6px rgba(8, 48, 101, 0.2); /* Soft shadow on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
-}
+
+
 
 /* Filter Sidebar Styling */
 .filter-sidebar {
@@ -1996,8 +1987,7 @@ body.no-wobble .partner-grid {
 .f1000-link {
     display: block;
     width: 100%;
-    background-color: #10428a;
-    color: white;
+    color: #10428a;
     border: none;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -2036,12 +2026,6 @@ body.no-wobble .partner-grid {
 }
 
 
-.filter-button:hover,
-.f1000-link:hover {
-    background-color: #10428a;
-    box-shadow: 0 4px 6px rgba(8, 48, 101, 0.2);
-    transform: translateY(-2px);
-}
 
 .filter-button:active,
 .f1000-link:active {
