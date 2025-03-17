@@ -72,3 +72,48 @@ function loadGoogleAnalytics() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const copyButton = document.getElementById("copy-btn");
+    const citationText = document.getElementById("citation-text");
+
+    // Check if elements exist before adding event listeners
+    if (!copyButton) {
+        console.error("Copy button not found!");
+        return;
+    }
+
+    if (!citationText) {
+        console.error("Citation text not found!");
+        return;
+    }
+
+    copyButton.addEventListener("click", function () {
+        console.log("Citation Text:", citationText.innerText); // Debugging
+
+        if (citationText.innerText.trim() === "") {
+            console.error("Citation text is empty!");
+            return;
+        }
+
+        navigator.clipboard.writeText(citationText.textContent.trim())
+            .then(() => {
+                alert("Citation copied to clipboard!");
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const citationText = document.getElementById("citation-text");
+
+    if (!citationText) {
+        console.error("Citation text element not found!");
+        return;
+    }
+
+    console.log("Raw Citation Content:", citationText.innerHTML); // Log the raw HTML content
+    console.log("Processed Citation Content:", citationText.innerText.trim()); // Log the processed text
+});
+

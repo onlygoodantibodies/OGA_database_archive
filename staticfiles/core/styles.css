@@ -2707,17 +2707,36 @@ option {
     margin-top: 5px;
     border-radius: 2px;
 }
-.copy-btn {
-    background-color: #10428a; /* Dark blue */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+
+/* Container for the citation text and button */
+.cite-data-section {
+    text-align: center; /* Center everything inside */
+    padding: 20px; /* Adds spacing inside the section */
 }
 
-.copy-btn:hover {
-    background-color: #0b346a; /* Slightly darker blue */
+/* Style the Copy Citation Button */
+#copy-btn {
+    display: inline-block;
+    background-color: white; /* White background by default */
+    color: var(--main-blue); /* Main blue text */
+    text-decoration: none; /* No underline initially */
+    border: 1px solid white; /* White thin border */
+    padding: 5px 12px; /* Keeps it thin */
+    font-size: 14px; /* Slightly smaller text */
+    font-weight: normal; /* Not too bold */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    margin-top: 10px; /* Space between citation text and button */
+}
+
+/* Hover effect */
+#copy-btn:hover {
+    text-decoration: underline; /* Underlined text on hover */
+    transform: translateY(-1px); /* Subtle lift effect */
+}
+
+/* Active click effect */
+#copy-btn:active {
+    transform: translateY(0px); /* Resets after click */
 }

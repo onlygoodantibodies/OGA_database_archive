@@ -120,9 +120,12 @@
             {% if gene.citation %}
     <div class="cite-data-section">
         <h1 style="color: white;">Cite this Data</h1>
-        <p>{{ gene.citation|linebreaks }}</p> <!-- Ensures line breaks appear properly -->
+        <span id="citation-text">{{ gene.citation }}</span>
+        <button id="copy-btn">Copy Citation</button> <!-- Add this button -->
     </div>
-            {% endif %}
+{% endif %}
+
+        
 
       </aside>  
             <!-- Table Container -->
@@ -142,6 +145,7 @@
                         <tbody>
                             <tr>
                                 <td class="antibody-details">
+                                    <h3> Example</h3>
                                     <h3>High-performing Antibody</h3>
                                     <p>An example of a high-performing antibody.</p>
                                 </td>
