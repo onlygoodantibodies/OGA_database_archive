@@ -13,7 +13,7 @@ class GeneAdmin(admin.ModelAdmin):
 class DescriptionInline(admin.StackedInline):
     model = Description
     extra = 1
-    fields = ('rrid', 'supplier', 'host', 'clonality', 'recombinant', 'product_link')
+    fields = ('rrid', 'supplier', 'host', 'clonality', 'clone_ID','recombinant', 'product_link')
 
 
 # Antibody Admin

@@ -2010,7 +2010,7 @@ body.no-wobble .partner-grid {
     border-radius: 4px;
     padding: 12px 15px;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 .filter-button {
@@ -2706,4 +2706,18 @@ option {
     font-size: 0.65rem;  /* Slightly smaller font size */
     margin-top: 5px;
     border-radius: 2px;
+}
+.copy-btn {
+    background-color: #10428a; /* Dark blue */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #0b346a; /* Slightly darker blue */
 }

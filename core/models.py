@@ -44,6 +44,7 @@ class Description(models.Model):
     supplier = models.CharField(max_length=255, blank=True, null=True)
     host = models.CharField(max_length=100, blank=True, null=True)
     clonality = models.CharField(max_length=100, blank=True, null=True)
+    clone_ID = models.CharField(max_length=100, blank=True, null=True)
     recombinant = models.CharField(max_length=100, blank=True, null=True)
     product_link= models.CharField(max_length=255, blank=True, null=True )
 
