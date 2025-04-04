@@ -1538,11 +1538,13 @@ body.no-wobble .partner-grid {
     padding: 0 10px; /* Add padding for mobile screens */
 }
 }
+
 /* Table Container */
 .table-container {
     width: 100%;
-    margin: 20px auto;
-    padding: 0 10px; /* Add side padding for small screens */
+    max-width: 1600px; /* Allow more width overall */
+    margin: 30px auto;
+    padding: 0 20px; /* Increased side padding */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1551,84 +1553,100 @@ body.no-wobble .partner-grid {
 /* Row Box */
 .row-box {
     border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: 20px 0;
-    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    padding: 24px;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 95%;
-    max-width: 1400px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08);
+    width: 98%; /* Wider content */
+    max-width: 1600px;
     box-sizing: border-box;
 }
-/* Make the Ideal Antibody Row Sticky */
+
+/* Ideal Antibody Row */
 .ideal-antibody-row {
-    position: sticky; /* Makes the row sticky */
-    top: 0; /* Sticks to the top of the viewport */
-    z-index: 10; /* Ensures it stays above other rows */
-    background-color:  #eef2f5; /* Light blue tint for subtle contrast */
-    border: 2px solid #10428a; /* Slightly stronger blue border */
-    border-radius: 8px; /* Soft rounded edges */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
-    padding: 18px; /* Keeps spacing consistent */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #eef2f5;
+    border: 2px solid #10428a;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    padding: 20px;
 }
 
 /* Header Labels */
 .header-label {
     color: var(--main-blue);
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
 }
 
 /* Antibody Details */
 .antibody-details {
     text-align: left;
-    font-size: 0.9rem;
-    font-weight: normal;
-    width: 25%;
+    font-size: 1rem;
+    width: 28%;
 }
 
 .antibody-details h3 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
     color: var(--main-blue);
+    text-align: left; /* Aligns the text to the left */
 }
+
 
 .antibody-details p {
-    margin: 5px 0;
+    margin: 6px 0;
     color: var(--text-gray);
+    font-size: 0.9rem;
 }
 
-/* Style for links in the description */
+/* Description Links */
 .antibody-details a {
-    color: #666; /* Matches the text-gray variable */
-    text-decoration: none; /* Removes underline by default */
+    color: #666;
+    text-decoration: none;
 }
 
 .antibody-details a:hover {
-    text-decoration: underline; /* Adds underline on hover */
+    text-decoration: underline;
 }
 
-/* Experiment Boxes */
 .experiment-box {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 240px; /* Slightly smaller for better fit */
+    aspect-ratio: 1 / 1; /* Keeps the box square */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
-    width: 90%; /* Responsive width */
-    max-width: 270px; /* Limit maximum size */
-    height: auto; /* Allow flexible height */
-    margin: 0 auto; /* Center the box */
+    overflow: hidden;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .experiment-box img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    display: block;
 }
+
+/* On smaller screens, reduce box size */
+@media (max-width: 768px) {
+    .experiment-box {
+        max-width: 100px;
+        aspect-ratio: 1 / 1;
+        padding: 5px;
+    }
+}
+
+  
 /* Search Bar Wrapper */
 .search-bar-wrapper {
     width: 100%; /* Full width below the header */
@@ -1674,7 +1692,6 @@ body.no-wobble .partner-grid {
 
 
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .search-container {
@@ -1708,9 +1725,13 @@ body.no-wobble .partner-grid {
     border: 1px solid #dce7f5;
     border-radius: 8px;
     padding: 20px;
-    width: 300px;
+    width: 260px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .edu-box h3 {
@@ -1723,6 +1744,7 @@ body.no-wobble .partner-grid {
     font-size: 14px;
     color: #555;
     margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .learn-more-button {
@@ -1735,6 +1757,8 @@ body.no-wobble .partner-grid {
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s;
+    width: fit-content;         /* makes button only as wide as text */
+    margin: 0 auto;             /* centers it inside the box */
 }
 
 .learn-more-button:hover {
@@ -1823,250 +1847,18 @@ body.no-wobble .partner-grid {
     }
 }
 
-/* Sticky Filter Sidebar */
-.filter-sidebar {
-    position: sticky; /* Keep sidebar sticky */
-    top: 20px; /* Start sticking from here */
-    width: 220px; /* Keep consistent width */
-    padding: 15px;
-    background-color: var(--light-gray); /* Background color */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    font-family: Arial, sans-serif; /* Clean font */
-    color: var(--text-gray); /* Keep text consistent */
-    margin-right: 20px; /* Right margin */
-    
-    /*  Make sure it scrolls when needed */
-    max-height: calc(100vh - 40px); /* Adjust based on viewport height */
-    overflow-y: auto; /* Enable internal scrolling if content is too long */
-    padding-bottom: 20px; /* Ensure spacing */
-}
-
-/*  Prevent main content from overlapping */
-.main-content {
-    margin-left: 220px; /* Ensure sidebar and content don't overlap */
-    padding: 20px;
-}
-
-.cite-data-section {
-    background-color: var(--main-blue); /* Blue background */
-    color: #fff; /* White text color */
-    padding: 10px; /* Add padding for spacing inside the box */
-    border: 1px solid var(--main-blue); /* Main blue border */
-    border-radius: 8px; /* Optional: rounded corners */
-}
-
-/* Adjust heading and paragraph styles */
-.cite-data-section h1 {
-    margin-top: 0; /* Remove default margin for h1 */
-    color: #fff; /* Ensure heading is white */
-    font-size: 24px; /* Adjust font size as needed */
-    text-decoration: underline;
-}
-
-.cite-data-section p {
-    color: var(--light-gray); /* Optional: light gray text for paragraph */
-    font-size: 14px; /* Adjust font size as needed */
-    text-align: center;
-}
 
 
-
-/* Other existing styles */
-.filter-sidebar h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: var(--main-blue); /* Main blue for the title */
-    font-weight: bold;
-    text-align: center;
-}
-
-.filter-group {
-    margin-bottom: 15px;
-}
-
-.filter-group p {
-    text-align: center;
-}
-
-
-.filter-group h1 {
-    text-decoration: underline;
-    color: var(--main-blue);
-    font-weight:bolder;
-    text-align: center;
-}
-
-
-.filter-group label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: var(--main-blue); /* Main blue for the labels */
-    margin-bottom: 5px;
-}
-
-.filter-group select {
-    width: 100%;
-    padding: 8px;
-    font-size: 0.9rem;
-    border: 1px solid var(--text-gray); /* Subtle gray border */
-    border-radius: 4px;
-    background: white;
-    color: var(--text-gray);
-    transition: border-color 0.3s ease;
-}
-
-.filter-group select:hover,
-.filter-group select:focus {
-    border-color: var(--main-blue); /* Highlight border on focus/hover */
-    outline: none;
-}
-
-.filter-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    background-color: var(--main-blue); /* Main blue */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.filter-button:hover {
-    background-color: #083165; /* Darker blue on hover */
-    transform: translateY(-1px); /* Slight lift on hover */
-}
-
-/* Main Content Styling */
-.table-container {
-    flex: 1; /* Fills remaining space next to the filter sidebar */
-    background: white; /* White background */
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    color: var(--text-gray); /* Text gray for consistency */
-}
-
-/* Container Styling */
-.container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    margin: 20px;
-}
-
-/* F1000 Report Styling */
-.f1000-report {
-    margin-bottom: 20px;
-    text-align: center; /* Ensures horizontal centering */
-    display: flex; /* Use flexbox for precise centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    width: 100%; /* Take full width of sidebar */
-    
-}
-
-.f1000-link {
-    display: inline; /* Inline makes it behave like a normal link */
-    text-decoration: underline; /* Adds a proper underline */
-    font-weight: bold; /* Enhances visibility */
-    transition: color 0.3s ease, text-decoration-color 0.3s ease;
-}
-
-
-
-
-/* Filter Sidebar Styling */
-.filter-sidebar {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-top: 30px;
-}
-
-/* Button Styles (Filter and F1000 Link) */
-
-.f1000-link {
-    display: block;
-    width: 100%;
-    color: #10428a;
-    border: none;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    
-    transition:
-        background-color 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.2s ease;
-
-    border-radius: 4px;
-    padding: 12px 15px;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-}
-
-.filter-button {
-    display: block;
-    width: 100%;
-    background-color:#10428a ;
-    color: white;
-    border: none;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    
-    transition:
-        background-color 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.2s ease;
-
-    border-radius: 4px;
-    padding: 12px 15px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-
-
-.filter-button:active,
-.f1000-link:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(8, 48, 101, 0.1);
-}
-
-/* Select Inputs - Modern Styling */
-.filter-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    background-color: white;
-    font-size: 0.95rem;
-    
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.filter-group select:focus {
-    outline: none;
-    border-color: var(--main-blue);
-    box-shadow: 0 0 0 2px rgba(0, 51, 153, 0.2);
-}
 /* Prevent scaling for the antibody table page */
 .antibody-table-page {
     min-width: 1024px; /* Set a minimum width for desktop layout */
     overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
+.antibody-table-page * {
+    box-sizing: border-box;
+  }
+  
 /* Adjust Banner */
 .antibody-banner {
     height: 150px; /* Reduce banner height */
@@ -2160,6 +1952,13 @@ body.no-wobble .partner-grid {
     font-weight: 500; /* Semi-bold for emphasis */
     line-height: 1.6; /* Improve readability */
 }
+.no-results p:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-blue);
+    margin-bottom: 10px;
+  }
+  
 
 .nominate-target-button {
     margin-left: 15px; /* Space between text and button */
@@ -2545,19 +2344,6 @@ option {
 }
 
 
-.logo-home {
-    display: flex;
-    justify-content: left; /* Centers logo horizontally */
-    align-items: left; /* Centers logo vertically */
-    height: 100px; /* Adjust header height if needed */
-}
-
-.logo-home .logo-img {
-    width: 300px; /* Adjust the size as needed */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent it from exceeding container */
-}
-
 /* Cookie Banner Styling */
 .cookie-banner {
     position: fixed;
@@ -2740,3 +2526,201 @@ option {
 #copy-btn:active {
     transform: translateY(0px); /* Resets after click */
 }
+
+/* Filter Container */
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+/* Title */
+.filter-title {
+    font-size: 1.3rem;
+    color: var(--main-blue);
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* Container holding the filters */
+.filter-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  
+  /* Flexbox for form to align everything in one line */
+  .filter-form {
+    display: flex;
+    gap: 15px;
+    align-items: end; /* aligns all dropdowns and button bottom edge */
+    flex-wrap: wrap; /* wrap ONLY if screen is small */
+  }
+  
+  /* Individual filter dropdown group */
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+  }
+  
+  /* Filter button styling */
+  .filter-button {
+    background-color: var(--main-blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    height: 40px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-button:hover {
+    background-color: #0c3673;
+  }
+  
+  /* Ensure selects are visually aligned with button */
+  .filter-group select {
+    padding: 10px;
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Add this to your CSS */
+.filter-group.button-wrapper {
+    align-self: flex-end;
+    margin-top: 0;
+    min-width: auto; /* override inherited width */
+}
+
+  
+  /* Optional: make the layout mobile friendly */
+  @media (max-width: 768px) {
+    .filter-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .filter-group {
+      width: 100%;
+    }
+  
+    .button-wrapper {
+      align-self: flex-start;
+      margin-top: 10px;
+    }
+  }
+  
+
+.banner-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: var(--main-blue);
+    color: white;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  /* Center section should take minimal width and be centered */
+  .banner-center {
+    flex: 0 1 auto;
+    text-align: center;
+  }
+  
+  /* Right section stays in the top right */
+  .banner-right {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    max-width: 40%;
+  }
+  
+  .banner-center h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .f1000-link {
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+  
+  
+  /* Citation Box */
+  .compact-citation {
+    color: white;
+    font-size: 0.8rem;
+    border-left: 1px solid white;
+    padding-left: 12px;
+    max-width: 500px;
+    line-height: 1.3;
+    text-align: left;
+  }
+  
+  .compact-citation button {
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.75rem;
+    margin-top: 4px;
+  }
+  
+  .compact-citation button:hover {
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .banner-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  
+    .banner-left {
+      flex: 1;
+      margin-left: 10px;
+    }
+  
+    .banner-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: 20px;
+      text-align: right;
+    }
+  
+    .banner-center h2,
+    .banner-center .f1000-link {
+      margin: 4px 0;
+      font-size: 0.8rem; /* Optional: reduce size on small screens */
+    }
+  
+    .cite-data-section {
+      max-width: 240px;
+      font-size: 0.75rem;
+    }
+  
+    .cite-data-section button {
+      font-size: 0.5rem;
+    }
+  }
+
+

@@ -13,14 +13,14 @@
     {% include 'core/cookie_banner.html' %}
     <script src="{% static 'core/script.js' %}"></script>
     
-    <!-- Header Section -->
+<!-- Header Section -->
 <header class="header">
-    <div class="logo-home">
+    <div class="logo">
         <a href="{% url 'home' %}"> <!-- Link to the home page -->
-            <img src="{% static 'core/logo778.png' %}" alt="Logo" class="logo-img">
+            <img src="{% static 'core/logo.png' %}" alt="Logo" class="logo-img">
         </a>
     </div> 
-    
+
  <!-- Hamburger Icon -->
 <div class="hamburger">☰</div>
 
@@ -38,96 +38,87 @@
     </nav>
 </header>
 
-    <!-- Banner Section -->
-    <section class="banner antibody-banner">
-        <div class="banner-text">
-            <h2>Data</h2>
-            <p><strong style="color: white;">Gene: {{ gene.name }}</strong></p>
+<section class="banner antibody-banner">
+    <div class="banner-content">
+      
+      <div class="banner-center">
+        <h2>Gene: {{ gene.name }}</h2>
+        <a href="{{ gene.f1000_report_link }}" target="_blank" class="f1000-link">Full Report</a>
+        {% if gene.citation %}
+          <div class="copy-citation-wrapper">
+            <button id="copy-btn" class="copy-btn" title="{{ gene.citation }}">Copy Citation</button>
+            <span id="citation-text" style="display: none;">{{ gene.citation }}</span>
+          </div>
+        {% endif %}
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <div class="beta-test-notice" style="padding: 10px 0; font-size: 0.9rem; margin-top: 3px; margin-bottom: 3px; line-height: 1;">
+    Antibody order is random
+</div>
+  
+  
+
+<!-- Filters remain below as they are -->
+<div class="filter-container">
+    <form class="filter-form" method="get">
+      <!-- Filters go here -->
+  
+        <!-- Host Filter -->
+        <div class="filter-group">
+            <label for="host">Host</label>
+            <select name="host" id="host">
+                <option value="">-- Select Host --</option>
+                {% for host in hosts %}
+                    <option value="{{ host }}" {% if request.GET.host == host %}selected{% endif %}>{{ host }}</option>
+                {% endfor %}
+            </select>
         </div>
-    </section>
 
-    <div class="beta-test-notice" style="padding: 10px 0; font-size: 0.9rem; margin-top: 3px; margin-bottom: 3px; line-height: 1;">
-        This website is a beta test
-    </div>
-    
+        <!-- Clonality Filter -->
+        <div class="filter-group">
+            <label for="clonality">Clonality</label>
+            <select name="clonality" id="clonality">
+                <option value="">-- Select Clonality --</option>
+                {% for clonality in clonality_options %}
+                    <option value="{{ clonality }}" {% if request.GET.clonality == clonality %}selected{% endif %}>{{ clonality }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <div class="content">
-        <div class="container">
-            <aside class="filter-sidebar">
-                <!-- F1000 Report Link -->
-                <div class="f1000-report">
-                    <a href="{{ gene.f1000_report_link }}" target="_blank" class="f1000-link">
-                        Full Report 
-                    </a>
-                </div>
+        <!-- Recombinant Filter -->
+        <div class="filter-group">
+            <label for="recombinant">Recombinant</label>
+            <select name="recombinant" id="recombinant">
+                <option value="">-- Select Recombinant --</option>
+                {% for recombinant in recombinant_options %}
+                    <option value="{{ recombinant }}" {% if request.GET.recombinant == recombinant %}selected{% endif %}>
+                        {{ recombinant }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
 
-                <!-- Filter Sidebar -->
-                <form method="get">
-                    <h3>Filter Antibodies</h3>
+        <!-- Recommended Application Filter (Placeholder) -->
+<div class="filter-group">
+    <label for="recommended">Recommended Application</label>
+    <select name="recommended" id="recommended" disabled>
+        <option value="">-- Coming Soon --</option>
+    </select>
+</div>
 
-                    <!-- Host Filter -->
-                    <div class="filter-group">
-                        <label for="host">Host</label>
-                        <select name="host" id="host">
-                            <option value="">-- Select Host --</option>
-                            {% for host in hosts %}
-                                <option value="{{ host }}" {% if request.GET.host == host %}selected{% endif %}>{{ host }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
+   <!-- Filter Button -->
+   <div class="filter-group button-wrapper">
+    <button type="submit" class="filter-button">Filter</button>
+  </div>
+</form>
+</div>
 
-                    <!-- Clonality Filter -->
-                    <div class="filter-group">
-                        <label for="clonality">Clonality</label>
-                        <select name="clonality" id="clonality">
-                            <option value="">-- Select Clonality --</option>
-                            {% for clonality in clonality_options %}
-                                <option value="{{ clonality }}" {% if request.GET.clonality == clonality %}selected{% endif %}>{{ clonality }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
 
-                    <!-- Recombinant Filter -->
-                    <div class="filter-group">
-                        <label for="recombinant">Recombinant</label>
-                        <select name="recombinant" id="recombinant">
-                            <option value="">-- Select Recombinant --</option>
-                            {% for recombinant in recombinant_options %}
-                                <option value="{{ recombinant }}" {% if request.GET.recombinant == recombinant %}selected{% endif %}>
-                                    {{ recombinant }}
-                                </option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <!-- Submit Button -->
-                    <button type="submit" class="filter-button">Filter</button>
-                </form>
 
-                      <!-- Divider Section -->
-        <section class="section-divider">
-            <div class="divider-line"></div>
-          </section>   
-  
-          <div class="filter-group"> 
-              <p>Antibody order is random</p>
-    
-          
-          <!-- Divider Section -->
-          <section class="section-divider">
-              <div class="divider-line"></div>
-            </section>     
-  
-            {% if gene.citation %}
-    <div class="cite-data-section">
-        <h1 style="color: white;">Cite this Data</h1>
-        <span id="citation-text">{{ gene.citation }}</span>
-        <button id="copy-btn">Copy Citation</button> <!-- Add this button -->
-    </div>
-{% endif %}
-
-        
-
-      </aside>  
             <!-- Table Container -->
             <main class="table-container">
                 <!-- Ideal Antibody Row -->
@@ -174,22 +165,34 @@
                     <tbody>
                         <tr>
                             <!-- Antibody Details -->
-                            <td class="antibody-details">
-                                <h3>{{ antibody.name }}</h3>
-                                {% if antibody.description %}
-                                    <p>RRID: {{ antibody.description.rrid }}</p>
-                                    <p>Supplier: {{ antibody.description.supplier }}</p>
-                                    <p>Host: {{ antibody.description.host }}</p>
-                                    <p>Clonality: {{ antibody.description.clonality }}</p>
-                                    <p>Recombinant: {{antibody.description.recombinant}}</p>
-                                    {% if antibody.description.product_link %}
-                                      <a href="{{ antibody.description.product_link }}" target="_blank" class="product-link">
-                                         Find product here
-                                      </a>
-                                    {% endif %}
+                           
+<td class="antibody-details">
+    <h3>{{ antibody.name }}</h3>
+    {% if antibody.description %}
+        <p>RRID: {{ antibody.description.rrid }}</p>
 
-                                {% endif %}
-                            </td>
+        <p>
+            Supplier:
+            {% if antibody.description.product_link %}
+                <a href="{{ antibody.description.product_link }}" target="_blank" class="product-link">
+                    {{ antibody.description.supplier }}
+                </a>
+            {% else %}
+                {{ antibody.description.supplier }}
+            {% endif %}
+        </p>
+
+        <p>{{ antibody.description.host }}</p>
+        <p>{{ antibody.description.clonality }}</p>
+
+        {% if antibody.description.clone_ID %}
+            <p>Clone ID: {{ antibody.description.clone_ID }}</p>
+        {% endif %}
+
+       
+    {% endif %}
+</td>
+
 
                             <!-- WB Experiment -->
                             <td>

@@ -96,12 +96,11 @@
 
     <!-- Header Section -->
     <header class="header">
-        <div class="logo-home">
+        <div class="logo">
             <a href="{% url 'home' %}"> <!-- Link to the home page -->
-                <img src="{% static 'core/logo778.png' %}" alt="Logo" class="logo-img">
+                <img src="{% static 'core/logo.png' %}" alt="Logo" class="logo-img">
             </a>
-        </div>  
-        
+        </div> 
     <!-- Hamburger Icon -->
     <div class="hamburger">☰</div>
 
@@ -148,11 +147,11 @@
      </div>
           <div class="edu-box">
         <h3>Choosing the Right Antibody for Your Application</h3>
-        <p>Learn how to choose the right antibody for techniques like Western blot, IP, IF, and flow cytometry</p>
+        <p>Learn how to choose the right antibody for techniques </p>
         <a href="{% url 'resources' %}" class="learn-more-button">Learn More</a>
      </div>
      <div class="edu-box">
-        <h3>A Consensus Platform for Antibody Characterization: Standardizing Research Practices</h3>
+        <h3>A Consensus Platform for Antibody Characterization</h3>
         <p>Explore YCharOS’s open antibody data to enhance validation and reproducibility in research.</p>
         <a href="https://www.nature.com/articles/s41596-024-01095-8.epdf?sharing_token=IXXRzz7RxXpFU_UVogq6sdRgN0jAjWel9jnR3ZoTv0NSYM8h6b2wKJRmPiy1somliPIeES3xGSkoZ4ZMCeKloxqiNQkig-6xoPoUrVqkPkvetkWJe8z4Ndrr6QK7KaLT1yRgjR_QwxUQvDHeB1MF4ikyApv-qlNcjgM46HezpHo%3D" class="learn-more-button" target="_blank" rel="noopener noreferrer">Learn More</a>
      </div>
@@ -175,10 +174,12 @@
 
 
     <!-- No Results Message -->
-    <div id="no-results-message" class="no-results">
-      <p>Didn't find what you're looking for?</p>
-      <a href="{% url 'contact' %}" class="nominate-target-button">Nominate a Target</a>
-    </div>
+<div id="no-results-message" class="no-results" style="display: none;">
+    <p><strong>Not Available Yet</strong></p>
+    <p>Didn't find what you're looking for?</p>
+    <a href="{% url 'contact' %}" class="nominate-target-button">Nominate a Target</a>
+  </div>
+  
 
 <!-- Footer -->
 <footer class="footer">
