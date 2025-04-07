@@ -116,6 +116,7 @@ def antibody_table(request, gene_id):
                 "clonality": antibody.description.clonality,
                 "clone_ID": antibody.description.clone_ID,
                 "recombinant": antibody.description.recombinant,
+                "recomended_applications" : antibody.description.recomended_applications,
                 "product_link": antibody.description.product_link
             }
 

@@ -189,6 +189,10 @@
             <p>Clone ID: {{ antibody.description.clone_ID }}</p>
         {% endif %}
 
+        {% if antibody.description.recomended_applications %}
+            <p> Recomended Applications : {{ antibody.description.recomended_applications }}</p>
+        {% endif %}    
+
        
     {% endif %}
 </td>
