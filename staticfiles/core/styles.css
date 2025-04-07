@@ -2045,23 +2045,18 @@ strong {
 }
 
 @media (max-width: 768px) {
-    .educational-section {
-        flex-wrap: wrap; /* Allow wrapping */
-        justify-content: center;
-        gap: 12px;
-    }
-
     .edu-box {
-        flex: 1 1 calc(45% - 10px); /* Two per row with gap */
-        padding: 12px;
-        font-size: 13px;
-        background-color: #f3f8ff;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 250px;
-        margin: 6px;
-    }
+        flex: 1 1 calc(33.333% - 10px);
+        max-width: 33.333%;
+        min-width: 0;
+        padding: 10px;
+      }
+    
+      .educational-section {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
 
     .edu-box h3 {
         font-size: 1rem;
