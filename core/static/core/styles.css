@@ -2059,7 +2059,7 @@ strong {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 250px;
+        min-height: 200px;
         margin: 6px;
     }
 
