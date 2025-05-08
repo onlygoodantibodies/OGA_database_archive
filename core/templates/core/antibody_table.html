@@ -101,15 +101,21 @@
                 {% endfor %}
             </select>
         </div>
-
-        <!-- Recommended Application Filter (Placeholder) -->
+<!-- Recommended Applications Filter -->
 <div class="filter-group">
-    <label for="recommended">Recommended Application</label>
-    <select name="recommended" id="recommended" disabled>
-        <option value="">-- Coming Soon --</option>
+    <label for="recomended_applications">Recommended Applications</label>
+    <select name="recomended_applications" id="recomended_applications">
+        <option value="">-- Select Application --</option>
+        {% for app in recomended_applications_options %}
+            <option value="{{ app }}" {% if request.GET.recomended_applications == app %}selected{% endif %}>
+                {{ app }}
+            </option>
+        {% endfor %}
     </select>
 </div>
 
+
+    
    <!-- Filter Button -->
    <div class="filter-group button-wrapper">
     <button type="submit" class="filter-button">Filter</button>

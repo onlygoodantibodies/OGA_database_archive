@@ -126,21 +126,23 @@ def antibody_table(request, gene_id):
             "description": description,
         })
 
-    # Fetch unique filter options
+  # Fetch unique filter options
     hosts = gene.antibodies.filter(description__host__isnull=False).values_list("description__host", flat=True).distinct()
     clonality_options = gene.antibodies.filter(description__clonality__isnull=False).values_list("description__clonality", flat=True).distinct()
     recombinant_options = gene.antibodies.filter(description__recombinant__isnull=False).values_list("description__recombinant", flat=True).distinct()
+    recomended_applications_options = gene.antibodies.filter(description__recomended_applications__isnull=False).values_list("description__recomended_applications", flat=True).distinct()
 
     return render(request, "core/antibody_table.html", {
         "gene": gene,
-        "f1000_report_link": gene.f1000_report_link,  # Pass the link to the template
+        "f1000_report_link": gene.f1000_report_link,
         "antibody_data": antibody_data,
         "hosts": hosts,
         "clonality_options": clonality_options,
         "recombinant_options": recombinant_options,
+        "recomended_applications_options": recomended_applications_options
     })
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 def set_dark_mode(request):
     response = redirect('home')  # Redirect back to homepage
