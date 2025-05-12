@@ -55,7 +55,7 @@
                 const noResultsMessage = document.getElementById('no-results-message');
                 let hasResults = false;
         
-                geneCache.forEach(({ geneName, element }) => {
+                geneCache.forEach(({ geneName, element }) => {54
                     if (geneName.includes(query)) {
                         element.style.display = '';  // Show matching boxes
                         hasResults = true;
@@ -118,7 +118,10 @@
         </nav>
     </header>
 
-
+<!-- Site Purpose Banner -->
+<div class="site-purpose-banner" style="background-color: #e6f2ff; padding: 15px; text-align: center; font-size: 1.1rem; font-weight: 600; color: #003366;">
+     Find knockout antibodies for your target of interest – and growing! New antibodies added every month.
+</div>
     <!-- Search Bar -->
     <div class="search-bar-wrapper" style="position: relative;">
         <form method="get" class="search-container">

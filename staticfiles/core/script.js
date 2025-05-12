@@ -117,3 +117,15 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Processed Citation Content:", citationText.innerText.trim()); // Log the processed text
 });
 
+function copyCurrentURL() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+        const confirmation = document.getElementById('copy-confirmation');
+        confirmation.style.display = 'block';
+        setTimeout(() => {
+            confirmation.style.display = 'none';
+        }, 2500);
+    });
+}
+
+
