@@ -3,8 +3,8 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.shortcuts import render, redirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import  redirect
+from django.shortcuts import  get_object_or_404
 from .models import Gene, Antibody
 from django.conf import settings
 
@@ -83,6 +83,7 @@ def antibody_table(request, gene_id):
     host_filter = request.GET.get("host")
     clonality_filter = request.GET.get("clonality")
     recombinant_filter = request.GET.get("recombinant")
+    discontinued = request.GET.get("discontinued")  # ✅ New line
 
     # Apply filters
     if host_filter:
@@ -91,6 +92,10 @@ def antibody_table(request, gene_id):
         antibodies = antibodies.filter(description__clonality=clonality_filter)
     if recombinant_filter:
         antibodies = antibodies.filter(description__recombinant=recombinant_filter)
+    if discontinued == "yes":
+        antibodies = antibodies.filter(description__discontinued=True)
+    elif discontinued == "no":
+        antibodies = antibodies.filter(description__discontinued=False)
 
     # Prepare structured dataset
     antibody_data = []
@@ -116,7 +121,7 @@ def antibody_table(request, gene_id):
                 "clonality": antibody.description.clonality,
                 "clone_ID": antibody.description.clone_ID,
                 "recombinant": antibody.description.recombinant,
-                "recomended_applications" : antibody.description.recomended_applications,
+                "recomended_applications": antibody.description.recomended_applications,
                 "product_link": antibody.description.product_link,
                 "discontinued": antibody.description.discontinued,
             }
@@ -127,11 +132,12 @@ def antibody_table(request, gene_id):
             "description": description,
         })
 
-  # Fetch unique filter options
+    # Fetch unique filter options
     hosts = gene.antibodies.filter(description__host__isnull=False).values_list("description__host", flat=True).distinct()
     clonality_options = gene.antibodies.filter(description__clonality__isnull=False).values_list("description__clonality", flat=True).distinct()
     recombinant_options = gene.antibodies.filter(description__recombinant__isnull=False).values_list("description__recombinant", flat=True).distinct()
     recomended_applications_options = gene.antibodies.filter(description__recomended_applications__isnull=False).values_list("description__recomended_applications", flat=True).distinct()
+    discontinued_options = gene.antibodies.filter(description__discontinued__isnull=False).values_list("description__discontinued", flat=True).distinct()
 
     return render(request, "core/antibody_table.html", {
         "gene": gene,
@@ -140,10 +146,11 @@ def antibody_table(request, gene_id):
         "hosts": hosts,
         "clonality_options": clonality_options,
         "recombinant_options": recombinant_options,
-        "recomended_applications_options": recomended_applications_options
+        "recomended_applications_options": recomended_applications_options,
+        "discontinued": discontinued,  # ✅ Pass current selection to template
+        "discontinued_options": discontinued_options,  # ✅ (Optional) for dynamic dropdown
     })
 
-from django.shortcuts import render
 
 def set_dark_mode(request):
     response = redirect('home')  # Redirect back to homepage
