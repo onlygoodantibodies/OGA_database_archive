@@ -101,28 +101,6 @@
                 {% endfor %}
             </select>
         </div>
-<!-- Recommended Applications Filter -->
-<div class="filter-group">
-    <label for="recomended_applications">Vendor Recommended Applications</label>
-    <select name="recomended_applications" id="recomended_applications">
-        <option value="">-- Select Application --</option>
-        {% for app in recomended_applications_options %}
-            <option value="{{ app }}" {% if request.GET.recomended_applications == app %}selected{% endif %}>
-                {{ app }}
-            </option>
-        {% endfor %}
-    </select>
-</div>
-
-<!-- Discontinued Filter -->
-<div class="filter-group">
-    <label for="discontinued">Discontinued</label>
-    <select name="discontinued" id="discontinued">
-        <option value="">-- Select Option --</option>
-        <option value="yes" {% if request.GET.discontinued == "yes" %}selected{% endif %}>Yes</option>
-        <option value="no" {% if request.GET.discontinued == "no" %}selected{% endif %}>No</option>
-    </select>
-</div>
 
     
    <!-- Filter Button -->
@@ -199,7 +177,8 @@
             {% endif %}
         </p>
 
-        <p>{{ antibody.description.host }}</p>
+        <p>Host:
+            {{ antibody.description.host }}</p>
         <p>{{ antibody.description.clonality }}</p>
 
         {% if antibody.description.clone_ID %}
