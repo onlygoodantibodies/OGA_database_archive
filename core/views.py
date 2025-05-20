@@ -83,7 +83,7 @@ def antibody_table(request, gene_id):
     host_filter = request.GET.get("host")
     clonality_filter = request.GET.get("clonality")
     recombinant_filter = request.GET.get("recombinant")
-    discontinued = request.GET.get("discontinued")  # ✅ New line
+    discontinued = request.GET.get("discontinued")  # ✅
 
     # Apply filters
     if host_filter:
@@ -92,9 +92,11 @@ def antibody_table(request, gene_id):
         antibodies = antibodies.filter(description__clonality=clonality_filter)
     if recombinant_filter:
         antibodies = antibodies.filter(description__recombinant=recombinant_filter)
+
+    # ✅ Hide discontinued antibodies unless explicitly included
     if discontinued == "yes":
         antibodies = antibodies.filter(description__discontinued=True)
-    elif discontinued == "no":
+    elif discontinued == "no" or discontinued is None:
         antibodies = antibodies.filter(description__discontinued=False)
 
     # Prepare structured dataset
@@ -147,8 +149,8 @@ def antibody_table(request, gene_id):
         "clonality_options": clonality_options,
         "recombinant_options": recombinant_options,
         "recomended_applications_options": recomended_applications_options,
-        "discontinued": discontinued,  # ✅ Pass current selection to template
-        "discontinued_options": discontinued_options,  # ✅ (Optional) for dynamic dropdown
+        "discontinued": discontinued,
+        "discontinued_options": discontinued_options,
     })
 
 
