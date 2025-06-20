@@ -26,16 +26,16 @@
 
 <!-- Navigation Menu -->
     <nav>
-        <ul class="menu">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'publications' %}">Publications</a></li>
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-            <li><a href="{% url 'news' %}">News</a></li>
-            <li><a href="{% url 'partners' %}">Partners</a></li>
-            <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
-        </ul>
-    </nav>
+  <ul class="menu">
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'about' %}">About Us</a></li>
+    <li><a href="{% url 'publications' %}">Publications</a></li>
+    <li><a href="{% url 'projects' %}">Projects</a></li>
+    <li><a href="{% url 'news' %}">News</a></li>
+    <li><a href="{% url 'partners' %}">Partners</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+  </ul>
+</nav>
 </header>
 
 <section class="banner antibody-banner">
@@ -183,10 +183,6 @@
 
         {% if antibody.description.clone_ID %}
             <p>Clone ID: {{ antibody.description.clone_ID }}</p>
-        {% endif %}
-
-        {% if antibody.description.recomended_applications %}
-            <p>Vendor Recomended Applications : {{ antibody.description.recomended_applications }}</p>
         {% endif %}
 
         {% if antibody.description.discontinued %}
