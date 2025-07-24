@@ -8,7 +8,22 @@ class AnswerInline(admin.TabularInline):
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [AnswerInline]
 
-admin.site.register(Lesson)
+# academy/admin.py
+
+from django.contrib import admin
+from .models import Lesson, LessonSection
+
+class LessonSectionInline(admin.StackedInline):
+    model = LessonSection
+    extra = 1
+
+@admin.register(Lesson)
+class LessonAdmin(admin.ModelAdmin):
+    list_display = ("order", "title")
+    prepopulated_fields = {"slug": ("title",)}
+    inlines = [LessonSectionInline]
+
+
 admin.site.register(Quiz)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Certificate)

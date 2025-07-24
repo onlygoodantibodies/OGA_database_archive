@@ -28,17 +28,25 @@
         <div class="hamburger">☰</div>
 
         <!-- Navigation Menu -->
-        <nav>
-            <ul class="menu">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About Us</a></li>
-                <li><a href="{% url 'publications' %}">Publications</a></li>
-                <li><a href="{% url 'projects' %}"class="active">Projects</a></li>
-                <li><a href="{% url 'news' %}">News</a></li>
-                <li><a href="{% url 'partners' %}">Partners</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-            </ul>
-        </nav>
+         <nav>
+  <ul class="menu">
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'about' %}">About Us</a></li>
+    <li><a href="{% url 'publications' %}">Publications</a></li>
+    <li><a href="{% url 'projects' %}">Projects</a></li>
+    <li><a href="{% url 'news' %}">News</a></li>
+    <li><a href="{% url 'partners' %}">Partners</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+
+    {% if user.is_authenticated %}
+      <!-- Logged‐in users go straight to the Academy home -->
+      <li><a href="{% url 'academy:academy_home' %}">Academy</a></li>
+    {% else %}
+      <!-- Guests go to the login (which also links to signup) -->
+      <li><a href="{% url 'academy:login' %}">Academy</a></li>
+    {% endif %}
+  </ul>
+</nav>
     </header>
 
     <!-- Banner Section -->

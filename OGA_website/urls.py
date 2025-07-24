@@ -1,33 +1,26 @@
-"""
-URL configuration for OGA_website project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import path, include  # Include is needed to link app-specific URLs
-from core import views  # Import your view for the home page
-from django.conf import settings
-from django.conf.urls.static import static
-from django.views.static import serve  
+from django.urls import path, include
+from core import views as core_views  #  Alias core views
+from academy import views as academy_views  #  Alias academy views
 
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')), 
-] 
+    path('certificate/<int:cert_id>/pdf/', academy_views.generate_pdf, name='generate_pdf'),  
+    path('academy/', include('academy.urls', namespace='academy')),
+    path('accounts/', include('allauth.urls')),
+    path('grappelli/', include('grappelli.urls')),      # if you installed django-grappelli
+
+
+    # CKEditor upload endpoints
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+]
+
 # Serve media files in development mode (DEBUG=True)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -37,5 +30,3 @@ if not settings.DEBUG:
     urlpatterns += [
         path('media/<path:path>/', serve, {'document_root': settings.MEDIA_ROOT}),
     ]
-
-
